@@ -26,6 +26,29 @@ const categoryWords = {
   health: ["生病", "看病", "医疗", "医保", "体检", "医院", "发烧", "心理"],
   study: ["入学", "新生", "报到", "学习", "图书馆", "课程", "助学"],
   career: ["毕业", "就业", "实习", "招聘", "离校", "档案", "合同", "租房"],
+  account: ["账号", "密码", "激活", "jnuid", "统一身份", "服务号", "校园卡"],
+  network: [
+    "校园网",
+    "网络",
+    "联网",
+    "wifi",
+    "无线",
+    "有线",
+    "锐捷",
+    "端口",
+    "mynet",
+  ],
+  payment: ["缴费", "学费", "学杂费", "财务", "充值", "水电费", "电费", "水费"],
+  logistics: ["快递", "收件", "收货", "寄件", "包裹", "收件地址"],
+  facilities: [
+    "校园地图",
+    "楼宇",
+    "操场",
+    "体育馆",
+    "游泳馆",
+    "超市",
+    "商业城",
+  ],
 };
 const categoryLabels = {
   clothes: "衣物护理",
@@ -35,10 +58,28 @@ const categoryLabels = {
   health: "医疗健康",
   study: "校园办事",
   career: "毕业与就业",
+  account: "校园账号",
+  network: "校园网络",
+  payment: "缴费充值",
+  logistics: "快递收发",
+  facilities: "校园地图",
 };
 export function searchCatalog(query, catalog) {
   const normalized = query.trim().toLowerCase();
+  const networkQuery = categoryWords.network.some((word) =>
+    normalized.includes(word),
+  );
+  const faultQuery = [
+    "坏",
+    "故障",
+    "维修",
+    "报修",
+    "断网",
+    "连不上",
+    "无法连接",
+  ].some((word) => normalized.includes(word));
   const housingFault =
+    !networkQuery &&
     ["宿舍", "空调", "漏水", "水电", "寝室"].some((word) =>
       normalized.includes(word),
     ) &&
@@ -61,13 +102,20 @@ export function searchCatalog(query, catalog) {
             : 0),
         0,
       );
+      const title = entry.title.toLowerCase();
       const titleScore =
-        normalized.includes(entry.title) || entry.title.includes(normalized)
-          ? 7
-          : 0;
+        normalized.includes(title) || title.includes(normalized) ? 7 : 0;
       const categoryScore = relatedCategories.includes(entry.category) ? 2 : 0;
+      const body = [
+        entry.summary,
+        ...(entry.content || []),
+        ...entry.steps,
+        ...(entry.tables || []).flatMap((table) => table.rows.flat()),
+      ]
+        .join(" ")
+        .toLowerCase();
       const phraseScore =
-        normalized.length >= 2 && entry.summary.includes(normalized) ? 2 : 0;
+        normalized.length >= 2 && body.includes(normalized) ? 3 : 0;
       return {
         entry,
         score:
@@ -75,7 +123,12 @@ export function searchCatalog(query, catalog) {
           titleScore +
           categoryScore +
           phraseScore +
-          (housingFault && entry.id === "repair" ? 8 : 0),
+          (housingFault && entry.id === "repair" ? 8 : 0) +
+          (networkQuery &&
+          faultQuery &&
+          entry.id === "pdf-campus-network-repair"
+            ? 16
+            : 0),
       };
     })
     .filter((match) => match.score > 0)
@@ -98,9 +151,14 @@ export function localAnswer(query, catalog) {
   const labels = categories
     .map((category) => categoryLabels[category])
     .join("、");
+  const first = recommendations[0];
+  const evidence =
+    first.sourceState === "pdf"
+      ? `《番禺校区攻略》PDF 第 ${first.sourcePages.join("、")} 页：${first.summary}`
+      : first.summary;
   return {
     mode: "local",
-    answer: `找到了与${labels}相关的入口。点击下方条目可以查看办理线索，再打开对应来源。具体地点、时间和要求请以来源最新说明为准。`,
+    answer: `找到${labels}相关资料。${evidence}\n点击下方条目查看完整步骤、图片和来源。原攻略中的时间、价格与营业状态是历史信息，请核对学校或商家的最新说明。`,
     recommendations: recommendations.map((entry) => entry.id),
     categories,
   };

@@ -2,13 +2,14 @@ import { chromium } from "@playwright/test";
 import http from "node:http";
 import fs from "node:fs/promises";
 import path from "node:path";
-const root = path.resolve("dist");
+const root = path.resolve(process.env.STATIC_ROOT || "dist");
 const mime = {
   ".html": "text/html",
   ".js": "text/javascript",
   ".css": "text/css",
   ".svg": "image/svg+xml",
   ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
   ".png": "image/png",
   ".webp": "image/webp",
 };
@@ -62,6 +63,11 @@ try {
   await page.goto(`http://127.0.0.1:${address.port}/panyu-campus-guide/`);
   await page.waitForLoadState("networkidle");
   await page.waitForTimeout(1100);
+  for (const picture of await page.locator("img").all()) {
+    await picture.scrollIntoViewIfNeeded();
+    await picture.evaluate((element) => element.decode());
+  }
+  await page.evaluate(() => window.scrollTo(0, 0));
   const images = await page
     .locator("img")
     .evaluateAll((images) =>
@@ -93,6 +99,20 @@ try {
     "failed assets:",
     failed.length,
   );
+  await page.goto(
+    `http://127.0.0.1:${address.port}/panyu-campus-guide/#/guide?category=travel`,
+  );
+  await page.waitForTimeout(700);
+  await page
+    .getByRole("button", { name: /番禺校区往返新造地铁站校园小巴/ })
+    .click();
+  await page
+    .locator(".detail-cover img")
+    .evaluate((element) => element.decode());
+  const busUrl = await page.locator(".detail-cover img").getAttribute("src");
+  if (!busUrl.includes("xinzao-campus-minibus.jpeg"))
+    throw new Error("PDF bus image missing under Pages subpath");
+  await page.getByRole("button", { name: "关闭指南详情" }).click();
   if (apis.length || problems.length || failed.length)
     throw new Error("Pages static deployment check failed");
 } finally {

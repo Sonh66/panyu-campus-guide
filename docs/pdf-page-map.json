@@ -1,0 +1,269 @@
+[
+  {
+    "page": 1,
+    "entryIds": ["pdf-jnuid-login"]
+  },
+  {
+    "page": 2,
+    "entryIds": ["pdf-jnuid-login"]
+  },
+  {
+    "page": 3,
+    "entryIds": ["pdf-jnuid-login", "pdf-jnuid-password-reset"]
+  },
+  {
+    "page": 4,
+    "entryIds": ["pdf-jnuid-password-reset"]
+  },
+  {
+    "page": 5,
+    "entryIds": ["pdf-jnuid-password-reset"]
+  },
+  {
+    "page": 6,
+    "entryIds": ["pdf-tuition-payment"]
+  },
+  {
+    "page": 7,
+    "entryIds": ["pdf-wechat-service-hub", "pdf-tuition-payment"]
+  },
+  {
+    "page": 8,
+    "entryIds": ["pdf-wechat-service-hub", "pdf-tuition-payment"]
+  },
+  {
+    "page": 9,
+    "entryIds": [
+      "pdf-wechat-service-hub",
+      "pdf-tuition-payment",
+      "pdf-campus-card-entry",
+      "pdf-jnu-deepseek"
+    ]
+  },
+  {
+    "page": 10,
+    "entryIds": ["pdf-wechat-service-hub", "pdf-tuition-payment"]
+  },
+  {
+    "page": 11,
+    "entryIds": ["pdf-tuition-payment", "pdf-finance-hall"]
+  },
+  {
+    "page": 12,
+    "entryIds": ["pdf-tuition-payment", "pdf-finance-hall"]
+  },
+  {
+    "page": 13,
+    "entryIds": ["pdf-tuition-payment"]
+  },
+  {
+    "page": 14,
+    "entryIds": [
+      "pdf-campus-map",
+      "pdf-campus-clinic-location",
+      "pdf-study-room-location",
+      "pdf-sports-facilities",
+      "pdf-express-centre",
+      "pdf-xingan-supermarket",
+      "pdf-f5-rice-noodles",
+      "pdf-speciality-restaurant",
+      "pdf-shanbei-restaurant",
+      "pdf-hongli-canteen",
+      "pdf-yuhua-canteen",
+      "pdf-lakeside-restaurant",
+      "pdf-express-address"
+    ]
+  },
+  {
+    "page": 15,
+    "entryIds": [
+      "pdf-xingan-supermarket",
+      "pdf-speciality-restaurant",
+      "pdf-shanbei-restaurant",
+      "pdf-hongli-canteen",
+      "pdf-yuhua-canteen",
+      "pdf-lakeside-restaurant"
+    ]
+  },
+  {
+    "page": 16,
+    "entryIds": ["pdf-yuhua-canteen", "pdf-campus-kfc"]
+  },
+  {
+    "page": 17,
+    "entryIds": [
+      "pdf-wechat-service-hub",
+      "pdf-campus-kfc",
+      "pdf-luckin-t3",
+      "pdf-ningji-t5",
+      "pdf-cotti-t5",
+      "pdf-encounter-noodles-east",
+      "pdf-luckin-east",
+      "pdf-mcdonalds-east",
+      "pdf-chabaidao-east",
+      "pdf-jiliudaren-east",
+      "pdf-express-address",
+      "pdf-network-application"
+    ]
+  },
+  {
+    "page": 18,
+    "entryIds": ["pdf-wechat-service-hub", "pdf-network-application"]
+  },
+  {
+    "page": 19,
+    "entryIds": ["pdf-wechat-service-hub", "pdf-network-application"]
+  },
+  {
+    "page": 20,
+    "entryIds": ["pdf-wechat-service-hub", "pdf-network-application"]
+  },
+  {
+    "page": 21,
+    "entryIds": [
+      "pdf-wechat-service-hub",
+      "pdf-campus-card-entry",
+      "pdf-network-application"
+    ]
+  },
+  {
+    "page": 22,
+    "entryIds": [
+      "pdf-wechat-service-hub",
+      "pdf-digital-resources",
+      "pdf-fitness-results",
+      "pdf-network-application"
+    ]
+  },
+  {
+    "page": 23,
+    "entryIds": ["pdf-network-application"]
+  },
+  {
+    "page": 24,
+    "entryIds": ["pdf-network-application", "pdf-jnu-secure-wifi"]
+  },
+  {
+    "page": 25,
+    "entryIds": ["pdf-jnu-secure-wifi"]
+  },
+  {
+    "page": 26,
+    "entryIds": ["pdf-jnu-secure-wifi", "pdf-wired-network"]
+  },
+  {
+    "page": 27,
+    "entryIds": ["pdf-wired-network", "pdf-campus-network-repair"]
+  },
+  {
+    "page": 28,
+    "entryIds": ["pdf-wechat-service-hub", "pdf-campus-network-repair"]
+  },
+  {
+    "page": 29,
+    "entryIds": ["pdf-wechat-service-hub", "pdf-campus-network-repair"]
+  },
+  {
+    "page": 30,
+    "entryIds": ["pdf-campus-network-repair"]
+  },
+  {
+    "page": 31,
+    "entryIds": ["pdf-campus-network-repair", "pdf-network-service-locations"]
+  },
+  {
+    "page": 32,
+    "entryIds": ["pdf-campus-network-repair", "pdf-network-service-locations"]
+  },
+  {
+    "page": 33,
+    "entryIds": ["pdf-campus-network-repair"]
+  },
+  {
+    "page": 34,
+    "entryIds": ["pdf-campus-network-repair", "pdf-network-service-locations"]
+  },
+  {
+    "page": 35,
+    "entryIds": ["pdf-campus-network-repair"]
+  },
+  {
+    "page": 36,
+    "entryIds": ["pdf-campus-network-repair", "pdf-teaching-shuttle"]
+  },
+  {
+    "page": 37,
+    "entryIds": ["pdf-teaching-shuttle"]
+  },
+  {
+    "page": 38,
+    "entryIds": ["pdf-teaching-shuttle", "pdf-xinzao-campus-minibus"]
+  },
+  {
+    "page": 39,
+    "entryIds": ["pdf-xinzao-campus-minibus", "pdf-ruyue-bus"]
+  },
+  {
+    "page": 40,
+    "entryIds": ["pdf-ruyue-bus", "pdf-xinzao-metro"]
+  },
+  {
+    "page": 41,
+    "entryIds": ["pdf-xinzao-metro"]
+  },
+  {
+    "page": 42,
+    "entryIds": [
+      "pdf-wechat-service-hub",
+      "pdf-xinzao-metro",
+      "pdf-dorm-water-electricity"
+    ]
+  },
+  {
+    "page": 43,
+    "entryIds": ["pdf-wechat-service-hub", "pdf-dorm-water-electricity"]
+  },
+  {
+    "page": 44,
+    "entryIds": [
+      "pdf-wechat-service-hub",
+      "pdf-dorm-water-electricity",
+      "pdf-offcampus-takeout-lockers"
+    ]
+  },
+  {
+    "page": 45,
+    "entryIds": [
+      "pdf-offcampus-takeout-lockers",
+      "pdf-takeout-kuaituan",
+      "pdf-takeout-jnu-canteen",
+      "pdf-takeout-gouzhong",
+      "pdf-takeout-jnu-delivery",
+      "pdf-takeout-waimaigou",
+      "pdf-takeout-xingqiudiandian",
+      "pdf-takeout-askforfan",
+      "pdf-takeout-wuyougo",
+      "pdf-takeout-yidianda"
+    ]
+  },
+  {
+    "page": 46,
+    "entryIds": ["pdf-takeout-kuaituan", "pdf-takeout-jnu-canteen"]
+  },
+  {
+    "page": 47,
+    "entryIds": ["pdf-takeout-gouzhong", "pdf-takeout-jnu-delivery"]
+  },
+  {
+    "page": 48,
+    "entryIds": ["pdf-takeout-waimaigou", "pdf-takeout-xingqiudiandian"]
+  },
+  {
+    "page": 49,
+    "entryIds": ["pdf-takeout-askforfan", "pdf-takeout-wuyougo"]
+  },
+  {
+    "page": 50,
+    "entryIds": ["pdf-takeout-yidianda"]
+  }
+]

@@ -26,15 +26,47 @@ import {
   MessageCircle,
   School,
   ChevronLeft,
+  KeyRound,
+  Wifi,
+  WalletCards,
+  Package,
+  Map as MapIcon,
+  Phone,
+  Mail,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import catalog from "./catalog.json";
+import rawCatalog from "./catalog.json";
 import { localAnswer, searchCatalog } from "../server/catalog-search.mjs";
 
 gsap.registerPlugin(ScrollTrigger);
 const pagesDeployment = import.meta.env.VITE_DEPLOY_TARGET === "github-pages";
 const sourceUrl = "https://www.kdocs.cn/l/cd8vwmB6EhQt";
-type Entry = (typeof catalog)[number];
+type Entry = {
+  id: string;
+  title: string;
+  category: string;
+  summary: string;
+  url: string;
+  tags: string[];
+  stages: string[];
+  steps: string[];
+  sourceLabel: string;
+  checkedOn: string;
+  sourceState: string;
+  content: string[];
+  links: { label: string; url: string }[];
+  sourcePages: number[];
+  tables: { columns: string[]; rows: string[][]; caption?: string }[];
+  image: string;
+  imageAlt: string;
+  imageCredit: string;
+  sourceNote: string;
+  gallery: { image: string; alt: string; caption: string }[];
+};
+const catalog: Entry[] = rawCatalog;
+function assetUrl(path: string) {
+  return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+}
 type Category = {
   title: string;
   short: string;
@@ -50,7 +82,7 @@ const categories: Record<string, Category> = {
     description: "洗衣、换季与衣物整理",
     color: "pink",
     icon: Shirt,
-    image: "clothes",
+    image: "images/clothes.jpg",
   },
   food: {
     title: "今天吃什么",
@@ -58,7 +90,7 @@ const categories: Record<string, Category> = {
     description: "校园美食与餐饮信息",
     color: "yellow",
     icon: Utensils,
-    image: "food",
+    image: "images/food.jpg",
   },
   housing: {
     title: "安心住下来",
@@ -66,7 +98,7 @@ const categories: Record<string, Category> = {
     description: "宿舍、报修与生活用品",
     color: "blue",
     icon: House,
-    image: "room",
+    image: "images/room.jpg",
   },
   travel: {
     title: "出发去看看",
@@ -74,7 +106,7 @@ const categories: Record<string, Category> = {
     description: "到校、地铁与返乡",
     color: "green",
     icon: Bike,
-    image: "bike",
+    image: "images/bike.jpg",
   },
   health: {
     title: "照顾好自己",
@@ -82,7 +114,7 @@ const categories: Record<string, Category> = {
     description: "健康、医保与学生支持",
     color: "purple",
     icon: HeartPulse,
-    image: "health",
+    image: "images/health.jpg",
   },
   study: {
     title: "学习与办事",
@@ -90,7 +122,7 @@ const categories: Record<string, Category> = {
     description: "教务、图书馆与奖助",
     color: "blue",
     icon: BookOpen,
-    image: "campus-illustration",
+    image: "images/sections/study.webp",
   },
   career: {
     title: "走向下一站",
@@ -98,7 +130,47 @@ const categories: Record<string, Category> = {
     description: "实习、就业与权益保障",
     color: "green",
     icon: GraduationCap,
-    image: "campus-illustration",
+    image: "images/sections/career.webp",
+  },
+  account: {
+    title: "校园账号",
+    short: "号",
+    description: "统一身份、邮箱与账户",
+    color: "blue",
+    icon: KeyRound,
+    image: "images/sections/account.webp",
+  },
+  network: {
+    title: "校园网络",
+    short: "网",
+    description: "联网、认证与网络报修",
+    color: "purple",
+    icon: Wifi,
+    image: "images/sections/network.webp",
+  },
+  payment: {
+    title: "学费与水电",
+    short: "费",
+    description: "学费、充值与水电缴费",
+    color: "yellow",
+    icon: WalletCards,
+    image: "images/sections/payment.webp",
+  },
+  logistics: {
+    title: "快递与收发",
+    short: "递",
+    description: "取件、寄件与收货地址",
+    color: "pink",
+    icon: Package,
+    image: "images/sections/logistics.webp",
+  },
+  facilities: {
+    title: "校园地图",
+    short: "图",
+    description: "楼宇、路线与校园设施",
+    color: "green",
+    icon: MapIcon,
+    image: "images/sections/facilities.webp",
   },
 };
 const stages = [
@@ -195,19 +267,33 @@ function EntryCard({
       className={`entry-card tone-${categories[entry.category].color}`}
       onClick={() => onOpen(entry)}
     >
-      <span className="entry-icon">
-        <CategoryIcon category={entry.category} />
+      <span className="entry-thumbnail">
+        <img
+          src={assetUrl(entry.image)}
+          alt=""
+          loading="lazy"
+          width="560"
+          height="315"
+        />
+        <span className="entry-image-category">
+          <CategoryIcon category={entry.category} size={16} />
+          {categories[entry.category].title}
+        </span>
       </span>
-      <span className="entry-copy">
-        <strong>{entry.title}</strong>
-        <span>{entry.summary}</span>
-        <small>
-          {entry.sourceLabel}
-          {entry.sourceState === "provided" ? " · 原文入口" : ""}
-        </small>
-      </span>
-      <span className="entry-arrow">
-        <ArrowUpRight size={19} aria-hidden="true" />
+      <span className="entry-card-body">
+        <span className="entry-copy">
+          <strong>{entry.title}</strong>
+          <span>{entry.summary}</span>
+          <small>
+            {entry.sourceState === "pdf" && entry.sourcePages.length
+              ? `攻略 PDF · 第 ${entry.sourcePages.join("、")} 页`
+              : entry.sourceLabel}
+            {entry.sourceState === "provided" ? " · 原文入口" : ""}
+          </small>
+        </span>
+        <span className="entry-arrow">
+          <ArrowUpRight size={19} aria-hidden="true" />
+        </span>
       </span>
     </button>
   );
@@ -258,8 +344,8 @@ function SourceNote() {
     <div className="source-note">
       <BookOpen size={19} aria-hidden="true" />
       <p>
-        原文攻略需在 WPS
-        查看。这里先汇集分类入口与学校官网，具体安排以来源最新说明为准。
+        已按 50 页 PDF 整理校园攻略，具体时间、价格与办理方式以最新说明为准。
+        原有扩展入口仍需回到原文或官网核对。
       </p>
       <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
         查看原文
@@ -360,7 +446,7 @@ function Home({
                   <p>{category.description}</p>
                 </div>
                 <img
-                  src={`${import.meta.env.BASE_URL}images/${category.image}.jpg`}
+                  src={assetUrl(category.image)}
                   alt=""
                   loading="lazy"
                   width="300"
@@ -369,6 +455,50 @@ function Home({
                 <span className="category-go">
                   <ArrowUpRight size={17} aria-hidden="true" />
                 </span>
+              </a>
+            ))}
+        </div>
+      </section>
+      <section
+        className="section-block campus-service-section"
+        aria-labelledby="services-heading"
+      >
+        <div className="section-heading">
+          <div>
+            <h2 id="services-heading">校园大小事，一站找到</h2>
+            <p>账号、网络、缴费、快递，再到学习与成长。</p>
+          </div>
+          <a className="text-link" href={guideHref()}>
+            浏览全部板块
+            <ArrowUpRight size={17} aria-hidden="true" />
+          </a>
+        </div>
+        <div className="service-category-grid">
+          {Object.entries(categories)
+            .slice(5)
+            .map(([key, category]) => (
+              <a
+                key={key}
+                href={guideHref(key)}
+                className={`service-category-card tone-${category.color}`}
+              >
+                <div className="service-category-photo">
+                  <img
+                    src={assetUrl(category.image)}
+                    alt=""
+                    loading="lazy"
+                    width="560"
+                    height="315"
+                  />
+                  <span className="service-category-icon">
+                    <CategoryIcon category={key} size={21} />
+                  </span>
+                </div>
+                <div className="service-category-copy">
+                  <h3>{category.title}</h3>
+                  <p>{category.description}</p>
+                  <ArrowUpRight size={18} aria-hidden="true" />
+                </div>
               </a>
             ))}
         </div>
@@ -951,17 +1081,22 @@ function EntryDialog({
   onClose: () => void;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
+  const detailScroll = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const element = dialog.current;
     if (!element) return;
-    if (entry && !element.open) {
-      element.showModal();
-      if (!reducedMotion())
-        gsap.fromTo(
-          element,
-          { opacity: 0, y: 22, scale: 0.97 },
-          { opacity: 1, y: 0, scale: 1, duration: 0.32, ease: "power3.out" },
-        );
+    if (entry) {
+      element.scrollTop = 0;
+      if (detailScroll.current) detailScroll.current.scrollTop = 0;
+      if (!element.open) {
+        element.showModal();
+        if (!reducedMotion())
+          gsap.fromTo(
+            element,
+            { opacity: 0, y: 22, scale: 0.97 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.32, ease: "power3.out" },
+          );
+      }
     }
     if (!entry && element.open) element.close();
     return () => {
@@ -973,6 +1108,7 @@ function EntryDialog({
       ref={dialog}
       className="entry-dialog"
       aria-labelledby="detail-title"
+      aria-describedby="detail-summary"
       onCancel={onClose}
       onClick={(event) => {
         if (event.target === event.currentTarget) onClose();
@@ -987,44 +1123,204 @@ function EntryDialog({
           >
             <X size={21} aria-hidden="true" />
           </button>
-          <div
-            className={`detail-symbol tone-${categories[entry.category].color}`}
-          >
-            <CategoryIcon category={entry.category} size={29} />
+          <div className="detail-scroll" ref={detailScroll}>
+            <figure
+              className={`detail-cover ${entry.image.startsWith("images/pdf/") ? "detail-cover-original" : ""}`}
+            >
+              <img
+                src={assetUrl(entry.image)}
+                alt={entry.imageAlt}
+                width="1400"
+                height="800"
+              />
+              <figcaption>
+                <span
+                  className={`detail-cover-category tone-${categories[entry.category].color}`}
+                >
+                  <CategoryIcon category={entry.category} size={19} />
+                  {categories[entry.category].title}
+                </span>
+                {entry.imageCredit && <small>{entry.imageCredit}</small>}
+              </figcaption>
+            </figure>
+            <div className="detail-content">
+              <div className="detail-source-row">
+                <span className="detail-source">{entry.sourceLabel}</span>
+                {entry.sourcePages.length > 0 && (
+                  <span className="detail-page-reference">
+                    <BookOpen size={14} aria-hidden="true" />
+                    PDF 第 {entry.sourcePages.join("、")} 页
+                  </span>
+                )}
+              </div>
+              <h2 id="detail-title">{entry.title}</h2>
+              <p id="detail-summary" className="detail-summary">
+                {entry.summary}
+              </p>
+              {entry.content.length > 0 && (
+                <section
+                  className="detail-section detail-prose"
+                  aria-label="攻略正文"
+                >
+                  <h3>攻略详情</h3>
+                  {entry.content.map((paragraph, index) => (
+                    <p key={`${entry.id}-paragraph-${index}`}>{paragraph}</p>
+                  ))}
+                </section>
+              )}
+              {entry.steps.length > 0 && (
+                <section className="detail-section" aria-label="办理与使用步骤">
+                  <h3>从这里开始</h3>
+                  <ol className="detail-steps">
+                    {entry.steps.map((step, index) => (
+                      <li key={`${entry.id}-step-${index}`}>{step}</li>
+                    ))}
+                  </ol>
+                </section>
+              )}
+              {entry.tables.map((table, index) => (
+                <section
+                  className="detail-section detail-table-section"
+                  key={`${entry.id}-table-${index}`}
+                >
+                  <h3 id={`detail-table-${index}`}>
+                    {table.caption || "参考信息表"}
+                  </h3>
+                  <p className="detail-table-hint">
+                    表格可上下、左右滚动查看完整信息。
+                  </p>
+                  <div
+                    className="detail-table-scroll"
+                    role="region"
+                    aria-labelledby={`detail-table-${index}`}
+                    tabIndex={0}
+                  >
+                    <table>
+                      <thead>
+                        <tr>
+                          {table.columns.map((column, columnIndex) => (
+                            <th key={columnIndex} scope="col">
+                              {column}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {table.rows.map((row, rowIndex) => (
+                          <tr key={rowIndex}>
+                            {row.map((cell, cellIndex) => (
+                              <td key={cellIndex}>{cell}</td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+              ))}
+              {entry.gallery.length > 0 && (
+                <section className="detail-section" aria-label="攻略原图">
+                  <h3>攻略里的图片</h3>
+                  <p className="detail-gallery-hint">
+                    点击图片，在新窗口查看原图。
+                  </p>
+                  <div className="detail-gallery">
+                    {entry.gallery.map((picture, index) => (
+                      <a
+                        key={`${entry.id}-gallery-${index}`}
+                        href={assetUrl(picture.image)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="detail-gallery-item"
+                        aria-label={`查看原图：${picture.alt}`}
+                      >
+                        <img
+                          src={assetUrl(picture.image)}
+                          alt={picture.alt}
+                          loading="lazy"
+                        />
+                        <span>
+                          {picture.caption}
+                          <ExternalLink size={14} aria-hidden="true" />
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </section>
+              )}
+              {entry.links.length > 0 && (
+                <section className="detail-section" aria-label="联系与网站入口">
+                  <h3>联系与相关入口</h3>
+                  <div className="detail-links">
+                    {entry.links.map((link, index) => (
+                      <a
+                        key={`${entry.id}-link-${index}`}
+                        href={link.url}
+                        target={
+                          link.url.startsWith("http") ? "_blank" : undefined
+                        }
+                        rel={
+                          link.url.startsWith("http")
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
+                      >
+                        {link.url.startsWith("tel:") ? (
+                          <Phone size={17} aria-hidden="true" />
+                        ) : link.url.startsWith("mailto:") ? (
+                          <Mail size={17} aria-hidden="true" />
+                        ) : (
+                          <ExternalLink size={17} aria-hidden="true" />
+                        )}
+                        <span>{link.label}</span>
+                        <ArrowUpRight size={15} aria-hidden="true" />
+                      </a>
+                    ))}
+                  </div>
+                </section>
+              )}
+              <div className="detail-note">
+                <ShieldCheck size={19} aria-hidden="true" />
+                <div>
+                  <strong>
+                    {entry.sourceState === "pdf"
+                      ? "资料来源与时效"
+                      : "来源说明"}
+                  </strong>
+                  {entry.sourceNote && <p>{entry.sourceNote}</p>}
+                  <p>
+                    {entry.sourceState === "pdf"
+                      ? "本条内容已按所提供的 PDF 整理；资料时间及现行价格、班次、联系方式尚未核实，请以学校或服务方最新说明为准。"
+                      : entry.sourceState === "provided"
+                        ? "这是原有扩展入口，具体内容仍需回到原文核对。查看 WPS 原文可能需要登录。"
+                        : "本条提供官方服务入口，具体条件、时间和办理方式请核对最新通知。"}
+                  </p>
+                </div>
+              </div>
+              <a
+                className="primary-button detail-cta"
+                href={entry.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {entry.url.includes("kdocs.cn")
+                  ? "查看原文攻略"
+                  : "打开官网或来源"}
+                <ExternalLink size={17} aria-hidden="true" />
+              </a>
+              <a
+                className="detail-category"
+                href={guideHref(entry.category)}
+                onClick={onClose}
+              >
+                继续浏览{categories[entry.category].title}
+              </a>
+              <button className="detail-close-bottom" onClick={onClose}>
+                关闭本条指南
+                <X size={16} aria-hidden="true" />
+              </button>
+            </div>
           </div>
-          <span className="detail-source">{entry.sourceLabel}</span>
-          <h2 id="detail-title">{entry.title}</h2>
-          <p className="detail-summary">{entry.summary}</p>
-          <h3>从这里开始</h3>
-          <ol className="detail-steps">
-            {entry.steps.map((step) => (
-              <li key={step}>{step}</li>
-            ))}
-          </ol>
-          <div className="detail-note">
-            <ShieldCheck size={19} aria-hidden="true" />
-            <p>
-              {entry.sourceState === "provided"
-                ? "此入口将打开原文攻略，可能需要登录 WPS。尚未读取原文具体条目。"
-                : "此入口将打开官方网站。具体条件、时间和办理方式请核对最新通知。"}
-            </p>
-          </div>
-          <a
-            className="primary-button detail-cta"
-            href={entry.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            打开{entry.sourceLabel.split(" · ")[0]}
-            <ExternalLink size={17} aria-hidden="true" />
-          </a>
-          <a
-            className="detail-category"
-            href={guideHref(entry.category)}
-            onClick={onClose}
-          >
-            继续浏览{categories[entry.category].title}
-          </a>
         </>
       )}
     </dialog>
@@ -1135,7 +1431,7 @@ export default function App() {
           { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" },
         );
         gsap.fromTo(
-          ".category-card, .entry-card, .journey-card",
+          ".category-card, .service-category-card, .entry-card, .journey-card",
           { opacity: 0, y: 18 },
           {
             opacity: 1,
@@ -1232,13 +1528,15 @@ export default function App() {
           <Brand />
           <button
             className="mobile-menu"
-            aria-label="展开导航"
+            aria-label={menuOpen ? "收起导航" : "展开导航"}
+            aria-controls="main-navigation"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <X size={23} /> : <Menu size={23} />}
           </button>
           <nav
+            id="main-navigation"
             className={menuOpen ? "header-nav open" : "header-nav"}
             aria-label="主要导航"
           >
@@ -1315,7 +1613,7 @@ export default function App() {
             )}
             {motionPaused ? "动态效果已暂停" : "暂停动态效果"}
           </button>
-          <small>图片为生活场景表达，非校园实景。</small>
+          <small>主题照片为场景配图；攻略原图在详情中单独标注。</small>
         </div>
       </footer>
       {route.page !== "ask" && (

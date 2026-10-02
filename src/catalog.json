@@ -1,71 +1,2068 @@
 [
   {
+    "id": "pdf-jnuid-login",
+    "title": "JNUID 激活与统一身份登录",
+    "category": "account",
+    "summary": "新生先通过重置密码激活 JNUID，再使用学号密码或已绑定的微信登录。",
+    "content": [
+      "PDF 第 1 页以“JNUID 激活方式”为标题。登录说明要求师生登录系统后验证手机和邮箱、设置密保手机号和密保邮箱，便于忘记密码后找回；原说明引用“绑定密保手机及密保邮箱的操作”，但本 PDF 这部分没有提供该绑定操作的完整页面。",
+      "老用户在登录页输入 JNUID（人事编号或学号）和密码即可登录。新生按文档“重置密码”说明自行设置密码，重置后即可登录。截图还记录：新入职教职工在入职后的第三个工作日按重置密码流程操作。",
+      "已绑定“暨南大学”官方服务号的用户，可扫描登录框下方的微信二维码登录；未绑定的用户扫描后进入暨南大学统一身份认证微信绑定引导页，按提示完成绑定后可使用微信扫码登录。",
+      "登录页截图包含“账号登录”“其他登录方式”、滑动拼图验证、“忘记密码”“立即登录”和“微信扫码安全登录”入口。可见官方入口为 https://info.jnu.edu.cn/。这些说明依据原 PDF 整理，当前登录界面与规则以学校页面为准。"
+    ],
+    "steps": [
+      "进入学校信息门户",
+      "新生选择忘记密码并完成重置",
+      "使用学号及新密码登录",
+      "按页面要求验证手机、邮箱并完成密保绑定",
+      "需要微信登录时按官方引导绑定服务号"
+    ],
+    "url": "https://info.jnu.edu.cn/",
+    "links": [
+      {
+        "label": "暨南大学信息门户",
+        "url": "https://info.jnu.edu.cn/"
+      }
+    ],
+    "tags": ["JNUID", "激活", "学号", "统一身份认证", "微信绑定", "新生"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [1, 2, 3],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/account.webp",
+    "imageAlt": "笔记本电脑与账号服务场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-jnuid-password-reset",
+    "title": "JNUID 忘记密码与账号找回",
+    "category": "account",
+    "summary": "使用 JNUID 与已绑定手机或邮箱获取验证码，设置强等级新密码。",
+    "content": [
+      "在登录页点击“忘记密码”进入“重置密码”。按提示输入 JNUID（人事编号或学号），完成滑动拼图安全验证，再填写已绑定的手机或邮箱，点击“获取验证码”。",
+      "新生应填写报考暨南大学时所填的手机号或邮箱；新入职教职工应填写人才招聘系统中登记的手机号或邮箱。系统验证通过后，手机或邮箱会收到重置密码验证码。",
+      "输入验证码并设置强等级新密码，点击“确认提交”。原图可见密码提示包含数字、小写字母、大写字母和特殊字符等类型，其中“数字”为必须包含；其余具体复杂度与长度请按学校现行页面提示。成功截图显示 Mynet、VPN、暨南邮、数字校园、四海邮及校园网接入等密码修改成功。",
+      "若验证不通过，原文说会提示未绑定手机号或邮箱。截图中可见服务咨询电话：020-85220304、020-85220305。以上电话与流程来自 PDF，使用前宜在官方门户核对。"
+    ],
+    "steps": [
+      "点击信息门户登录页的忘记密码",
+      "填写 JNUID 并完成滑动验证",
+      "填写招生登记或已绑定的手机/邮箱",
+      "获取并输入验证码",
+      "按页面要求设置新密码并确认提交"
+    ],
+    "url": "https://info.jnu.edu.cn/",
+    "links": [
+      {
+        "label": "暨南大学信息门户",
+        "url": "https://info.jnu.edu.cn/"
+      }
+    ],
+    "tags": [
+      "JNUID",
+      "重置密码",
+      "找回密码",
+      "密保",
+      "验证码",
+      "020-85220304",
+      "020-85220305"
+    ],
+    "stages": ["arrival", "campus", "graduation"],
+    "sourcePages": [3, 4, 5],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/account.webp",
+    "imageAlt": "笔记本电脑与账号服务场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-wechat-service-hub",
+    "title": "暨南大学服务号与微服务入口",
+    "category": "account",
+    "summary": "从微信官方服务号进入信息服务与微服务，查找校园业务入口。",
+    "content": [
+      "PDF 演示在微信搜索“暨南大学服务号”，选择带认证标识的服务号；缴费演示的聊天页标题为“暨南大学”。打开底部“信息服务”，再点击“微服务”。菜单同时出现“假期值班表”“融合门户”“网上服务大厅”，底部还有“暨南新闻”“欢迎新生”。微服务截图可见域名 weixinfwh.jnu.edu.cn，但 PDF 没有给出该截图页面的完整链接。",
+      "2025 年 8 月 8 日的微服务截图显示：网上服务大厅、假期值班表、校内通知、实体校园卡服务、暨大 DeepSeek、校园网、入校码（石牌校区）、财务大厅、合同管理系统、差旅平台、网站群审核、石牌食堂订餐系统。",
+      "2024 年 9 月 6 日的微服务截图另记录：差旅管理平台、行政楼订餐、实验安全管控、仪器维修平台、番禺水电充值（学生宿舍）、公务用车填报、老教授协会、数字资源、体测查询。不同年份截图的布局与入口名称存在差异；石牌校区、珠海校区和工作人员业务应按适用人群选择。",
+      "服务号聊天界面的“网站登录提醒”卡片包含用户名、登录时间和“查看详情”；原图中的私人账号已遮挡，不作为公共信息转录。具体菜单位置和可办理业务以学校现行服务号为准。",
+      "PDF 第 28–29 页与第 43–44 页保留了“暨南大学微服务”长图。入口为微信搜索“暨南大学服务号”，进入“微服务”。第 28 页顶部显示 webapi4.jnu.edu.cn 域名；此处保留可见域名，不推测具体业务深层链接。",
+      "截图展示的服务名称包括：网上服务大厅、假期值班表、校内通知、实体校园卡服务、党政领导干部外出审批、校园网、入校码（标注石牌校区）、财务大厅、合同管理系统、差旅平台/差旅管理平台、网站群审核、石牌食堂订餐系统/石牌校区订餐、实验安全管控、仪器维修平台、番禺水电充值（学生宿舍）、公务用车填报、老教授协会、数字资源和体测查询。",
+      "这些名称来自不同时间的截图，部分名称和排列顺序存在变化。此条用于索引原文出现的业务，不表示每项业务对所有学生开放，也不代替各项正式办理规则。",
+      "第 43 页截图日期显示 2024 年 09 月 06 日。原截图中“保存成功”是截图时的界面提示，不表示使用者完成了水电充值。当前入口、身份权限和服务状态以学校服务号为准。"
+    ],
+    "steps": [
+      "微信搜索暨南大学服务号并核对认证标识",
+      "进入底部信息服务",
+      "选择微服务",
+      "按业务名称查找对应入口"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [
+      {
+        "label": "微服务截图所示域名",
+        "url": "https://webapi4.jnu.edu.cn/"
+      }
+    ],
+    "tags": [
+      "微信",
+      "暨南大学服务号",
+      "微服务",
+      "网上服务大厅",
+      "融合门户",
+      "校内通知",
+      "假期值班表",
+      "入校码",
+      "合同管理",
+      "差旅",
+      "实验安全",
+      "仪器维修",
+      "数字资源",
+      "体测查询",
+      "微信服务号",
+      "校园卡",
+      "财务大厅"
+    ],
+    "stages": ["arrival", "campus", "career", "graduation"],
+    "sourcePages": [7, 8, 9, 10, 17, 18, 19, 20, 21, 22, 28, 29, 42, 43, 44],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/account.webp",
+    "imageAlt": "笔记本电脑与账号服务场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-tuition-payment",
+    "title": "微信缴纳学费与学杂费查询",
+    "category": "payment",
+    "summary": "先激活 JNUID，再从微服务的财务大厅进入学杂费和待缴信息。",
+    "content": [
+      "第 6 页明确提醒：“微信缴纳学费（要先激活 JNUID 哦！）”。先完成账号激活与登录，再打开学校官方微信服务号。",
+      "按截图依次进入“信息服务 → 微服务 → 财务大厅 → 学杂费”。财务大厅截图可见域名 cwxt.jnu.edu.cn，但 PDF 没有提供完整页面链接。",
+      "学杂费“收费系统”内有“我的信息”“待缴信息”“自助缴费”“缴费历史”四个入口，原图红线标注“待缴信息”。据此查询应缴项目，并按收费系统实际流程办理；付款方式、金额和支付成功页面未在本 PDF 中展示，不据此补写。",
+      "缴费与金额应以本人学校收费系统为准；本平台不收集或代填账号密码，不代收学费。截图来自原攻略，入口名称可能随学校系统更新而变化。"
+    ],
+    "steps": [
+      "先激活 JNUID",
+      "微信进入信息服务 → 微服务",
+      "打开财务大厅",
+      "选择学杂费",
+      "查看待缴信息并按学校收费系统办理",
+      "完成后在缴费历史核对记录"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["学费", "学杂费", "微信缴费", "财务大厅", "待缴信息", "缴费历史"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [6, 7, 8, 9, 10, 11, 12, 13],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/payment.webp",
+    "imageAlt": "移动支付与缴费场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-finance-hall",
+    "title": "财务大厅服务目录",
+    "category": "payment",
+    "summary": "了解财务大厅中学杂费、发票、交费、查询和智能问答的原文入口。",
+    "content": [
+      "原 PDF 的财务大厅截图分为“业务办理”“业务查询”“信息资讯”。业务办理包含“网上审批”“我的发票”“学杂费”“伙食交通交费”。",
+      "业务查询包含“我的项目”“被授权项目”“个人借款”“被锁定暂付款”“报销记录”“个人薪酬详情”；信息资讯包含“财务处主页”“智能问答”。",
+      "这些名称是截图中的服务目录，其中部分业务面向教职工或经费负责人；学生按自身权限使用“学杂费”等适用入口。PDF 没有提供这些分支的完整直链、办理条件或详细操作，不将目录截图等同于已核实可用服务。"
+    ],
+    "steps": [
+      "微信进入官方微服务",
+      "打开财务大厅",
+      "选择适合本人身份的业务入口"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["财务大厅", "我的发票", "伙食交通交费", "智能问答", "报销记录"],
+    "stages": ["arrival", "campus", "graduation"],
+    "sourcePages": [11, 12],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/payment.webp",
+    "imageAlt": "移动支付与缴费场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-campus-card-entry",
+    "title": "实体校园卡服务入口",
+    "category": "account",
+    "summary": "原攻略的微服务界面列有实体校园卡服务。",
+    "content": [
+      "2024 与 2025 年的微服务截图均出现“实体校园卡服务”入口。进入学校官方服务号“信息服务 → 微服务”后，按实际菜单查找。",
+      "PDF 仅展示入口名称，未展示补办、挂失、充值或办卡规则；这些业务应以学校当前校园卡服务页面为准。"
+    ],
+    "steps": [
+      "进入学校官方服务号的信息服务",
+      "打开微服务",
+      "查找实体校园卡服务"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["校园卡", "实体校园卡", "微服务"],
+    "stages": ["arrival", "campus", "graduation"],
+    "sourcePages": [9, 21],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/account.webp",
+    "imageAlt": "笔记本电脑与账号服务场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-jnu-deepseek",
+    "title": "暨大 DeepSeek 入口",
+    "category": "study",
+    "summary": "2025 年微服务截图中出现学校 AI 服务入口“暨大 DeepSeek”。",
+    "content": [
+      "PDF 第 9 页的 2025 年 8 月 8 日微服务截图中，有“暨大 DeepSeek”服务卡片，位置在实体校园卡服务和校园网之间。",
+      "可从学校官方服务号“信息服务 → 微服务”查找该名称。原攻略没有展示登录权限、使用说明或可用模型，因此此项仅记录原文入口，不承诺当前开放状态。"
+    ],
+    "steps": [
+      "进入学校官方微服务",
+      "查找暨大 DeepSeek",
+      "按学校实际页面登录并使用"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["暨大DeepSeek", "DeepSeek", "AI", "人工智能", "微服务"],
+    "stages": ["arrival", "campus", "career", "graduation"],
+    "sourcePages": [9],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/study.webp",
+    "imageAlt": "图书馆与学习场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-digital-resources",
+    "title": "数字资源入口",
+    "category": "study",
+    "summary": "学校微服务截图中列有数字资源服务。",
+    "content": [
+      "2024 年 9 月 6 日的微服务截图底部出现“数字资源”入口，可按官方服务号“信息服务 → 微服务”的路径查找。",
+      "原 PDF 没有展示具体资源名称、下载规则或访问权限；需要以学校当前数字资源页面的说明为准。"
+    ],
+    "steps": [
+      "进入官方服务号的信息服务 → 微服务",
+      "查找数字资源",
+      "核对资源访问要求"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["数字资源", "学习", "微服务"],
+    "stages": ["arrival", "campus", "career"],
+    "sourcePages": [22],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/study.webp",
+    "imageAlt": "图书馆与学习场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-fitness-results",
+    "title": "体测查询入口",
+    "category": "health",
+    "summary": "在学校微服务中查找体测查询。",
+    "content": [
+      "第 22 页微服务截图出现“体测查询”入口。该截图为 2024 年版本，菜单名称与位置需按当前学校界面核对。",
+      "原文仅展示入口，未包含体测成绩、项目标准、测试时间或预约流程。"
+    ],
+    "steps": [
+      "进入官方服务号的信息服务 → 微服务",
+      "查找体测查询",
+      "按本人身份查看学校记录"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["体测", "体测查询", "健康", "微服务"],
+    "stages": ["campus", "graduation"],
+    "sourcePages": [22],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/health.jpg",
+    "imageAlt": "医疗健康场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-campus-map",
+    "title": "番禺校区原文地图",
+    "category": "facilities",
+    "summary": "查看原 PDF 的实际校园地图与南门、东门、主要道路及楼宇分布。",
+    "content": [
+      "第 14 页提供题为“暨大番禺校区地图”的示意图。校园南门位于图下方，东门在右侧；西南门标注“不可出入”，属于原图当时的说明，需要按现场开放情况核对。主干道路标有上海路、南京路、广州路，支路可见弘仁路、弘智路、弘文路、弘阳路。",
+      "地图标注宿舍 T1、T2、T3、T4、T5、T10、T11、T12，T11 旁的快递中心，W2 学生活动中心，以及商业中心、F5 米粉店、膳北小馆、特色餐厅、弘礼食堂、裕华食堂和湖景餐厅。",
+      "主要学习与行政设施包括：教学楼、图书馆、知识产权大楼、暨南大学伯明翰大学联合学院、药学院、化学与材料学院、院系楼、实验楼、白鸽 30 栋行政办公室、白鸽 21 栋行政办公室、白鸽 25 栋 24 小时自习室。",
+      "体育与健康设施包括校医室、西操场、东操场、篮球场、游泳馆、体育馆；水景与桥梁标注镜湖、博雅桥、博文桥。地图是 PDF 的实际图片，作为原文位置参考，不是实时导航或现行官方测绘图。"
+    ],
+    "steps": [
+      "查看原文地图",
+      "根据南门、东门与道路确定方向",
+      "按楼宇名称查找目的地",
+      "出行前核对现场标识和开放情况"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": [
+      "校园地图",
+      "南门",
+      "东门",
+      "上海路",
+      "南京路",
+      "广州路",
+      "图书馆",
+      "教学楼",
+      "宿舍",
+      "T11",
+      "快递中心"
+    ],
+    "stages": ["arrival", "campus", "graduation"],
+    "sourcePages": [14],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/campus-map.jpg",
+    "imageAlt": "番禺校区原文地图",
+    "imageCredit": "用户提供的 PDF 第 14 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/campus-map.jpg",
+        "alt": "番禺校区完整原文地图",
+        "caption": "PDF 第 14 页 · 可放大查看原文标注"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-campus-clinic-location",
+    "title": "校医室位置",
+    "category": "health",
+    "summary": "原文地图将校医室标在西侧篮球场以南、宿舍区西侧。",
+    "content": [
+      "第 14 页校园地图用红十字图标标出“校医室”，在西侧游泳馆、篮球场的南侧，T1–T4 宿舍区的西侧，靠近上海路与弘仁路。",
+      "PDF 没有提供校医室营业时间、挂号规则、联系电话或急救服务说明；就诊前应核对学校医疗部门当前通知。"
+    ],
+    "steps": [
+      "在原文校园地图定位校医室",
+      "核对当前学校医疗通知",
+      "按实际指引前往"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["校医室", "校医院", "就医", "医疗", "校园地图"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [14],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/health.jpg",
+    "imageAlt": "医疗健康场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/campus-map.jpg",
+        "alt": "番禺校区原文地图",
+        "caption": "PDF 第 14 页 · 原文位置参考"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-study-room-location",
+    "title": "白鸽 25 栋自习室",
+    "category": "study",
+    "summary": "原文地图标注白鸽 25 栋 24 小时自习室。",
+    "content": [
+      "第 14 页地图在校园西侧标注“白鸽 25 栋 24 小时自习室”，位于白鸽 21 栋、白鸽 30 栋行政办公室附近、知识产权大楼西侧。",
+      "“24 小时”来自原图，当前开放时间、进入条件与假期安排并未核实；请以校方通知和现场规定为准。"
+    ],
+    "steps": [
+      "在原文地图查看白鸽 25 栋",
+      "核对现行开放时间与进入条件",
+      "按道路与现场标识前往"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["白鸽25栋", "自习室", "24小时", "学习", "校园地图"],
+    "stages": ["arrival", "campus", "career"],
+    "sourcePages": [14],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/study.webp",
+    "imageAlt": "图书馆与学习场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/campus-map.jpg",
+        "alt": "番禺校区原文地图",
+        "caption": "PDF 第 14 页 · 原文位置参考"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-sports-facilities",
+    "title": "操场、游泳馆与体育馆",
+    "category": "facilities",
+    "summary": "原文地图包含东西操场、篮球场、游泳馆与体育馆的位置。",
+    "content": [
+      "第 14 页地图标注：西操场在西北侧，游泳馆与篮球场位于西操场南侧；东操场与另一处篮球场在东侧，体育馆在东南侧、化学与材料学院东侧。",
+      "PDF 仅提供位置示意，没有开放时间、收费标准、预约网址或器材借用规则；场馆可用情况需向学校现行场地管理渠道核对。"
+    ],
+    "steps": [
+      "按原文地图查找运动设施",
+      "核对场地开放与预约规则",
+      "按规定使用场地"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["西操场", "东操场", "篮球场", "游泳馆", "体育馆", "运动", "场馆"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [14],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/facilities.webp",
+    "imageAlt": "校园楼宇与设施场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/campus-map.jpg",
+        "alt": "番禺校区原文地图",
+        "caption": "PDF 第 14 页 · 原文位置参考"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-express-centre",
+    "title": "快递中心位置",
+    "category": "logistics",
+    "summary": "原文校园地图将快递中心标在 T11 旁。",
+    "content": [
+      "第 14 页地图写明“快递中心【T11 旁】”，位于宿舍区东北方向、T10/T11/T12 与 W2 学生活动中心附近。",
+      "该位置来自 PDF 原图；营业时间、各快递公司的存放点与取件方式未在 PDF 中展示，应以实际取件通知与现场指引为准。"
+    ],
+    "steps": [
+      "查看取件通知",
+      "按原文地图定位 T11 旁快递中心",
+      "核对现场取件点"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["快递", "取件", "快递中心", "T11", "物流"],
+    "stages": ["arrival", "campus", "graduation"],
+    "sourcePages": [14],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/logistics.webp",
+    "imageAlt": "快递分拣与包裹场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/campus-map.jpg",
+        "alt": "番禺校区原文地图",
+        "caption": "PDF 第 14 页 · 原文位置参考"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-xingan-supermarket",
+    "title": "兴安超市与商业城",
+    "category": "facilities",
+    "summary": "原文餐饮商超图将兴安超市与商业城标在宿舍区一带。",
+    "content": [
+      "第 15 页以“超市、餐饮区域”为主题，在校园图上标注“兴安超市 & 商业城”，位于西侧宿舍区、商业中心附近。",
+      "图中同时标出特色餐厅、膳北、弘礼、裕华堂、湖景餐厅，便于按生活区寻找消费点。商超营业时间、商品价格与门店现状没有在原文中提供。"
+    ],
+    "steps": [
+      "查看原文商超分布图",
+      "在宿舍区商业中心一带查找兴安超市与商业城",
+      "以现场营业信息为准"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["兴安超市", "商业城", "商业中心", "超市", "购物", "日用品"],
+    "stages": ["arrival", "campus", "graduation"],
+    "sourcePages": [14, 15],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/food-zone.jpg",
+    "imageAlt": "原文商超与餐饮分布图",
+    "imageCredit": "用户提供的 PDF 第 15 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/campus-map.jpg",
+        "alt": "番禺校区原文地图",
+        "caption": "PDF 第 14 页 · 原文位置参考"
+      },
+      {
+        "image": "images/pdf/food-zone.jpg",
+        "alt": "原文商超与餐饮分布图",
+        "caption": "PDF 第 15 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-f5-rice-noodles",
+    "title": "F5 米粉店",
+    "category": "food",
+    "summary": "原文校园地图在 T5 一带标注 F5 米粉店。",
+    "content": [
+      "第 14 页地图在 T5 宿舍楼旁以红点标出“F5 米粉店”。此条根据地图标签单独归入餐饮。",
+      "PDF 未提供菜单、价格、营业时间或线上下单链接；店铺是否继续营业需核对现场。"
+    ],
+    "steps": ["查看原文地图的 T5 区域", "查找 F5 米粉店现场标识"],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["F5米粉店", "米粉", "T5", "餐饮"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [14],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/food.jpg",
+    "imageAlt": "餐食与校园饮食场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/campus-map.jpg",
+        "alt": "番禺校区原文地图",
+        "caption": "PDF 第 14 页 · 原文位置参考"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-speciality-restaurant",
+    "title": "特色餐厅",
+    "category": "food",
+    "summary": "原文餐饮图记录特色餐厅位置，并说明当时暂时关闭。",
+    "content": [
+      "第 14–15 页校园图在宿舍区与联合学院附近标注“特色餐厅”，第 15 页餐饮说明写“特色餐厅、膳北小馆暂时关闭了”。",
+      "“暂时关闭”是攻略撰写时的状态，不等于已经核实当前仍关闭或已重开。原文没有菜单、价格或营业时间。"
+    ],
+    "steps": ["查看原文餐饮图位置", "先核对当前是否营业", "再决定是否前往"],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["特色餐厅", "餐饮", "历史关闭说明"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [14, 15],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/food-zone.jpg",
+    "imageAlt": "原文商超与餐饮分布图",
+    "imageCredit": "用户提供的 PDF 第 15 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/campus-map.jpg",
+        "alt": "番禺校区原文地图",
+        "caption": "PDF 第 14 页 · 原文位置参考"
+      },
+      {
+        "image": "images/pdf/food-zone.jpg",
+        "alt": "原文商超与餐饮分布图",
+        "caption": "PDF 第 15 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-shanbei-restaurant",
+    "title": "膳北小馆",
+    "category": "food",
+    "summary": "原图列有膳北小馆，文字注明攻略当时暂时关闭。",
+    "content": [
+      "第 14 页地图标注“膳北小馆”，第 15 页商超餐饮图使用“特色 & 膳北”定位。原文明确写特色餐厅、膳北小馆当时暂时关闭。",
+      "这条保留原文的历史状态，不作为当前营业结论。原攻略没有提供菜单、营业时间、联系电话或下单入口。"
+    ],
+    "steps": ["查看原文膳北小馆位置", "核对当前营业状态后前往"],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["膳北小馆", "膳北", "餐饮", "历史关闭说明"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [14, 15],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/food-zone.jpg",
+    "imageAlt": "原文商超与餐饮分布图",
+    "imageCredit": "用户提供的 PDF 第 15 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/campus-map.jpg",
+        "alt": "番禺校区原文地图",
+        "caption": "PDF 第 14 页 · 原文位置参考"
+      },
+      {
+        "image": "images/pdf/food-zone.jpg",
+        "alt": "原文商超与餐饮分布图",
+        "caption": "PDF 第 15 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-hongli-canteen",
+    "title": "弘礼食堂",
+    "category": "food",
+    "summary": "原文地图在东北侧宿舍区附近标注弘礼食堂。",
+    "content": [
+      "第 14 页校园地图在 W2 学生活动中心、T12 一带东侧标注“弘礼食堂”；第 15 页餐饮图突出标注“弘礼”。",
+      "PDF 没有提供弘礼食堂的营业时间、菜品、楼层、价格或支付规则，以学校与食堂现场信息为准。"
+    ],
+    "steps": [
+      "在原文餐饮图定位弘礼",
+      "按 T12/W2 附近位置前往",
+      "核对实际开放时间"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["弘礼", "弘礼食堂", "食堂", "T12", "W2"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [14, 15],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/food-zone.jpg",
+    "imageAlt": "原文商超与餐饮分布图",
+    "imageCredit": "用户提供的 PDF 第 15 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/campus-map.jpg",
+        "alt": "番禺校区原文地图",
+        "caption": "PDF 第 14 页 · 原文位置参考"
+      },
+      {
+        "image": "images/pdf/food-zone.jpg",
+        "alt": "原文商超与餐饮分布图",
+        "caption": "PDF 第 15 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-yuhua-canteen",
+    "title": "裕华堂与裕华食堂",
+    "category": "food",
+    "summary": "原文称饭堂为裕华堂，附建筑照片和所在位置。",
+    "content": [
+      "第 15 页写“饭堂（也就是裕华堂）”，餐饮图突出标注“裕华堂”；第 14 页校园图对应标注“裕华食堂”，位于东北宿舍区南侧、教学楼北侧。",
+      "第 16 页附裕华堂建筑实景照片，并记录“裕华堂对面正在盖新的饭堂，敬请期待”。建设说明属于原攻略当时情况，不表示当前施工或开业状态。",
+      "原文未提供营业时间、菜单、价格和支付方式，使用时按食堂当日信息核对。"
+    ],
+    "steps": [
+      "查看原文地图中裕华堂的位置",
+      "按学校现场指引前往",
+      "核对当日营业与菜品信息"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["裕华堂", "裕华食堂", "饭堂", "食堂", "新饭堂"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [14, 15, 16],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/yuhua-hall.jpg",
+    "imageAlt": "PDF 中的裕华堂建筑实景",
+    "imageCredit": "用户提供的 PDF 第 16 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/campus-map.jpg",
+        "alt": "番禺校区原文地图",
+        "caption": "PDF 第 14 页 · 原文位置参考"
+      },
+      {
+        "image": "images/pdf/food-zone.jpg",
+        "alt": "校园餐饮分布图",
+        "caption": "PDF 第 15 页 · 校园餐饮分布"
+      },
+      {
+        "image": "images/pdf/yuhua-hall.jpg",
+        "alt": "PDF 中的裕华堂建筑实景",
+        "caption": "PDF 第 16 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-lakeside-restaurant",
+    "title": "湖景餐厅",
+    "category": "food",
+    "summary": "原文餐饮图在图书馆靠镜湖一侧标注湖景餐厅。",
+    "content": [
+      "第 14 页地图与第 15 页餐饮分布图均标出“湖景餐厅”，位置在图书馆南侧、镜湖附近。",
+      "原文没有提供菜单、营业时间、价格或预约规则；地图中的位置与经营状态需要按现场核对。"
+    ],
+    "steps": [
+      "查看原文图书馆及镜湖位置",
+      "查找湖景餐厅现场标识",
+      "核对营业情况"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["湖景餐厅", "图书馆", "镜湖", "餐饮"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [14, 15],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/food-zone.jpg",
+    "imageAlt": "原文商超与餐饮分布图",
+    "imageCredit": "用户提供的 PDF 第 15 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/campus-map.jpg",
+        "alt": "番禺校区原文地图",
+        "caption": "PDF 第 14 页 · 原文位置参考"
+      },
+      {
+        "image": "images/pdf/food-zone.jpg",
+        "alt": "原文商超与餐饮分布图",
+        "caption": "PDF 第 15 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-campus-kfc",
+    "title": "校内 KFC 肯德基",
+    "category": "food",
+    "summary": "从南门进入后过镜湖桥，在图书馆自习室前方查找 KFC。",
+    "content": [
+      "第 16 页写明“KFC 位置：南门进来过镜湖桥，图书馆自习室前方”；第 17 页附 KFC 门店实景照片。",
+      "路线文字与照片均来自原攻略。PDF 没有提供营业时间、菜单、配送范围或下单网址，门店现状以现场为准。"
+    ],
+    "steps": [
+      "从校园南门进入",
+      "按原文路线经过镜湖桥",
+      "在图书馆自习室前方查找 KFC 标识"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["KFC", "肯德基", "南门", "图书馆", "餐饮"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [16, 17],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/kfc-campus.jpg",
+    "imageAlt": "PDF 中的校内肯德基门店实景",
+    "imageCredit": "用户提供的 PDF 第 17 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/kfc-campus.jpg",
+        "alt": "PDF 中的校内肯德基门店实景",
+        "caption": "PDF 第 17 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-luckin-t3",
+    "title": "瑞幸咖啡 · T3 宿舍楼",
+    "category": "food",
+    "summary": "原文记录 T3 宿舍楼楼下有瑞幸咖啡。",
+    "content": [
+      "第 17 页明确写“T3 宿舍楼楼下有瑞幸咖啡”。这条与东门外瑞幸分别记录，避免将两个地点混为同一门店。",
+      "原文没有提供营业时间、价格或下单链接，位置及营业情况按现场和商家官方渠道核对。"
+    ],
+    "steps": ["前往 T3 宿舍楼", "在楼下查找瑞幸咖啡"],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["瑞幸咖啡", "瑞幸", "luckin", "T3", "咖啡"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [17],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/coffee.webp",
+    "imageAlt": "咖啡饮品场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-ningji-t5",
+    "title": "柠季 · T5 架空层",
+    "category": "food",
+    "summary": "原文记录 T5 宿舍楼架空层有柠季。",
+    "content": [
+      "第 17 页写“T5 宿舍楼架空层有柠季、库迪咖啡”。柠季按独立店名归入茶饮服务。",
+      "原文没有提供营业时间、价格或线上入口，店铺现状以现场和商家官方渠道为准。"
+    ],
+    "steps": ["前往 T5 宿舍楼", "在架空层查找柠季"],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["柠季", "柠檬茶", "茶饮", "T5", "架空层"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [17],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/coffee.webp",
+    "imageAlt": "咖啡饮品场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-cotti-t5",
+    "title": "库迪咖啡 · T5 架空层",
+    "category": "food",
+    "summary": "原文记录 T5 宿舍楼架空层有库迪咖啡。",
+    "content": [
+      "第 17 页写“T5 宿舍楼架空层有柠季、库迪咖啡”。库迪咖啡按独立门店归入咖啡服务。",
+      "PDF 没有提供营业时间、菜单、价格或下单网址，按门店现场和商家官方渠道核对。"
+    ],
+    "steps": ["前往 T5 宿舍楼", "在架空层查找库迪咖啡"],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["库迪咖啡", "库迪", "Cotti", "T5", "架空层", "咖啡"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [17],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/coffee.webp",
+    "imageAlt": "咖啡饮品场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-encounter-noodles-east",
+    "title": "遇见小面 · 东门外",
+    "category": "food",
+    "summary": "原文记录从东门出去，旁边有遇见小面。",
+    "content": [
+      "第 17 页写“东门出去，旁边有遇见小面，瑞幸，麦当劳”。遇见小面按独立店名记录，地点为校区东门外附近。",
+      "PDF 没有展示具体门牌号、菜品、价格、营业时间或在线下单入口；前往前按现场与商家官方信息核对。"
+    ],
+    "steps": ["从东门出校", "在东门外附近查找遇见小面", "核对门店营业情况"],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["遇见小面", "小面", "东门", "校外餐饮"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [17],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/food.jpg",
+    "imageAlt": "餐食与校园饮食场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-luckin-east",
+    "title": "瑞幸咖啡 · 东门外",
+    "category": "food",
+    "summary": "原文记录东门外附近有瑞幸咖啡。",
+    "content": [
+      "第 17 页将“瑞幸”列在东门外附近门店中，与遇见小面、麦当劳并列；这条与 T3 楼下瑞幸分开展示。",
+      "PDF 没有给出门牌、营业时间、价格或线上下单链接，实际门店情况需要核对。"
+    ],
+    "steps": ["从东门出校", "在东门外附近查找瑞幸咖啡"],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["瑞幸", "瑞幸咖啡", "luckin", "东门", "咖啡"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [17],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/coffee.webp",
+    "imageAlt": "咖啡饮品场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-mcdonalds-east",
+    "title": "麦当劳 · 东门外",
+    "category": "food",
+    "summary": "原文记录东门外附近有麦当劳。",
+    "content": [
+      "第 17 页写“东门出去，旁边有遇见小面，瑞幸，麦当劳”。麦当劳按独立门店记录，地点为东门外附近。",
+      "PDF 没有提供具体门牌、营业时间、菜单、价格或配送说明；门店服务以商家当前信息为准。"
+    ],
+    "steps": ["从东门出校", "在附近查找麦当劳门店", "核对营业与服务信息"],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["麦当劳", "McDonalds", "东门", "快餐", "校外餐饮"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [17],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/food.jpg",
+    "imageAlt": "餐食与校园饮食场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-chabaidao-east",
+    "title": "茶百道 · 东门对面",
+    "category": "food",
+    "summary": "原文记录东门对面过马路有茶百道。",
+    "content": [
+      "第 17 页写“东门对面过马路有茶百道、鸡柳大人”。茶百道按独立店名归入茶饮。",
+      "位置是原文当时的说明；具体门牌、营业时间和价格没有提供，按现场及商家官方信息核对。过马路时应走实际人行通道。"
+    ],
+    "steps": ["从东门出校", "经实际人行通道过马路", "查找对面的茶百道门店"],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["茶百道", "茶饮", "奶茶", "东门对面"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [17],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/coffee.webp",
+    "imageAlt": "咖啡饮品场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-jiliudaren-east",
+    "title": "鸡柳大人 · 东门对面",
+    "category": "food",
+    "summary": "原文记录东门对面过马路有鸡柳大人。",
+    "content": [
+      "第 17 页写“东门对面过马路有茶百道、鸡柳大人”。鸡柳大人按独立店名归入餐饮。",
+      "原文没有提供具体门牌、营业时间、价格或下单链接；店铺现状需核对。过马路时按实际人行通道通行。"
+    ],
+    "steps": ["从东门出校", "经实际人行通道过马路", "查找鸡柳大人门店"],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["鸡柳大人", "鸡柳", "小吃", "东门对面"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [17],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/food.jpg",
+    "imageAlt": "餐食与校园饮食场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-express-address",
+    "title": "番禺校区快递收件地址",
+    "category": "logistics",
+    "summary": "原攻略提供番禺校区快递地址：兴业大道东 855 号暨南大学番禺校区。",
+    "content": [
+      "第 17 页原文地址为：“广东省广州市番禺区兴业大道东855号暨南大学番禺校区”。",
+      "填写快递信息时使用本人实际姓名与联系电话；PDF 未规定宿舍信息的必填格式，也没有提供快递公司地址规范。原文地图将快递中心标在 T11 旁，最终取件点以物流通知为准。"
+    ],
+    "steps": [
+      "填写广东省广州市番禺区",
+      "填写兴业大道东855号暨南大学番禺校区",
+      "填写本人收件信息",
+      "按物流通知确认取件点"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": ["快递地址", "收件地址", "兴业大道东855号", "寄件", "番禺校区"],
+    "stages": ["arrival", "campus", "graduation"],
+    "sourcePages": [14, 17],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/logistics.webp",
+    "imageAlt": "快递分拣与包裹场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/campus-map.jpg",
+        "alt": "番禺校区原文地图",
+        "caption": "PDF 第 14 页 · 原文位置参考"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-network-application",
+    "title": "学生校园网申请与端口选择",
+    "category": "network",
+    "summary": "从官方服务号微服务进入校园网，使用学生快捷申请网络服务。",
+    "content": [
+      "第 17–23 页演示：微信搜索“暨南大学服务号”并打开，点击底部“信息服务 → 微服务”，在服务目录选择“校园网”，进入后点击“学生快捷申请网络服务”。服务号聊天页还出现网站登录提醒卡片，其中私人账号信息不转录。",
+      "校园网服务页同时包含“用户自助服务平台”“重置密码”“故障报修”“访客网络申请”“访客网络申请（珠海校区）”“在线客服”。这些是原截图目录，珠海校区入口有明确适用校区限制。",
+      "第 24 页写明申请后选择“单端口”或“双端口”，含义为这个账号能够同时有多少设备连接校园网；原文称有线网和无线网共通。PDF 没有展示套餐价格、开通时长或付款流程，不补写不存在的收费信息。",
+      "校园网目录截图显示 2024 年 9 月 6 日，属于原攻略的历史界面；当前套餐、申请资格、端口限制和菜单以学校网络服务中心说明为准。"
+    ],
+    "steps": [
+      "微信搜索并进入暨南大学服务号",
+      "信息服务 → 微服务",
+      "选择校园网",
+      "选择学生快捷申请网络服务",
+      "按实际页面选择单端口或双端口"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": [
+      "校园网",
+      "申请网络",
+      "学生快捷申请网络服务",
+      "单端口",
+      "双端口",
+      "有线网",
+      "无线网",
+      "访客网络",
+      "在线客服"
+    ],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [17, 18, 19, 20, 21, 22, 23, 24],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/network.webp",
+    "imageAlt": "网络设备与联网服务场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-jnu-secure-wifi",
+    "title": "JNU-Secure 无线网原文配置",
+    "category": "network",
+    "summary": "查看原攻略的 PEAP、阶段 2 验证、身份字段等无线配置截图说明。",
+    "content": [
+      "第 24 页以“无线网 jnu-secure 连接方式”为标题，第 25 页截图显示网络名称“JNU-Secure”。原图标注：EAP 方法选择 PEAP；阶段 2 身份验证选择 MSCHAPv2 或者无；身份字段填写学号；匿名身份不填。",
+      "原图还标注 CA 证书选择“不验证”，同时系统显示“未指定任何证书。您的网络连接将不是私密连接。”这是一份旧截图中的配置记录与警告，不代表对关闭证书验证的现行建议；使用时应遵循学校当前的证书与安全配置。",
+      "第 26 页续图显示密码字段填写个人校园网密码，代理选择“无”，底部为“取消”“连接”。不同手机系统的字段可能不同，证书设置与实际连接要求请以学校网络服务中心现行说明为准。"
+    ],
+    "steps": [
+      "查找 JNU-Secure 无线网络",
+      "对照原图查看 PEAP 与阶段2验证字段",
+      "身份字段使用本人学号",
+      "匿名身份按官方现行要求填写",
+      "密码填写本人校园网密码，代理按官方当前要求配置",
+      "证书验证与最终连接按学校现行安全指引办理"
+    ],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "tags": [
+      "JNU-Secure",
+      "jnu-secure",
+      "WiFi",
+      "无线网",
+      "PEAP",
+      "MSCHAPv2",
+      "身份",
+      "学号",
+      "证书"
+    ],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [24, 25, 26],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/network.webp",
+    "imageAlt": "网络设备与联网服务场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-wired-network",
+    "title": "有线校园网：下载锐捷客户端并连接",
+    "category": "network",
+    "summary": "按电脑系统下载校园网认证客户端，接上网线后使用校园网账号和密码连接。",
+    "content": [
+      "原文提供锐捷客户端下载页：https://netc.jnu.edu.cn/rjxz/list.htm。下载页截图区分校区和操作系统，番禺校区位于“校园网认证客户端（石牌、番禺、深圳学生宿舍楼）”一栏，显示 Windows、Mac、Linux 版本；其他区域还有珠海/深圳办公区域认证客户端、OA 协同办公组件、陈东/华文客户端和永中 Office，下载前应核对适用校区与系统。",
+      "安装适合电脑的认证客户端，接上网线，输入自己的校园网账号和校园网密码，点击“连接”。第 27 页客户端截图还显示“记住密码”“自动连接”选项；这两个选项是界面说明，按自己的设备使用情况选择。",
+      "客户端示例界面提示“无法连接认证服务器，尝试重新认证”。遇到连接问题可以重试，并按“校园网故障报修”条目联系服务人员。示例账号属于界面演示，不能当作公共账号使用。",
+      "原截图客户端版本标注 V6.61.2016.05.10，属于 PDF 中的历史界面；当前安装包与使用要求以官方下载页为准。"
+    ],
+    "steps": [
+      "打开校园网认证客户端下载页",
+      "选择适用番禺校区和电脑系统的版本",
+      "安装客户端并接上网线",
+      "输入个人校园网账号和密码，点击连接"
+    ],
+    "url": "https://netc.jnu.edu.cn/rjxz/list.htm",
+    "links": [
+      {
+        "label": "校园网认证客户端下载",
+        "url": "https://netc.jnu.edu.cn/rjxz/list.htm"
+      },
+      {
+        "label": "MyNet 校园网自助服务",
+        "url": "https://mynet.jnu.edu.cn/"
+      }
+    ],
+    "tags": ["锐捷", "网线", "有线网", "Windows", "Mac", "Linux", "校园网密码"],
+    "sourcePages": [26, 27],
+    "stages": ["arrival", "campus"],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/network.webp",
+    "imageAlt": "网络设备与联网服务场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-campus-network-repair",
+    "title": "校园网故障报修与进度查询",
+    "category": "network",
+    "summary": "通过暨南大学服务号的校园网入口进入 MyNet，填写报修表单并查询报障进度。",
+    "content": [
+      "入口路径为微信“暨南大学服务号”→“微服务”→“校园网”。PDF 第 28 页将“校园网”图标圈出，第 30 页显示 mynet.jnu.edu.cn 的网络服务菜单并圈出“故障报修”。",
+      "进入校园网用户自助服务平台后，点击左上角“菜单”，展开“故障报修”，选择“报修申请”。同一菜单还提供“报障查询与评分”，可查看报障情况并进行评价。",
+      "报修表单展示学工号、姓名、电话、其他联系方式、位置、故障分类、标题和描述。截图中电话、位置、故障分类、标题、描述有红色星号，应按实际界面要求填写；其他联系方式可填写微信、QQ 或邮箱。个人账号、姓名和联系方式必须填写自己的信息，截图示例不作转录。",
+      "原文表单底部提供公开服务渠道：网址 https://mynet.jnu.edu.cn；电话 020-85220304、020-85220305；邮箱 owl@jnu.edu.cn。以上为 PDF 记录的渠道，未在本次资料整理中核实当前服务状态。",
+      "第 31、33、35、36 页是报修操作界面，第 34 页继续显示校区服务点地址。它们用于说明旧版入口与表单字段，当前页面布局、报修分类和受理时间可能已调整。"
+    ],
+    "steps": [
+      "微信搜索暨南大学服务号并打开微服务",
+      "点击校园网，进入 MyNet",
+      "打开菜单→故障报修→报修申请",
+      "填写个人联系方式、位置、故障分类、标题与描述",
+      "通过报障查询与评分查看进度"
+    ],
+    "url": "https://mynet.jnu.edu.cn/",
+    "links": [
+      {
+        "label": "校园网用户自助服务平台",
+        "url": "https://mynet.jnu.edu.cn/"
+      },
+      {
+        "label": "服务电话 020-85220304",
+        "url": "tel:02085220304"
+      },
+      {
+        "label": "服务电话 020-85220305",
+        "url": "tel:02085220305"
+      },
+      {
+        "label": "校园网服务邮箱",
+        "url": "mailto:owl@jnu.edu.cn"
+      }
+    ],
+    "tags": [
+      "校园网维修",
+      "故障报修",
+      "报障查询",
+      "MyNet",
+      "网络故障",
+      "电话",
+      "在线客服"
+    ],
+    "sourcePages": [27, 28, 29, 30, 31, 32, 33, 34, 35, 36],
+    "stages": ["arrival", "campus"],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/network.webp",
+    "imageAlt": "网络设备与联网服务场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-network-service-locations",
+    "title": "校园网服务点：五校区地址、电话与时间",
+    "category": "network",
+    "summary": "PDF 记录了石牌、番禺、华文、深圳和珠海校区校园网服务点，番禺服务点在教学楼 120。",
+    "content": [
+      "服务点信息来自校园网用户自助服务平台截图，是 PDF 中保留的历史联系表。前往或致电前应向学校确认当前地址和开放时间。",
+      "石牌校区：曾宪梓科学馆 209；电话 020-85220304、020-85220305；服务时间 08:00–18:00。",
+      "番禺校区：教学楼 120；电话 020-85220304、020-85220305；服务时间 08:30–11:50、14:30–17:00。该行跨 PDF 第 31、32 页。",
+      "华文校区：办公楼 712 室；电话 020-87205058；服务时间周一到周五 08:30–17:00。",
+      "深圳校区：教学楼 303；电话 0755-26931914；服务时间周一到周五 08:00–12:00、14:30–17:30。",
+      "珠海校区：教学综合楼 C412；电话 0756-8505230；服务时间周一到周五 08:00–12:00、14:30–17:30。"
+    ],
+    "steps": [
+      "确认自己所在校区",
+      "查看对应服务点地址和原表服务时间",
+      "先通过公开电话确认当前受理安排"
+    ],
+    "url": "https://mynet.jnu.edu.cn/",
+    "links": [
+      {
+        "label": "MyNet 校园网自助服务",
+        "url": "https://mynet.jnu.edu.cn/"
+      },
+      {
+        "label": "石牌/番禺热线 020-85220304",
+        "url": "tel:02085220304"
+      },
+      {
+        "label": "石牌/番禺热线 020-85220305",
+        "url": "tel:02085220305"
+      },
+      {
+        "label": "华文服务点 020-87205058",
+        "url": "tel:02087205058"
+      },
+      {
+        "label": "深圳服务点 0755-26931914",
+        "url": "tel:075526931914"
+      },
+      {
+        "label": "珠海服务点 0756-8505230",
+        "url": "tel:07568505230"
+      }
+    ],
+    "tags": ["网络服务点", "教学楼120", "办公地址", "服务时间", "网络热线"],
+    "sourcePages": [31, 32, 34],
+    "stages": ["arrival", "campus"],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/network.webp",
+    "imageAlt": "网络设备与联网服务场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [
+      {
+        "columns": ["校区", "地址", "电话", "原表服务时间"],
+        "rows": [
+          [
+            "石牌校区",
+            "曾宪梓科学馆209",
+            "020-85220304 / 020-85220305",
+            "08:00–18:00"
+          ],
+          [
+            "番禺校区",
+            "教学楼120",
+            "020-85220304 / 020-85220305",
+            "08:30–11:50；14:30–17:00"
+          ],
+          ["华文校区", "办公楼712室", "020-87205058", "周一到周五 08:30–17:00"],
+          [
+            "深圳校区",
+            "教学楼303",
+            "0755-26931914",
+            "周一到周五 08:00–12:00；14:30–17:30"
+          ],
+          [
+            "珠海校区",
+            "教学综合楼C412",
+            "0756-8505230",
+            "周一到周五 08:00–12:00；14:30–17:30"
+          ]
+        ],
+        "caption": "校园网服务点：五校区地址、电话与时间（PDF 原表）"
+      }
+    ],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-teaching-shuttle",
+    "title": "番禺校区与校本部教学班车",
+    "category": "travel",
+    "summary": "整理教学班车双向工作日与周末时刻，并保留教职工优先、学生有空位可乘的规则。",
+    "content": [
+      "PDF 第 36 页展示蓝色暨南大学教学班车照片，第 37–38 页记录番禺校区与校本部教学班车时间表。时刻表没有当前更新日期，以下为原文历史班次，出行前应核对学校当日公告。",
+      "周一至周五，校本部→番禺校区：07:30、08:00、08:30、09:30、13:00、15:00、17:20、20:20。",
+      "周一至周五，番禺校区→校本部：08:40、09:20、10:30、13:00、16:00、17:10、18:00、18:30、20:30、21:25。",
+      "周六、周日，校本部→番禺校区：07:30、08:30、09:30、13:00、17:20。",
+      "周六、周日，番禺校区→校本部：08:40、13:00、17:10、18:30、21:15。",
+      "校本部乘车地点：行政办公楼北侧候车点。番禺校区乘车地点：教学楼北侧候车亭。节假日的班车时间另行通知。",
+      "原表提醒教职工凭校园卡乘车。往来班车主要为到番禺校区上课的教师开通，按课程安排制定教学班车计划；在上课教师全部上车后仍有空位时，允许学生乘坐。原文没有承诺学生必有座位，也没有给出学生票价。"
+    ],
+    "steps": [
+      "核对当日是否工作日、周末或节假日",
+      "查看所需方向的原表时刻并确认最新公告",
+      "前往对应校区候车点",
+      "遵守教职工优先和有空位才允许学生乘坐的规则"
+    ],
+    "tags": [
+      "教学班车",
+      "校本部",
+      "石牌校区",
+      "跨校区",
+      "校园卡",
+      "时刻表",
+      "学生乘车规则"
+    ],
+    "sourcePages": [36, 37, 38],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "stages": ["arrival", "campus"],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/campus-coach.jpg",
+    "imageAlt": "PDF 中的蓝色暨南大学教学班车",
+    "imageCredit": "用户提供的 PDF 第 36 页原图 · 保留来源标识",
+    "tables": [
+      {
+        "columns": ["运行日期", "方向", "原表发车时间"],
+        "rows": [
+          ["周一至周五", "校本部→番禺校区", "07:30"],
+          ["周一至周五", "校本部→番禺校区", "08:00"],
+          ["周一至周五", "校本部→番禺校区", "08:30"],
+          ["周一至周五", "校本部→番禺校区", "09:30"],
+          ["周一至周五", "校本部→番禺校区", "13:00"],
+          ["周一至周五", "校本部→番禺校区", "15:00"],
+          ["周一至周五", "校本部→番禺校区", "17:20"],
+          ["周一至周五", "校本部→番禺校区", "20:20"],
+          ["周一至周五", "番禺校区→校本部", "08:40"],
+          ["周一至周五", "番禺校区→校本部", "09:20"],
+          ["周一至周五", "番禺校区→校本部", "10:30"],
+          ["周一至周五", "番禺校区→校本部", "13:00"],
+          ["周一至周五", "番禺校区→校本部", "16:00"],
+          ["周一至周五", "番禺校区→校本部", "17:10"],
+          ["周一至周五", "番禺校区→校本部", "18:00"],
+          ["周一至周五", "番禺校区→校本部", "18:30"],
+          ["周一至周五", "番禺校区→校本部", "20:30"],
+          ["周一至周五", "番禺校区→校本部", "21:25"],
+          ["周六、周日", "校本部→番禺校区", "07:30"],
+          ["周六、周日", "校本部→番禺校区", "08:30"],
+          ["周六、周日", "校本部→番禺校区", "09:30"],
+          ["周六、周日", "校本部→番禺校区", "13:00"],
+          ["周六、周日", "校本部→番禺校区", "17:20"],
+          ["周六、周日", "番禺校区→校本部", "08:40"],
+          ["周六、周日", "番禺校区→校本部", "13:00"],
+          ["周六、周日", "番禺校区→校本部", "17:10"],
+          ["周六、周日", "番禺校区→校本部", "18:30"],
+          ["周六、周日", "番禺校区→校本部", "21:15"]
+        ],
+        "caption": "番禺校区与校本部教学班车（PDF 原表）"
+      }
+    ],
+    "gallery": [
+      {
+        "image": "images/pdf/campus-coach.jpg",
+        "alt": "PDF 中的蓝色暨南大学教学班车",
+        "caption": "PDF 第 36 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-xinzao-campus-minibus",
+    "title": "番禺校区往返新造地铁站校园小巴",
+    "category": "travel",
+    "summary": "原文列出校园小巴工作日与周末的首末班时间、发车间隔和两端乘车点。",
+    "content": [
+      "校园小巴连接番禺校区和新造地铁站，第 39 页上半部分是绿色小巴车辆照片。以下时刻与间隔来自 PDF 原文，未核实当前班次和票价。",
+      "周一到周五，番禺校区→新造地铁站：首班 07:00，末班 20:50；高峰期每 10 分钟一班，平峰期每 15–20 分钟一班。",
+      "周一到周五，新造地铁站→番禺校区：首班 07:15，末班 21:00；高峰期每 10 分钟一班，平峰期每 15–20 分钟一班。",
+      "周末，番禺校区→新造地铁站：首班 07:00，末班 21:00；每 10–15 分钟一班。",
+      "周末，新造地铁站→番禺校区：首班 07:10，末班 21:00；每 10–15 分钟一班。",
+      "番禺校区乘车地点：南门出口停车场。新造地铁站乘车地点：A1 出口公交站。乘车前应核对现场最新安排。"
+    ],
+    "steps": [
+      "确认工作日或周末及行驶方向",
+      "核对最新首末班信息",
+      "在南门出口停车场或新造 A1 出口公交站候车"
+    ],
+    "tags": ["校园小巴", "新造地铁站", "南门", "A1出口", "首末班", "校园交通"],
+    "sourcePages": [38, 39],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "stages": ["arrival", "campus"],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/xinzao-campus-minibus.jpeg",
+    "imageAlt": "绿色番禺校区往返新造地铁站校园小巴",
+    "imageCredit": "用户提供的 PDF 第 39 页原图 · 保留来源标识",
+    "tables": [
+      {
+        "columns": ["运行日期", "方向", "首班", "末班", "原文间隔"],
+        "rows": [
+          [
+            "周一到周五",
+            "番禺校区→新造地铁站",
+            "07:00",
+            "20:50",
+            "高峰10分钟；平峰15–20分钟"
+          ],
+          [
+            "周一到周五",
+            "新造地铁站→番禺校区",
+            "07:15",
+            "21:00",
+            "高峰10分钟；平峰15–20分钟"
+          ],
+          ["周末", "番禺校区→新造地铁站", "07:00", "21:00", "10–15分钟"],
+          ["周末", "新造地铁站→番禺校区", "07:10", "21:00", "10–15分钟"]
+        ],
+        "caption": "番禺校区往返新造地铁站校园小巴（PDF 原表）"
+      }
+    ],
+    "gallery": [
+      {
+        "image": "images/pdf/xinzao-campus-minibus.jpeg",
+        "alt": "绿色番禺校区往返新造地铁站校园小巴",
+        "caption": "PDF 第 39 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-ruyue-bus",
+    "title": "广州如约巴士：番禺校区与天河、校本部",
+    "category": "travel",
+    "summary": "微信搜索广州如约巴士并检索暨南大学，可查看线路；PDF 保留工作日和周末班次。",
+    "content": [
+      "第 39 页下半部分展示红色如约巴士照片；第 40 页给出原文班次表。它与教师优先的教学班车不同，应分别核对线路与运行规则。",
+      "周一至周五，番禺校区→天河公交场（途经校本部南门）：07:30、12:30、16:30。",
+      "周一至周五，校本部→番禺校区：13:30、18:30、21:00。",
+      "周末，番禺校区→天河公交场（途经校本部南门）：08:00、10:00、12:30、14:30、16:30。",
+      "周末，校本部→番禺校区：09:00、13:30、18:30、20:30、21:30。",
+      "微信搜索并打开“广州如约巴士”小程序，再搜索关键词“暨南大学”，即可查看相关线路。PDF 没有提供网页直链或可复用的小程序链接，因此使用名称搜索。",
+      "番禺校区乘车地点：教学楼左侧乘车点。石牌校区乘车地点：行政办公楼北侧乘车点。原文未列票价和购票步骤，以上班次属于历史资料，应在小程序内核对当前运行时间、站点与购票规则。"
+    ],
+    "steps": [
+      "在微信搜索广州如约巴士小程序",
+      "搜索关键词暨南大学",
+      "核对当前线路、时间和购票规则",
+      "按所选线路到对应乘车点"
+    ],
+    "tags": [
+      "如约巴士",
+      "广州如约巴士",
+      "天河公交场",
+      "校本部南门",
+      "班车",
+      "小程序"
+    ],
+    "sourcePages": [39, 40],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "stages": ["arrival", "campus"],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/ruyue-bus.jpeg",
+    "imageAlt": "红色广州如约巴士",
+    "imageCredit": "用户提供的 PDF 第 39 页原图 · 保留来源标识",
+    "tables": [
+      {
+        "columns": ["运行日期", "方向", "原表发车时间"],
+        "rows": [
+          ["周一至周五", "番禺校区→天河公交场（途经校本部南门）", "07:30"],
+          ["周一至周五", "番禺校区→天河公交场（途经校本部南门）", "12:30"],
+          ["周一至周五", "番禺校区→天河公交场（途经校本部南门）", "16:30"],
+          ["周一至周五", "校本部→番禺校区", "13:30"],
+          ["周一至周五", "校本部→番禺校区", "18:30"],
+          ["周一至周五", "校本部→番禺校区", "21:00"],
+          ["周末", "番禺校区→天河公交场（途经校本部南门）", "08:00"],
+          ["周末", "番禺校区→天河公交场（途经校本部南门）", "10:00"],
+          ["周末", "番禺校区→天河公交场（途经校本部南门）", "12:30"],
+          ["周末", "番禺校区→天河公交场（途经校本部南门）", "14:30"],
+          ["周末", "番禺校区→天河公交场（途经校本部南门）", "16:30"],
+          ["周末", "校本部→番禺校区", "09:00"],
+          ["周末", "校本部→番禺校区", "13:30"],
+          ["周末", "校本部→番禺校区", "18:30"],
+          ["周末", "校本部→番禺校区", "20:30"],
+          ["周末", "校本部→番禺校区", "21:30"]
+        ],
+        "caption": "广州如约巴士：番禺校区与天河、校本部（PDF 原表）"
+      }
+    ],
+    "gallery": [
+      {
+        "image": "images/pdf/ruyue-bus.jpeg",
+        "alt": "红色广州如约巴士",
+        "caption": "PDF 第 39 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-xinzao-metro",
+    "title": "新造地铁站与步行导航",
+    "category": "travel",
+    "summary": "原文将新造地铁站列为距离学校最近的地铁站，并提供前往 A1 口的步行地图截图。",
+    "content": [
+      "原文说明“离学校最近的地铁站：新造地铁站”。第 41 页展示从暨南大学（番禺校区）方向前往“新造-A1口”的地图路线，界面选择“步行”，地图中标注地铁 4 号线。",
+      "地图上的预计到达时间属于截图时的导航结果，路线、实际步行时长和出入口状态应以实时地图为准。原图没有以正文给出固定步行时长，不将截图时间换算成通用时间承诺。",
+      "如不选择步行，可参照“校园小巴”条目：番禺校区南门出口停车场往返新造地铁 A1 出口公交站。"
+    ],
+    "steps": [
+      "在地图应用搜索新造地铁站 A1 口",
+      "选择步行或合适交通方式",
+      "按实时路线前往，核对出入口与运营信息"
+    ],
+    "tags": ["新造地铁站", "地铁4号线", "A1口", "步行路线", "地铁", "地图导航"],
+    "sourcePages": [40, 41, 42],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "stages": ["arrival", "campus"],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/travel-bus.webp",
+    "imageAlt": "巴士与公共交通场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-dorm-water-electricity",
+    "title": "番禺宿舍水电费充值",
+    "category": "payment",
+    "summary": "通过暨南大学服务号微服务中的番禺水电充值，填写个人与宿舍信息和充值金额。",
+    "content": [
+      "微信搜索“暨南大学服务号”，打开“微服务”，找到标有“学生宿舍”的“番禺水电充值”入口。第 44 页在微服务长图中圈出了该入口。",
+      "原文要求输入姓名、学号、宿舍楼号、宿舍号和充值金额，校园卡号可以不填。填写时应核对自己的宿舍信息与实际金额；PDF 没有给出当前收费标准或完整支付确认界面。",
+      "第 42 页为微信搜索服务号截图，第 43–44 页为旧版微服务入口截图。第 43 页显示 2024 年 09 月 06 日，属于历史参考；“保存成功”是原截图上的提示，不能作为充值成功证明。当前充值入口、表单与扣费结果以学校系统为准。"
+    ],
+    "steps": [
+      "微信搜索暨南大学服务号",
+      "打开微服务→番禺水电充值",
+      "填写姓名、学号、宿舍楼号、宿舍号与充值金额",
+      "核对信息后依照学校当前支付界面完成充值并保存结果"
+    ],
+    "tags": [
+      "水电费",
+      "宿舍充值",
+      "番禺水电充值",
+      "校园卡号",
+      "宿舍楼号",
+      "充值金额"
+    ],
+    "sourcePages": [42, 43, 44],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "stages": ["arrival", "campus"],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/sections/payment.webp",
+    "imageAlt": "移动支付与缴费场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "tables": [],
+    "gallery": [],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-offcampus-takeout-lockers",
+    "title": "校外外卖：东门、南门取餐与外卖柜",
+    "category": "food",
+    "summary": "PDF 提醒美团、淘宝闪购等校外平台外卖需在东门或南门领取，并展示外卖柜。",
+    "content": [
+      "原文说明美团、淘宝闪购等外卖平台无法将外卖送入学校，需要去东门或者南门取餐；东门、南门都有外卖柜。此为 PDF 记录的配送规则，实际配送区域、门禁与取餐要求应在下单时核对。",
+      "第 45 页展示黄色美团外卖柜实景照片，可用于辨认取餐设施；照片上能看到扫码存取提示。原文没有提供通用取餐码，也未给出费用标准，取餐应按自己的订单和柜体提示办理。",
+      "PDF 另列校内可配送外卖，但特别提示“具体看情况，有些倒闭了”。校内平台名单与校外取餐规则分别保留，不能把旧广告视为当前配送保证。"
+    ],
+    "steps": [
+      "下单前确认配送范围与取餐位置",
+      "与骑手核对东门或南门及外卖柜信息",
+      "使用自己订单的通知和取餐信息领取"
+    ],
+    "tags": ["外卖柜", "美团", "淘宝闪购", "东门", "南门", "校外外卖", "取餐"],
+    "sourcePages": [44, 45],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "stages": ["arrival", "campus"],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/takeout-lockers.jpeg",
+    "imageAlt": "黄色美团外卖柜",
+    "imageCredit": "用户提供的 PDF 第 45 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/takeout-lockers.jpeg",
+        "alt": "黄色美团外卖柜",
+        "caption": "PDF 第 45 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-takeout-kuaituan",
+    "title": "校内外卖小程序：快点星球",
+    "category": "food",
+    "summary": "PDF 保留“快点星球”小程序分享卡片，可在微信搜索名称后核对当前营业与配送信息。",
+    "content": [
+      "第 46 页上半部分分享卡片名称为“快点星球”，分享文案为“速戳！外卖送到宿舍楼！”，图片写有“吃喝全都有，直达宿舍”。图片中的拼音品牌字样为 KUAITUANXINGQIU，但微信查找应以分享卡片的中文名称“快点星球”为准。",
+      "原文对整组校内外卖名单提示“具体看情况，有些倒闭了”。本次仅按原 PDF 收录，不将旧分享卡片作为平台当前在营或必能配送的核实结果。",
+      "PDF 仅提供小程序分享截图，没有可抽取的真实直链。请在微信搜索“快点星球”，核对名称、校区和经营信息；下方来源按钮可打开原攻略。"
+    ],
+    "steps": [
+      "微信搜索小程序名称“快点星球”",
+      "核对番禺校区、当前营业状态与配送范围",
+      "查看当前菜单、费用和取餐方式后再下单"
+    ],
+    "tags": ["快点星球", "直达宿舍", "校内配送"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [45, 46],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/takeout-kuaituan.png",
+    "imageAlt": "快点星球小程序分享卡片",
+    "imageCredit": "用户提供的 PDF 第 46 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/takeout-kuaituan.png",
+        "alt": "快点星球小程序分享卡片",
+        "caption": "PDF 第 46 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-takeout-jnu-canteen",
+    "title": "校内外卖小程序：暨食堂",
+    "category": "food",
+    "summary": "PDF 保留“暨食堂”小程序分享卡片，可在微信搜索名称后核对当前营业与配送信息。",
+    "content": [
+      "第 46 页下半部分分享卡片名称与标题均为“暨食堂”，配图是校园食堂建筑照片。原文将它放在“校内可配送外卖”名单中，没有给出当前菜单、价格、配送地点或具体营业时间。",
+      "原文对整组校内外卖名单提示“具体看情况，有些倒闭了”。本次仅按原 PDF 收录，不将旧分享卡片作为平台当前在营或必能配送的核实结果。",
+      "PDF 仅提供小程序分享截图，没有可抽取的真实直链。请在微信搜索“暨食堂”，核对名称、校区和经营信息；下方来源按钮可打开原攻略。"
+    ],
+    "steps": [
+      "微信搜索小程序名称“暨食堂”",
+      "核对番禺校区、当前营业状态与配送范围",
+      "查看当前菜单、费用和取餐方式后再下单"
+    ],
+    "tags": ["暨食堂", "食堂小程序", "校内配送"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [45, 46],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/takeout-jnu-canteen.png",
+    "imageAlt": "暨食堂小程序分享卡片",
+    "imageCredit": "用户提供的 PDF 第 46 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/takeout-jnu-canteen.png",
+        "alt": "暨食堂小程序分享卡片",
+        "caption": "PDF 第 46 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-takeout-gouzhong",
+    "title": "校内外卖小程序：够钟点餐+",
+    "category": "food",
+    "summary": "PDF 保留“够钟点餐+”小程序分享卡片，可在微信搜索名称后核对当前营业与配送信息。",
+    "content": [
+      "第 47 页上半部分分享卡片名称为“够钟点餐+”，文案写有“用‘够钟点餐’，每月生活费至少省300块”，配图宣传“¥50 无门槛优惠券”“吃喝神券免费领”。这些是原截图中的历史广告描述，不代表当前有效优惠或节省保证。",
+      "原文对整组校内外卖名单提示“具体看情况，有些倒闭了”。本次仅按原 PDF 收录，不将旧分享卡片作为平台当前在营或必能配送的核实结果。",
+      "PDF 仅提供小程序分享截图，没有可抽取的真实直链。请在微信搜索“够钟点餐+”，核对名称、校区和经营信息；下方来源按钮可打开原攻略。"
+    ],
+    "steps": [
+      "微信搜索小程序名称“够钟点餐+”",
+      "核对番禺校区、当前营业状态与配送范围",
+      "查看当前菜单、费用和取餐方式后再下单"
+    ],
+    "tags": ["够钟点餐", "够钟点餐+", "历史优惠", "校内配送"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [45, 47],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/takeout-gouzhong.png",
+    "imageAlt": "够钟点餐+小程序分享卡片",
+    "imageCredit": "用户提供的 PDF 第 47 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/takeout-gouzhong.png",
+        "alt": "够钟点餐+小程序分享卡片",
+        "caption": "PDF 第 47 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-takeout-jnu-delivery",
+    "title": "校内外卖小程序：暨食到家校园服务",
+    "category": "food",
+    "summary": "PDF 保留“暨食到家校园服务”小程序分享卡片，可在微信搜索名称后核对当前营业与配送信息。",
+    "content": [
+      "第 47 页下半部分分享卡片名称与标题为“暨食到家校园服务”。截图展示搜索框、营养早餐、美味正餐、快乐宵夜、暨食甄选、兼职招募、米饭主食、饮料甜品、汉堡披萨、炸鸡烧烤、粉面汤食等入口；还有汉堡王、瑞幸咖啡、达美乐、肯德基、暖食等搜索词。",
+      "配图中的“达美乐七折起？！”等字样是旧截图宣传，不能作为当前活动价格。此条保留平台名称和截图用途，不保证所列商家目前仍可配送。",
+      "原文对整组校内外卖名单提示“具体看情况，有些倒闭了”。本次仅按原 PDF 收录，不将旧分享卡片作为平台当前在营或必能配送的核实结果。",
+      "PDF 仅提供小程序分享截图，没有可抽取的真实直链。请在微信搜索“暨食到家校园服务”，核对名称、校区和经营信息；下方来源按钮可打开原攻略。"
+    ],
+    "steps": [
+      "微信搜索小程序名称“暨食到家校园服务”",
+      "核对番禺校区、当前营业状态与配送范围",
+      "查看当前菜单、费用和取餐方式后再下单"
+    ],
+    "tags": ["暨食到家", "校园服务", "早餐", "正餐", "宵夜", "校内配送"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [45, 47],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/takeout-jnu-delivery.png",
+    "imageAlt": "暨食到家校园服务小程序分享卡片",
+    "imageCredit": "用户提供的 PDF 第 47 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/takeout-jnu-delivery.png",
+        "alt": "暨食到家校园服务小程序分享卡片",
+        "caption": "PDF 第 47 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-takeout-waimaigou",
+    "title": "校内外卖小程序：校园外卖购",
+    "category": "food",
+    "summary": "PDF 保留“校园外卖购”小程序分享卡片，可在微信搜索名称后核对当前营业与配送信息。",
+    "content": [
+      "第 48 页上半部分分享卡片名称为“校园外卖购”，配图宣传“校园订餐就来外卖购”“校园订餐，随叫随到”。原文未提供可直接跳转的网址、现行配送范围或营业安排。",
+      "原文对整组校内外卖名单提示“具体看情况，有些倒闭了”。本次仅按原 PDF 收录，不将旧分享卡片作为平台当前在营或必能配送的核实结果。",
+      "PDF 仅提供小程序分享截图，没有可抽取的真实直链。请在微信搜索“校园外卖购”，核对名称、校区和经营信息；下方来源按钮可打开原攻略。"
+    ],
+    "steps": [
+      "微信搜索小程序名称“校园外卖购”",
+      "核对番禺校区、当前营业状态与配送范围",
+      "查看当前菜单、费用和取餐方式后再下单"
+    ],
+    "tags": ["校园外卖购", "校园订餐", "校内配送"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [45, 48],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/takeout-waimaigou.png",
+    "imageAlt": "校园外卖购小程序分享卡片",
+    "imageCredit": "用户提供的 PDF 第 48 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/takeout-waimaigou.png",
+        "alt": "校园外卖购小程序分享卡片",
+        "caption": "PDF 第 48 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-takeout-xingqiudiandian",
+    "title": "校内外卖小程序：星球点点",
+    "category": "food",
+    "summary": "PDF 保留“星球点点”小程序分享卡片，可在微信搜索名称后核对当前营业与配送信息。",
+    "content": [
+      "第 48 页下半部分分享卡片名称为“星球点点”，分享文案为“速戳！外卖送到宿舍楼！”，配图宣传“送餐到寝，外卖速达”。上述为历史分享卡片内容，具体是否配送到宿舍楼以及可选时间须在当前小程序确认。",
+      "原文对整组校内外卖名单提示“具体看情况，有些倒闭了”。本次仅按原 PDF 收录，不将旧分享卡片作为平台当前在营或必能配送的核实结果。",
+      "PDF 仅提供小程序分享截图，没有可抽取的真实直链。请在微信搜索“星球点点”，核对名称、校区和经营信息；下方来源按钮可打开原攻略。"
+    ],
+    "steps": [
+      "微信搜索小程序名称“星球点点”",
+      "核对番禺校区、当前营业状态与配送范围",
+      "查看当前菜单、费用和取餐方式后再下单"
+    ],
+    "tags": ["星球点点", "送餐到寝", "校内配送"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [45, 48],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/takeout-xingqiudiandian.png",
+    "imageAlt": "星球点点小程序分享卡片",
+    "imageCredit": "用户提供的 PDF 第 48 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/takeout-xingqiudiandian.png",
+        "alt": "星球点点小程序分享卡片",
+        "caption": "PDF 第 48 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-takeout-askforfan",
+    "title": "校内外卖小程序：Ask For饭",
+    "category": "food",
+    "summary": "PDF 保留“Ask For饭”小程序分享卡片，可在微信搜索名称后核对当前营业与配送信息。",
+    "content": [
+      "第 49 页上半部分分享卡片名称为“Ask For饭”。配图写有“全部都有”“首单立减5元”“百家商户可选，全品类涵盖”；这些是原广告中的历史宣传，不表示当前首单优惠仍然有效。",
+      "原文对整组校内外卖名单提示“具体看情况，有些倒闭了”。本次仅按原 PDF 收录，不将旧分享卡片作为平台当前在营或必能配送的核实结果。",
+      "PDF 仅提供小程序分享截图，没有可抽取的真实直链。请在微信搜索“Ask For饭”，核对名称、校区和经营信息；下方来源按钮可打开原攻略。"
+    ],
+    "steps": [
+      "微信搜索小程序名称“Ask For饭”",
+      "核对番禺校区、当前营业状态与配送范围",
+      "查看当前菜单、费用和取餐方式后再下单"
+    ],
+    "tags": ["Ask For饭", "Ask For", "历史优惠", "校内配送"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [45, 49],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/takeout-askforfan.png",
+    "imageAlt": "Ask For饭小程序分享卡片",
+    "imageCredit": "用户提供的 PDF 第 49 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/takeout-askforfan.png",
+        "alt": "Ask For饭小程序分享卡片",
+        "caption": "PDF 第 49 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-takeout-wuyougo",
+    "title": "校内外卖小程序：校园无忧GO",
+    "category": "food",
+    "summary": "PDF 保留“校园无忧GO”小程序分享卡片，可在微信搜索名称后核对当前营业与配送信息。",
+    "content": [
+      "第 49 页下半部分分享卡片名称为“校园无忧GO”，分享文案为“公子公主们请点餐～”，配图宣传“吃喝全都有，直达宿舍”。平台是否在营、可配送商家与宿舍楼范围需实时确认。",
+      "原文对整组校内外卖名单提示“具体看情况，有些倒闭了”。本次仅按原 PDF 收录，不将旧分享卡片作为平台当前在营或必能配送的核实结果。",
+      "PDF 仅提供小程序分享截图，没有可抽取的真实直链。请在微信搜索“校园无忧GO”，核对名称、校区和经营信息；下方来源按钮可打开原攻略。"
+    ],
+    "steps": [
+      "微信搜索小程序名称“校园无忧GO”",
+      "核对番禺校区、当前营业状态与配送范围",
+      "查看当前菜单、费用和取餐方式后再下单"
+    ],
+    "tags": ["校园无忧GO", "校园无忧", "直达宿舍", "校内配送"],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [45, 49],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/takeout-wuyougo.png",
+    "imageAlt": "校园无忧GO小程序分享卡片",
+    "imageCredit": "用户提供的 PDF 第 49 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/takeout-wuyougo.png",
+        "alt": "校园无忧GO小程序分享卡片",
+        "caption": "PDF 第 49 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
+    "id": "pdf-takeout-yidianda",
+    "title": "校内外卖小程序：一点达校园外卖（暨大）",
+    "category": "food",
+    "summary": "PDF 保留“一点达校园外卖”小程序分享卡片，可在微信搜索名称后核对当前营业与配送信息。",
+    "content": [
+      "第 50 页分享卡片显示小程序名称“一点达校园外卖”，标题为“一点达校园外卖（暨大）”。界面截图展示“全部”“膳北小馆”“校外美食”分类以及“免配送费”“支持自取”标签。",
+      "这只是 PDF 中的历史入口截图，“免配送费”不作为当前收费承诺；“膳北小馆”出现在旧小程序菜单，也不能说明其目前营业。应以当前小程序实际页面为准。",
+      "原文对整组校内外卖名单提示“具体看情况，有些倒闭了”。本次仅按原 PDF 收录，不将旧分享卡片作为平台当前在营或必能配送的核实结果。",
+      "PDF 仅提供小程序分享截图，没有可抽取的真实直链。请在微信搜索“一点达校园外卖”，核对名称、校区和经营信息；下方来源按钮可打开原攻略。"
+    ],
+    "steps": [
+      "微信搜索小程序名称“一点达校园外卖”",
+      "核对番禺校区、当前营业状态与配送范围",
+      "查看当前菜单、费用和取餐方式后再下单"
+    ],
+    "tags": [
+      "一点达校园外卖",
+      "一点达",
+      "暨大",
+      "膳北小馆",
+      "自取",
+      "校内配送"
+    ],
+    "stages": ["arrival", "campus"],
+    "sourcePages": [45, 50],
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "links": [],
+    "sourceLabel": "番禺校区攻略 PDF",
+    "sourceState": "pdf",
+    "checkedOn": "2026-10-02",
+    "image": "images/pdf/takeout-yidianda.png",
+    "imageAlt": "一点达校园外卖（暨大）小程序分享卡片",
+    "imageCredit": "用户提供的 PDF 第 50 页原图 · 保留来源标识",
+    "tables": [],
+    "gallery": [
+      {
+        "image": "images/pdf/takeout-yidianda.png",
+        "alt": "一点达校园外卖（暨大）小程序分享卡片",
+        "caption": "PDF 第 50 页原图"
+      }
+    ],
+    "sourceNote": "依据用户提供的 Untitled.pdf 逐页整理。包含 2024/2025 年截图；整理日期不表示资料当前有效，时间、营业状态与业务规则请以最新说明为准。"
+  },
+  {
     "id": "laundry",
     "title": "洗衣与衣物护理",
     "category": "clothes",
-    "summary": "查阅原文中的洗衣与衣物护理信息，了解服务地点与使用说明。",
-    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "summary": "洗衣前查看衣物洗涤标签，设备使用与收费以现场说明为准。",
+    "url": "https://panyu.jnu.edu.cn/",
     "tags": ["洗衣", "烘干", "衣服", "洗衣机"],
     "stages": ["arrival", "campus"],
     "steps": [
-      "在原文目录中查找洗衣相关条目",
-      "核对地点、价格和设备说明",
-      "使用前查看现场公示"
+      "查看衣物洗涤标签并分色整理",
+      "核对校内洗衣设备使用说明",
+      "洗涤后及时取出、晾晒或烘干"
     ],
-    "sourceLabel": "原文攻略",
+    "sourceLabel": "生活补充指引 · 校方通知入口",
     "checkedOn": "2026-10-02",
-    "sourceState": "provided"
+    "sourceState": "supplement",
+    "content": ["洗衣前查看衣物洗涤标签，设备使用与收费以现场说明为准。"],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/clothes.jpg",
+    "imageAlt": "衣物与穿搭场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "clothing",
     "title": "校园穿搭与换季",
     "category": "clothes",
-    "summary": "从校园生活攻略中寻找衣物准备与换季建议。",
-    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "summary": "根据广州天气与个人活动安排准备日常衣物；活动着装要求查看学校通知。",
+    "url": "https://panyu.jnu.edu.cn/",
     "tags": ["穿搭", "衣服", "换季", "军训"],
     "stages": ["arrival", "campus"],
     "steps": [
-      "查看入学与生活章节",
-      "根据个人需要整理衣物清单",
-      "活动着装以学校通知为准"
+      "结合天气准备衣物",
+      "核对军训及活动通知",
+      "按实际需要准备换季用品"
     ],
-    "sourceLabel": "原文攻略",
+    "sourceLabel": "生活补充指引 · 校方通知入口",
     "checkedOn": "2026-10-02",
-    "sourceState": "provided"
+    "sourceState": "supplement",
+    "content": [
+      "根据广州天气与个人活动安排准备日常衣物；活动着装要求查看学校通知。"
+    ],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/clothes.jpg",
+    "imageAlt": "衣物与穿搭场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "reuse",
     "title": "毕业物品与衣物整理",
     "category": "clothes",
-    "summary": "查看毕业生活信息，为捐赠、转赠和物品整理做好准备。",
-    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "summary": "毕业前分类整理衣物和生活用品，查看学校当年发布的回收或捐赠安排。",
+    "url": "https://xsc.jnu.edu.cn/",
     "tags": ["衣物", "捐赠", "二手", "回收"],
     "stages": ["graduation"],
     "steps": [
       "分类整理可继续使用的物品",
-      "查看校内发布的回收或捐赠活动",
-      "核对接收要求后再参与"
+      "查看校内回收或捐赠通知",
+      "核对接收要求后参与"
     ],
-    "sourceLabel": "原文攻略",
+    "sourceLabel": "生活补充指引 · 校方通知入口",
     "checkedOn": "2026-10-02",
-    "sourceState": "provided"
-  },
-  {
-    "id": "canteen",
-    "title": "食堂与校园美食",
-    "category": "food",
-    "summary": "查阅原文的餐饮章节，寻找食堂、饮食和校园周边信息。",
-    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
-    "tags": ["吃饭", "食堂", "餐厅", "午餐", "晚餐", "早餐", "饭"],
-    "stages": ["arrival", "campus"],
-    "steps": [
-      "进入攻略查找餐饮分类",
-      "核对营业时间及地点",
-      "价格和菜品以当天现场为准"
+    "sourceState": "supplement",
+    "content": [
+      "毕业前分类整理衣物和生活用品，查看学校当年发布的回收或捐赠安排。"
     ],
-    "sourceLabel": "原文攻略",
-    "checkedOn": "2026-10-02",
-    "sourceState": "provided"
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/clothes.jpg",
+    "imageAlt": "衣物与穿搭场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "food-campus",
@@ -78,24 +2075,16 @@
     "steps": ["打开校区官网", "查看通知或后勤相关栏目", "按通知公布的渠道咨询"],
     "sourceLabel": "番禺校区官网",
     "checkedOn": "2026-10-02",
-    "sourceState": "reachable"
-  },
-  {
-    "id": "coffee",
-    "title": "校园周边与咖啡",
-    "category": "food",
-    "summary": "在原文攻略中查找周边餐饮和休闲信息。",
-    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
-    "tags": ["咖啡", "奶茶", "周边", "聚餐"],
-    "stages": ["campus"],
-    "steps": [
-      "查找周边生活章节",
-      "出发前核对商家地址",
-      "营业状态以商家最新信息为准"
-    ],
-    "sourceLabel": "原文攻略",
-    "checkedOn": "2026-10-02",
-    "sourceState": "provided"
+    "sourceState": "reachable",
+    "content": ["从番禺校区官网查看餐饮及后勤相关通知。"],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/food.jpg",
+    "imageAlt": "餐食与校园饮食场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "dorm",
@@ -108,7 +2097,16 @@
     "steps": ["查看校区住宿相关通知", "确认材料和负责部门", "按通知要求办理"],
     "sourceLabel": "番禺校区官网",
     "checkedOn": "2026-10-02",
-    "sourceState": "reachable"
+    "sourceState": "reachable",
+    "content": ["通过校区官网了解住宿相关通知与办理指引。"],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/room.jpg",
+    "imageAlt": "宿舍居住场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "repair",
@@ -125,24 +2123,42 @@
     ],
     "sourceLabel": "番禺校区官网",
     "checkedOn": "2026-10-02",
-    "sourceState": "reachable"
+    "sourceState": "reachable",
+    "content": ["从校区官网查找后勤服务与报修渠道。"],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/room.jpg",
+    "imageAlt": "宿舍居住场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "housing-guide",
     "title": "宿舍生活攻略",
     "category": "housing",
-    "summary": "查阅原文中的宿舍生活、日用品和居住经验。",
-    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "summary": "按实际住宿安排准备生活用品，宿舍管理要求查看校区通知。",
+    "url": "https://panyu.jnu.edu.cn/",
     "tags": ["床", "宿舍用品", "日用品", "宿舍生活"],
     "stages": ["arrival", "campus"],
     "steps": [
-      "查看住宿章节",
+      "核对本人宿舍安排与管理要求",
       "按实际需要准备日用品",
-      "宿舍管理要求以学校通知为准"
+      "有疑问时联系宿舍管理部门"
     ],
-    "sourceLabel": "原文攻略",
+    "sourceLabel": "生活补充指引 · 校方通知入口",
     "checkedOn": "2026-10-02",
-    "sourceState": "provided"
+    "sourceState": "supplement",
+    "content": ["按实际住宿安排准备生活用品，宿舍管理要求查看校区通知。"],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/room.jpg",
+    "imageAlt": "宿舍居住场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "metro",
@@ -159,7 +2175,16 @@
     ],
     "sourceLabel": "广州地铁官网",
     "checkedOn": "2026-10-02",
-    "sourceState": "reachable"
+    "sourceState": "reachable",
+    "content": ["查看广州地铁官方网站的线路与运营信息。"],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/bike.jpg",
+    "imageAlt": "校园出行场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "rail",
@@ -176,41 +2201,44 @@
     ],
     "sourceLabel": "铁路 12306",
     "checkedOn": "2026-10-02",
-    "sourceState": "reachable"
-  },
-  {
-    "id": "campus-route",
-    "title": "到校与校园交通",
-    "category": "travel",
-    "summary": "从番禺校区官网查找校区交通和到校通知。",
-    "url": "https://panyu.jnu.edu.cn/",
-    "tags": ["校车", "校门", "导航", "番禺", "校园地图", "公交"],
-    "stages": ["arrival", "campus"],
-    "steps": [
-      "查看校区交通相关通知",
-      "确认校门和到校时间",
-      "出发前复核最新安排"
-    ],
-    "sourceLabel": "番禺校区官网",
-    "checkedOn": "2026-10-02",
-    "sourceState": "reachable"
+    "sourceState": "reachable",
+    "content": ["进入铁路 12306 查询车次、购票和乘车服务。"],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/bike.jpg",
+    "imageAlt": "校园出行场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "health-guide",
     "title": "就医与医保指南",
     "category": "health",
-    "summary": "在原文中查看医疗相关信息，并核对官方服务渠道。",
-    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "summary": "查找学校发布的医疗与医保服务信息，就诊及办理规则向负责部门核对。",
+    "url": "https://panyu.jnu.edu.cn/",
     "tags": ["医", "医院", "生病", "看病", "医保", "就诊", "挂号", "发烧"],
     "stages": ["arrival", "campus"],
     "steps": [
-      "查看攻略医疗章节",
-      "核对医疗机构和办理渠道",
-      "就诊与诊疗问题咨询医疗机构"
+      "查看学校医疗与医保通知",
+      "核对医疗机构及办理渠道",
+      "按现行规则咨询或就诊"
     ],
-    "sourceLabel": "原文攻略",
+    "sourceLabel": "生活补充指引 · 校方通知入口",
     "checkedOn": "2026-10-02",
-    "sourceState": "provided"
+    "sourceState": "supplement",
+    "content": [
+      "查找学校发布的医疗与医保服务信息，就诊及办理规则向负责部门核对。"
+    ],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/health.jpg",
+    "imageAlt": "医疗健康场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "student-support",
@@ -227,7 +2255,16 @@
     ],
     "sourceLabel": "学生处官网",
     "checkedOn": "2026-10-02",
-    "sourceState": "reachable"
+    "sourceState": "reachable",
+    "content": ["从学生处官网查找学生支持、咨询和相关通知。"],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/health.jpg",
+    "imageAlt": "医疗健康场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "health-notice",
@@ -240,7 +2277,16 @@
     "steps": ["查看官方健康相关通知", "确认项目和参与要求", "按照公布流程办理"],
     "sourceLabel": "番禺校区官网",
     "checkedOn": "2026-10-02",
-    "sourceState": "reachable"
+    "sourceState": "reachable",
+    "content": ["从校区官网查找体检、健康服务等通知。"],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/health.jpg",
+    "imageAlt": "医疗健康场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "welcome",
@@ -257,7 +2303,16 @@
     ],
     "sourceLabel": "番禺校区官网",
     "checkedOn": "2026-10-02",
-    "sourceState": "reachable"
+    "sourceState": "reachable",
+    "content": ["查找学校和校区发布的迎新信息，整理自己的报到清单。"],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/sections/study.webp",
+    "imageAlt": "图书馆与学习场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "academic",
@@ -274,7 +2329,16 @@
     ],
     "sourceLabel": "教务官网 · 需登录",
     "checkedOn": "2026-10-02",
-    "sourceState": "reachable"
+    "sourceState": "reachable",
+    "content": ["进入学校教务入口，查看学业及相关办事信息。"],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/sections/study.webp",
+    "imageAlt": "图书馆与学习场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "library",
@@ -291,7 +2355,16 @@
     ],
     "sourceLabel": "图书馆官网",
     "checkedOn": "2026-10-02",
-    "sourceState": "reachable"
+    "sourceState": "reachable",
+    "content": ["访问暨南大学图书馆，查找学习资源与服务说明。"],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/sections/study.webp",
+    "imageAlt": "图书馆与学习场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "scholarship",
@@ -308,7 +2381,16 @@
     ],
     "sourceLabel": "学生处官网",
     "checkedOn": "2026-10-02",
-    "sourceState": "reachable"
+    "sourceState": "reachable",
+    "content": ["查看学生处的奖助、学生管理及相关通知。"],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/sections/study.webp",
+    "imageAlt": "图书馆与学习场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "career",
@@ -325,7 +2407,16 @@
     ],
     "sourceLabel": "就业官网",
     "checkedOn": "2026-10-02",
-    "sourceState": "reachable"
+    "sourceState": "reachable",
+    "content": ["查看学校就业网站发布的招聘和就业相关信息。"],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/sections/career.webp",
+    "imageAlt": "毕业与成长场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "graduation",
@@ -342,23 +2433,43 @@
     ],
     "sourceLabel": "学校官网",
     "checkedOn": "2026-10-02",
-    "sourceState": "reachable"
+    "sourceState": "reachable",
+    "content": ["从学校官网查找毕业离校通知，整理办理事项。"],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/sections/career.webp",
+    "imageAlt": "毕业与成长场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   },
   {
     "id": "rights",
     "title": "租房与实习权益",
     "category": "career",
-    "summary": "查阅生活攻略并核对正式渠道，保留合同和沟通记录。",
-    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "summary": "租房、实习或消费发生争议时，整理合同与付款记录，联系正式咨询渠道。",
+    "url": "https://xsc.jnu.edu.cn/",
     "tags": ["合同", "诈骗", "租房", "押金", "协议", "被骗", "维权"],
     "stages": ["career", "graduation"],
     "steps": [
       "整理合同、付款及沟通记录",
-      "核对发布主体和官方咨询渠道",
-      "遇到争议时联系负责部门或专业机构"
+      "核对合同主体和官方咨询渠道",
+      "联系负责部门或专业机构"
     ],
-    "sourceLabel": "原文攻略",
+    "sourceLabel": "生活补充指引 · 校方通知入口",
     "checkedOn": "2026-10-02",
-    "sourceState": "provided"
+    "sourceState": "supplement",
+    "content": [
+      "租房、实习或消费发生争议时，整理合同与付款记录，联系正式咨询渠道。"
+    ],
+    "sourceNote": "补充导航，非本 PDF 收录的办理细则；具体要求请查看对应学校或服务机构通知。",
+    "image": "images/sections/career.webp",
+    "imageAlt": "毕业与成长场景",
+    "imageCredit": "Unsplash 场景配图 · 非特定校园设施",
+    "links": [],
+    "sourcePages": [],
+    "tables": [],
+    "gallery": []
   }
 ]
