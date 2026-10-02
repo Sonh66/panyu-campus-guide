@@ -1,0 +1,364 @@
+[
+  {
+    "id": "laundry",
+    "title": "洗衣与衣物护理",
+    "category": "clothes",
+    "summary": "查阅原文中的洗衣与衣物护理信息，了解服务地点与使用说明。",
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "tags": ["洗衣", "烘干", "衣服", "洗衣机"],
+    "stages": ["arrival", "campus"],
+    "steps": [
+      "在原文目录中查找洗衣相关条目",
+      "核对地点、价格和设备说明",
+      "使用前查看现场公示"
+    ],
+    "sourceLabel": "原文攻略",
+    "checkedOn": "2026-10-02",
+    "sourceState": "provided"
+  },
+  {
+    "id": "clothing",
+    "title": "校园穿搭与换季",
+    "category": "clothes",
+    "summary": "从校园生活攻略中寻找衣物准备与换季建议。",
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "tags": ["穿搭", "衣服", "换季", "军训"],
+    "stages": ["arrival", "campus"],
+    "steps": [
+      "查看入学与生活章节",
+      "根据个人需要整理衣物清单",
+      "活动着装以学校通知为准"
+    ],
+    "sourceLabel": "原文攻略",
+    "checkedOn": "2026-10-02",
+    "sourceState": "provided"
+  },
+  {
+    "id": "reuse",
+    "title": "毕业物品与衣物整理",
+    "category": "clothes",
+    "summary": "查看毕业生活信息，为捐赠、转赠和物品整理做好准备。",
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "tags": ["衣物", "捐赠", "二手", "回收"],
+    "stages": ["graduation"],
+    "steps": [
+      "分类整理可继续使用的物品",
+      "查看校内发布的回收或捐赠活动",
+      "核对接收要求后再参与"
+    ],
+    "sourceLabel": "原文攻略",
+    "checkedOn": "2026-10-02",
+    "sourceState": "provided"
+  },
+  {
+    "id": "canteen",
+    "title": "食堂与校园美食",
+    "category": "food",
+    "summary": "查阅原文的餐饮章节，寻找食堂、饮食和校园周边信息。",
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "tags": ["吃饭", "食堂", "餐厅", "午餐", "晚餐", "早餐", "饭"],
+    "stages": ["arrival", "campus"],
+    "steps": [
+      "进入攻略查找餐饮分类",
+      "核对营业时间及地点",
+      "价格和菜品以当天现场为准"
+    ],
+    "sourceLabel": "原文攻略",
+    "checkedOn": "2026-10-02",
+    "sourceState": "provided"
+  },
+  {
+    "id": "food-campus",
+    "title": "餐饮与后勤通知",
+    "category": "food",
+    "summary": "从番禺校区官网查看餐饮及后勤相关通知。",
+    "url": "https://panyu.jnu.edu.cn/",
+    "tags": ["餐饮", "食堂", "后勤", "投诉"],
+    "stages": ["arrival", "campus"],
+    "steps": ["打开校区官网", "查看通知或后勤相关栏目", "按通知公布的渠道咨询"],
+    "sourceLabel": "番禺校区官网",
+    "checkedOn": "2026-10-02",
+    "sourceState": "reachable"
+  },
+  {
+    "id": "coffee",
+    "title": "校园周边与咖啡",
+    "category": "food",
+    "summary": "在原文攻略中查找周边餐饮和休闲信息。",
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "tags": ["咖啡", "奶茶", "周边", "聚餐"],
+    "stages": ["campus"],
+    "steps": [
+      "查找周边生活章节",
+      "出发前核对商家地址",
+      "营业状态以商家最新信息为准"
+    ],
+    "sourceLabel": "原文攻略",
+    "checkedOn": "2026-10-02",
+    "sourceState": "provided"
+  },
+  {
+    "id": "dorm",
+    "title": "宿舍与入住",
+    "category": "housing",
+    "summary": "通过校区官网了解住宿相关通知与办理指引。",
+    "url": "https://panyu.jnu.edu.cn/",
+    "tags": ["宿舍", "入住", "住宿", "寝室", "住"],
+    "stages": ["arrival", "campus"],
+    "steps": ["查看校区住宿相关通知", "确认材料和负责部门", "按通知要求办理"],
+    "sourceLabel": "番禺校区官网",
+    "checkedOn": "2026-10-02",
+    "sourceState": "reachable"
+  },
+  {
+    "id": "repair",
+    "title": "宿舍报修与后勤",
+    "category": "housing",
+    "summary": "从校区官网查找后勤服务与报修渠道。",
+    "url": "https://panyu.jnu.edu.cn/",
+    "tags": ["报修", "维修", "空调", "漏水", "水电", "故障"],
+    "stages": ["campus"],
+    "steps": [
+      "记录故障位置和现象",
+      "查看校区公布的后勤联系方式",
+      "通过正式渠道提交并保留记录"
+    ],
+    "sourceLabel": "番禺校区官网",
+    "checkedOn": "2026-10-02",
+    "sourceState": "reachable"
+  },
+  {
+    "id": "housing-guide",
+    "title": "宿舍生活攻略",
+    "category": "housing",
+    "summary": "查阅原文中的宿舍生活、日用品和居住经验。",
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "tags": ["床", "宿舍用品", "日用品", "宿舍生活"],
+    "stages": ["arrival", "campus"],
+    "steps": [
+      "查看住宿章节",
+      "按实际需要准备日用品",
+      "宿舍管理要求以学校通知为准"
+    ],
+    "sourceLabel": "原文攻略",
+    "checkedOn": "2026-10-02",
+    "sourceState": "provided"
+  },
+  {
+    "id": "metro",
+    "title": "广州地铁出行",
+    "category": "travel",
+    "summary": "查看广州地铁官方网站的线路与运营信息。",
+    "url": "https://www.gzmtr.com/",
+    "tags": ["地铁", "出行", "到校", "机场", "南站", "交通"],
+    "stages": ["arrival", "campus", "graduation"],
+    "steps": [
+      "查询出发地和目的地",
+      "查看线路及运营时间",
+      "结合学校公布的校门信息规划最后一段路"
+    ],
+    "sourceLabel": "广州地铁官网",
+    "checkedOn": "2026-10-02",
+    "sourceState": "reachable"
+  },
+  {
+    "id": "rail",
+    "title": "火车票与返乡",
+    "category": "travel",
+    "summary": "进入铁路 12306 查询车次、购票和乘车服务。",
+    "url": "https://www.12306.cn/",
+    "tags": ["火车", "高铁", "返乡", "车票", "学生票", "回家"],
+    "stages": ["arrival", "campus", "graduation"],
+    "steps": [
+      "查询出行日期与车次",
+      "核对学生优惠相关规则",
+      "购票后关注列车和车站通知"
+    ],
+    "sourceLabel": "铁路 12306",
+    "checkedOn": "2026-10-02",
+    "sourceState": "reachable"
+  },
+  {
+    "id": "campus-route",
+    "title": "到校与校园交通",
+    "category": "travel",
+    "summary": "从番禺校区官网查找校区交通和到校通知。",
+    "url": "https://panyu.jnu.edu.cn/",
+    "tags": ["校车", "校门", "导航", "番禺", "校园地图", "公交"],
+    "stages": ["arrival", "campus"],
+    "steps": [
+      "查看校区交通相关通知",
+      "确认校门和到校时间",
+      "出发前复核最新安排"
+    ],
+    "sourceLabel": "番禺校区官网",
+    "checkedOn": "2026-10-02",
+    "sourceState": "reachable"
+  },
+  {
+    "id": "health-guide",
+    "title": "就医与医保指南",
+    "category": "health",
+    "summary": "在原文中查看医疗相关信息，并核对官方服务渠道。",
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "tags": ["医", "医院", "生病", "看病", "医保", "就诊", "挂号", "发烧"],
+    "stages": ["arrival", "campus"],
+    "steps": [
+      "查看攻略医疗章节",
+      "核对医疗机构和办理渠道",
+      "就诊与诊疗问题咨询医疗机构"
+    ],
+    "sourceLabel": "原文攻略",
+    "checkedOn": "2026-10-02",
+    "sourceState": "provided"
+  },
+  {
+    "id": "student-support",
+    "title": "学生支持与咨询",
+    "category": "health",
+    "summary": "从学生处官网查找学生支持、咨询和相关通知。",
+    "url": "https://xsc.jnu.edu.cn/",
+    "tags": ["心理", "咨询", "压力", "情绪", "辅导员", "支持"],
+    "stages": ["arrival", "campus", "graduation"],
+    "steps": [
+      "查看学生处相关栏目",
+      "根据需求找到负责部门",
+      "预约和开放安排以官方说明为准"
+    ],
+    "sourceLabel": "学生处官网",
+    "checkedOn": "2026-10-02",
+    "sourceState": "reachable"
+  },
+  {
+    "id": "health-notice",
+    "title": "体检与校区通知",
+    "category": "health",
+    "summary": "从校区官网查找体检、健康服务等通知。",
+    "url": "https://panyu.jnu.edu.cn/",
+    "tags": ["体检", "校医院", "医疗", "健康"],
+    "stages": ["arrival", "campus"],
+    "steps": ["查看官方健康相关通知", "确认项目和参与要求", "按照公布流程办理"],
+    "sourceLabel": "番禺校区官网",
+    "checkedOn": "2026-10-02",
+    "sourceState": "reachable"
+  },
+  {
+    "id": "welcome",
+    "title": "新生报到与迎新",
+    "category": "study",
+    "summary": "查找学校和校区发布的迎新信息，整理自己的报到清单。",
+    "url": "https://panyu.jnu.edu.cn/",
+    "tags": ["新生", "报到", "迎新", "入学", "注册"],
+    "stages": ["arrival"],
+    "steps": [
+      "查看当年的迎新通知",
+      "核对材料、地点与日期",
+      "办理后保存必要记录"
+    ],
+    "sourceLabel": "番禺校区官网",
+    "checkedOn": "2026-10-02",
+    "sourceState": "reachable"
+  },
+  {
+    "id": "academic",
+    "title": "教务与学业办理",
+    "category": "study",
+    "summary": "进入学校教务入口，查看学业及相关办事信息。",
+    "url": "https://jw.jnu.edu.cn/",
+    "tags": ["教务", "课表", "成绩", "选课", "证明", "学分"],
+    "stages": ["campus", "graduation"],
+    "steps": [
+      "进入官方教务入口",
+      "按提示使用学校账号登录",
+      "查看相应业务的办理说明"
+    ],
+    "sourceLabel": "教务官网 · 需登录",
+    "checkedOn": "2026-10-02",
+    "sourceState": "reachable"
+  },
+  {
+    "id": "library",
+    "title": "图书馆与学习资源",
+    "category": "study",
+    "summary": "访问暨南大学图书馆，查找学习资源与服务说明。",
+    "url": "https://lib.jnu.edu.cn/",
+    "tags": ["图书馆", "借书", "自习", "论文", "文献", "还书"],
+    "stages": ["arrival", "campus", "graduation"],
+    "steps": [
+      "查看资源和服务栏目",
+      "按官网说明使用借阅与电子资源",
+      "毕业前核对归还要求"
+    ],
+    "sourceLabel": "图书馆官网",
+    "checkedOn": "2026-10-02",
+    "sourceState": "reachable"
+  },
+  {
+    "id": "scholarship",
+    "title": "奖助与学生事务",
+    "category": "study",
+    "summary": "查看学生处的奖助、学生管理及相关通知。",
+    "url": "https://xsc.jnu.edu.cn/",
+    "tags": ["奖学金", "助学金", "补助", "困难", "请假"],
+    "stages": ["arrival", "campus"],
+    "steps": [
+      "查找当前学年的相关通知",
+      "核对申请条件和材料",
+      "在规定期限内按流程办理"
+    ],
+    "sourceLabel": "学生处官网",
+    "checkedOn": "2026-10-02",
+    "sourceState": "reachable"
+  },
+  {
+    "id": "career",
+    "title": "实习招聘与就业",
+    "category": "career",
+    "summary": "查看学校就业网站发布的招聘和就业相关信息。",
+    "url": "https://career.jnu.edu.cn/",
+    "tags": ["招聘", "工作", "实习", "就业", "岗位", "简历"],
+    "stages": ["career", "graduation"],
+    "steps": [
+      "查找招聘和就业服务栏目",
+      "核对发布方及岗位要求",
+      "签署协议前仔细阅读条款"
+    ],
+    "sourceLabel": "就业官网",
+    "checkedOn": "2026-10-02",
+    "sourceState": "reachable"
+  },
+  {
+    "id": "graduation",
+    "title": "毕业与离校事项",
+    "category": "career",
+    "summary": "从学校官网查找毕业离校通知，整理办理事项。",
+    "url": "https://www.jnu.edu.cn/",
+    "tags": ["毕业", "离校", "证书", "毕业证", "退宿", "档案"],
+    "stages": ["graduation"],
+    "steps": [
+      "查找本年度毕业离校通知",
+      "逐项核对负责部门及截止日期",
+      "学籍和资格结论以学校为准"
+    ],
+    "sourceLabel": "学校官网",
+    "checkedOn": "2026-10-02",
+    "sourceState": "reachable"
+  },
+  {
+    "id": "rights",
+    "title": "租房与实习权益",
+    "category": "career",
+    "summary": "查阅生活攻略并核对正式渠道，保留合同和沟通记录。",
+    "url": "https://www.kdocs.cn/l/cd8vwmB6EhQt",
+    "tags": ["合同", "诈骗", "租房", "押金", "协议", "被骗", "维权"],
+    "stages": ["career", "graduation"],
+    "steps": [
+      "整理合同、付款及沟通记录",
+      "核对发布主体和官方咨询渠道",
+      "遇到争议时联系负责部门或专业机构"
+    ],
+    "sourceLabel": "原文攻略",
+    "checkedOn": "2026-10-02",
+    "sourceState": "provided"
+  }
+]

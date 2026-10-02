@@ -1,0 +1,9 @@
+Use case: stylized-concept
+Asset type: production website hero illustration for a Chinese university campus life guide in Panyu, Guangzhou.
+Primary request: A premium contemporary 3D editorial illustration of a cheerful subtropical university campus, with a calm lake, curving lakeside promenade, lush palms and large banyan trees, low-rise modern teaching buildings, tiny students riding bicycles and walking, and a small tasteful outdoor coffee kiosk and canteen terrace.
+Style/medium: Sophisticated detailed 3D editorial illustration, crafted architectural diorama, tactile matte materials, soft realistic shadows, lush foliage and expressive miniature characters; mature design, not childish or toy-like.
+Composition/framing: Wide horizontal 16:9 landscape, subtly elevated camera, broad sweeping composition useful for webpage hero crop. Main teaching buildings, trees and student activities weighted to the center-right, calm sky and lake area towards the left; all parts of the image remain visually usable. Full scenic illustration to the edges.
+Lighting/mood: Warm sunlit late afternoon, clear azure sky, crisp bright inviting campus atmosphere, not sunset orange or dark.
+Color palette: Deep forest green, sky blue, pale warm stone, sunshine yellow accents, natural saturated colors.
+Materials/textures: Refined stone, warm architectural surfaces, delicate leaf clusters, smooth lake reflections, paved walkways.
+Constraints: Fictional campus architecture, no claims to portray a particular actual university building. No text, no letters, no logos, no watermark, no UI elements. Output a high-resolution landscape image.
