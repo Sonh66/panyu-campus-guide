@@ -13,6 +13,13 @@ const mapping = JSON.parse(
   ),
 );
 const byId = new Map(catalog.map((entry) => [entry.id, entry]));
+const provenance = JSON.parse(
+  await fs.readFile(
+    new URL("../docs/catalog-provenance.json", import.meta.url),
+    "utf8",
+  ),
+);
+const provenanceById = new Map(provenance.map((entry) => [entry.id, entry]));
 
 test("all 50 PDF pages have imported, readable entries and page provenance", () => {
   assert.deepEqual(
@@ -23,12 +30,12 @@ test("all 50 PDF pages have imported, readable entries and page provenance", () 
     assert.ok(row.entryIds.length > 0, `Page ${row.page} is missing`);
     for (const id of row.entryIds) {
       const entry = byId.get(id);
-      assert.equal(entry?.sourceState, "pdf");
-      assert.ok(entry.sourcePages.includes(row.page));
+      assert.equal(provenanceById.get(id)?.sourceState, "pdf");
+      assert.ok(provenanceById.get(id).sourcePages.includes(row.page));
       assert.ok(entry.content.length > 0);
     }
   }
-  assert.ok(byId.get("pdf-jnu-secure-wifi").sourcePages.includes(26));
+  assert.ok(provenanceById.get("pdf-jnu-secure-wifi").sourcePages.includes(26));
   assert.match(
     byId.get("pdf-jnu-secure-wifi").content.join(" "),
     /个人校园网密码/,
@@ -95,10 +102,11 @@ test("each named takeout program is independent and searchable", () => {
   }
 });
 
-test("network faults in a dorm lead to network repair with PDF evidence", () => {
+test("network faults lead to network repair without revealing data sources", () => {
   const result = localAnswer("我的宿舍网络坏了怎么报修", catalog);
   assert.equal(result.recommendations[0], "pdf-campus-network-repair");
-  assert.match(result.answer, /PDF 第/);
+  assert.match(result.answer, /MyNet/);
+  assert.doesNotMatch(result.answer, /PDF|宝典|原文|kdocs/i);
 });
 
 test("PDF extra links use explicit website, phone and email schemes", () => {

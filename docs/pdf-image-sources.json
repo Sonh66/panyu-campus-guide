@@ -1,7 +1,7 @@
 [
   {
-    "filename": "public/images/pdf/xinzao-campus-minibus.jpeg",
-    "publicPath": "/images/pdf/xinzao-campus-minibus.jpeg",
+    "filename": "public/images/campus/xinzao-campus-minibus.jpeg",
+    "publicPath": "/images/campus/xinzao-campus-minibus.jpeg",
     "width": 800,
     "height": 600,
     "entryId": "pdf-xinzao-campus-minibus",
@@ -21,8 +21,8 @@
     "visualChecked": true
   },
   {
-    "filename": "public/images/pdf/ruyue-bus.jpeg",
-    "publicPath": "/images/pdf/ruyue-bus.jpeg",
+    "filename": "public/images/campus/ruyue-bus.jpeg",
+    "publicPath": "/images/campus/ruyue-bus.jpeg",
     "width": 800,
     "height": 448,
     "entryId": "pdf-ruyue-bus",
@@ -42,8 +42,8 @@
     "visualChecked": true
   },
   {
-    "filename": "public/images/pdf/takeout-lockers.jpeg",
-    "publicPath": "/images/pdf/takeout-lockers.jpeg",
+    "filename": "public/images/campus/takeout-lockers.jpeg",
+    "publicPath": "/images/campus/takeout-lockers.jpeg",
     "width": 1036,
     "height": 1280,
     "entryId": "pdf-offcampus-takeout-lockers",
@@ -63,8 +63,8 @@
     "visualChecked": true
   },
   {
-    "filename": "public/images/pdf/takeout-kuaituan.png",
-    "publicPath": "/images/pdf/takeout-kuaituan.png",
+    "filename": "public/images/campus/takeout-kuaituan.png",
+    "publicPath": "/images/campus/takeout-kuaituan.png",
     "width": 393,
     "height": 443,
     "entryId": "pdf-takeout-kuaituan",
@@ -84,8 +84,8 @@
     "visualChecked": true
   },
   {
-    "filename": "public/images/pdf/takeout-jnu-canteen.png",
-    "publicPath": "/images/pdf/takeout-jnu-canteen.png",
+    "filename": "public/images/campus/takeout-jnu-canteen.png",
+    "publicPath": "/images/campus/takeout-jnu-canteen.png",
     "width": 396,
     "height": 444,
     "entryId": "pdf-takeout-jnu-canteen",
@@ -105,8 +105,8 @@
     "visualChecked": true
   },
   {
-    "filename": "public/images/pdf/takeout-gouzhong.png",
-    "publicPath": "/images/pdf/takeout-gouzhong.png",
+    "filename": "public/images/campus/takeout-gouzhong.png",
+    "publicPath": "/images/campus/takeout-gouzhong.png",
     "width": 375,
     "height": 456,
     "entryId": "pdf-takeout-gouzhong",
@@ -126,8 +126,8 @@
     "visualChecked": true
   },
   {
-    "filename": "public/images/pdf/takeout-jnu-delivery.png",
-    "publicPath": "/images/pdf/takeout-jnu-delivery.png",
+    "filename": "public/images/campus/takeout-jnu-delivery.png",
+    "publicPath": "/images/campus/takeout-jnu-delivery.png",
     "width": 360,
     "height": 435,
     "entryId": "pdf-takeout-jnu-delivery",
@@ -147,8 +147,8 @@
     "visualChecked": true
   },
   {
-    "filename": "public/images/pdf/takeout-waimaigou.png",
-    "publicPath": "/images/pdf/takeout-waimaigou.png",
+    "filename": "public/images/campus/takeout-waimaigou.png",
+    "publicPath": "/images/campus/takeout-waimaigou.png",
     "width": 381,
     "height": 441,
     "entryId": "pdf-takeout-waimaigou",
@@ -168,8 +168,8 @@
     "visualChecked": true
   },
   {
-    "filename": "public/images/pdf/takeout-xingqiudiandian.png",
-    "publicPath": "/images/pdf/takeout-xingqiudiandian.png",
+    "filename": "public/images/campus/takeout-xingqiudiandian.png",
+    "publicPath": "/images/campus/takeout-xingqiudiandian.png",
     "width": 378,
     "height": 432,
     "entryId": "pdf-takeout-xingqiudiandian",
@@ -189,8 +189,8 @@
     "visualChecked": true
   },
   {
-    "filename": "public/images/pdf/takeout-askforfan.png",
-    "publicPath": "/images/pdf/takeout-askforfan.png",
+    "filename": "public/images/campus/takeout-askforfan.png",
+    "publicPath": "/images/campus/takeout-askforfan.png",
     "width": 381,
     "height": 444,
     "entryId": "pdf-takeout-askforfan",
@@ -210,8 +210,8 @@
     "visualChecked": true
   },
   {
-    "filename": "public/images/pdf/takeout-wuyougo.png",
-    "publicPath": "/images/pdf/takeout-wuyougo.png",
+    "filename": "public/images/campus/takeout-wuyougo.png",
+    "publicPath": "/images/campus/takeout-wuyougo.png",
     "width": 381,
     "height": 447,
     "entryId": "pdf-takeout-wuyougo",
@@ -231,8 +231,8 @@
     "visualChecked": true
   },
   {
-    "filename": "public/images/pdf/takeout-yidianda.png",
-    "publicPath": "/images/pdf/takeout-yidianda.png",
+    "filename": "public/images/campus/takeout-yidianda.png",
+    "publicPath": "/images/campus/takeout-yidianda.png",
     "width": 369,
     "height": 444,
     "entryId": "pdf-takeout-yidianda",
@@ -252,8 +252,8 @@
     "visualChecked": true
   },
   {
-    "filename": "public/images/pdf/yuhua-hall.jpg",
-    "publicPath": "/images/pdf/yuhua-hall.jpg",
+    "filename": "public/images/campus/yuhua-hall.jpg",
+    "publicPath": "/images/campus/yuhua-hall.jpg",
     "width": 908,
     "height": 682,
     "entryIds": ["pdf-yuhua-canteen"],
@@ -267,8 +267,8 @@
     "visualChecked": true
   },
   {
-    "filename": "public/images/pdf/kfc-campus.jpg",
-    "publicPath": "/images/pdf/kfc-campus.jpg",
+    "filename": "public/images/campus/kfc-campus.jpg",
+    "publicPath": "/images/campus/kfc-campus.jpg",
     "width": 750,
     "height": 562,
     "entryIds": ["pdf-campus-kfc"],
@@ -282,8 +282,8 @@
     "visualChecked": true
   },
   {
-    "filename": "public/images/pdf/food-zone.jpg",
-    "publicPath": "/images/pdf/food-zone.jpg",
+    "filename": "public/images/campus/food-zone.jpg",
+    "publicPath": "/images/campus/food-zone.jpg",
     "width": 780,
     "height": 484,
     "entryIds": [
@@ -303,8 +303,8 @@
     "visualChecked": true
   },
   {
-    "filename": "public/images/pdf/campus-coach.jpg",
-    "publicPath": "/images/pdf/campus-coach.jpg",
+    "filename": "public/images/campus/campus-coach.jpg",
+    "publicPath": "/images/campus/campus-coach.jpg",
     "width": 598,
     "height": 307,
     "entryIds": ["pdf-teaching-shuttle"],
@@ -318,8 +318,8 @@
     "visualChecked": true
   },
   {
-    "filename": "public/images/pdf/campus-map.jpg",
-    "publicPath": "/images/pdf/campus-map.jpg",
+    "filename": "public/images/campus/campus-map.jpg",
+    "publicPath": "/images/campus/campus-map.jpg",
     "width": 819,
     "height": 533,
     "entryIds": ["pdf-campus-map"],

@@ -1,0 +1,156 @@
+[
+  {
+    "entryId": "pdf-jnuid-login",
+    "path": "images/entries/pdf-jnuid-login.webp",
+    "url": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "笔记本电脑与统一身份登录场景",
+    "credit": "主题场景配图 · 非具体校园设施",
+    "width": 1200,
+    "height": 960,
+    "sha256": "a27578664b671d3c5c3aa156f55e7d560da7f9c145d9404b87113d96ca586733"
+  },
+  {
+    "entryId": "pdf-jnuid-password-reset",
+    "path": "images/entries/pdf-jnuid-password-reset.webp",
+    "url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "数字安全与密码保护场景",
+    "credit": "主题场景配图 · 非具体校园设施",
+    "width": 1200,
+    "height": 800,
+    "sha256": "003914d9e5113d9c87a047a9a6531736311bd67643876816e35f1a0fc9ca0c7e"
+  },
+  {
+    "entryId": "pdf-wechat-service-hub",
+    "path": "images/entries/pdf-wechat-service-hub.webp",
+    "url": "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "手机操作与校园微服务场景",
+    "credit": "主题场景配图 · 非具体校园设施",
+    "width": 1200,
+    "height": 901,
+    "sha256": "e22d4c829eb604c9b4b0d66ddf551b6df2a9d73073edb5e679f264f29eddd98d"
+  },
+  {
+    "entryId": "pdf-campus-card-entry",
+    "path": "images/entries/pdf-campus-card-entry.webp",
+    "url": "https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?auto=format&fit=crop&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "卡片与服务终端场景",
+    "credit": "主题场景配图 · 非具体校园设施",
+    "width": 1200,
+    "height": 800,
+    "sha256": "5648b96d9d07ffa1ba6eae68066455a2c4e3b8c702f899e9da983fa1ac46b1cf"
+  },
+  {
+    "entryId": "pdf-network-application",
+    "path": "images/entries/pdf-network-application.webp",
+    "url": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "电脑工作区与网络服务申请场景",
+    "credit": "主题场景配图 · 非具体校园设施",
+    "width": 1200,
+    "height": 800,
+    "sha256": "123462d531c9a74c7c5967b95a40573d3534dbe45ec9e46f635470ea9db618ff"
+  },
+  {
+    "entryId": "pdf-jnu-secure-wifi",
+    "path": "images/entries/pdf-jnu-secure-wifi.webp",
+    "url": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "网络安全与无线连接场景",
+    "credit": "主题场景配图 · 非具体校园设施",
+    "width": 1200,
+    "height": 800,
+    "sha256": "d616cea3bd8d231426414fc3c6cc6763cc3a6bc297f67ad3b21022fce185c1f8"
+  },
+  {
+    "entryId": "pdf-wired-network",
+    "path": "images/entries/pdf-wired-network.webp",
+    "url": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "以太网网线与有线连接场景",
+    "credit": "主题场景配图 · 非具体校园设施",
+    "width": 1200,
+    "height": 800,
+    "sha256": "35bcb3890bd16ba2bff393965de4263ba79b58aaf07c09e5f0ad70369a40917f"
+  },
+  {
+    "entryId": "pdf-campus-network-repair",
+    "path": "images/entries/pdf-campus-network-repair.webp",
+    "url": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "设备检测与网络维修场景",
+    "credit": "主题场景配图 · 非具体校园设施",
+    "width": 1200,
+    "height": 800,
+    "sha256": "64484300d75721dba64ad575f90777bc40c719b4eeaa0a158a16db07107e5631"
+  },
+  {
+    "entryId": "pdf-network-service-locations",
+    "path": "images/entries/pdf-network-service-locations.webp",
+    "url": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "团队服务与网络支持场景",
+    "credit": "主题场景配图 · 非具体校园设施",
+    "width": 1200,
+    "height": 1799,
+    "sha256": "ac577895e67a398ba2c600a955888c84b348594b92e08ff9a1b23668a23c10f1"
+  },
+  {
+    "entryId": "pdf-tuition-payment",
+    "path": "images/entries/pdf-tuition-payment.webp",
+    "url": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "计算器与学费核对场景",
+    "credit": "主题场景配图 · 非具体校园设施",
+    "width": 1200,
+    "height": 689,
+    "sha256": "09e81bbc508c955c011126faf82e5337d0d73b87254d205e1e48dff94feb0cd6"
+  },
+  {
+    "entryId": "pdf-finance-hall",
+    "path": "images/entries/pdf-finance-hall.webp",
+    "url": "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "财务账目与业务管理场景",
+    "credit": "主题场景配图 · 非具体校园设施",
+    "width": 1200,
+    "height": 844,
+    "sha256": "695fe9534aeef1aff6dfb6a387638d1b7753c77e69f96300882cde068d988231"
+  },
+  {
+    "entryId": "pdf-dorm-water-electricity",
+    "path": "images/entries/pdf-dorm-water-electricity.webp",
+    "url": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "电力设施与水电费用场景",
+    "credit": "主题场景配图 · 非具体校园设施",
+    "width": 1200,
+    "height": 800,
+    "sha256": "b59b35f3569590a620e6fab99b5143d29e0ae50889552af4fb8e07f6871671e4"
+  },
+  {
+    "entryId": "pdf-jnu-deepseek",
+    "path": "images/entries/pdf-jnu-deepseek.webp",
+    "url": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "人工智能与数字技术场景",
+    "credit": "主题场景配图 · 非具体校园设施",
+    "width": 1200,
+    "height": 675,
+    "sha256": "9a2099498fee2754f493a9e6ca647b6ac1e852eb01b997cd957f8377aa50a88f"
+  },
+  {
+    "entryId": "pdf-digital-resources",
+    "path": "images/entries/pdf-digital-resources.webp",
+    "url": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "书籍笔记与数字学习资源场景",
+    "credit": "主题场景配图 · 非具体校园设施",
+    "width": 1200,
+    "height": 901,
+    "sha256": "7d464b7ca0d4c3072a5624a27d537d8187da08ae711ef14dcbfa3631a3fae548"
+  }
+]

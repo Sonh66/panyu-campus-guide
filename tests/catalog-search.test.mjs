@@ -44,7 +44,7 @@ test("valid model destinations are unique and map to existing categories", () =>
 });
 test("catalog links are HTTPS and entries are uniquely identified", () => {
   assert.equal(new Set(catalog.map((entry) => entry.id)).size, catalog.length);
-  catalog.forEach((entry) =>
-    assert.equal(new URL(entry.url).protocol, "https:"),
-  );
+  catalog
+    .filter((entry) => entry.url)
+    .forEach((entry) => assert.equal(new URL(entry.url).protocol, "https:"));
 });

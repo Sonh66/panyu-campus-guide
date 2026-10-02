@@ -55,7 +55,7 @@ async function open(entry) {
     await page.locator(".detail-scroll").evaluate((el) => el.scrollTop),
     0,
   );
-  if (entry.image.startsWith("images/pdf/"))
+  if (entry.imageFit === "contain")
     assert.equal(
       geometry.fit,
       "contain",
@@ -109,17 +109,19 @@ try {
   assert.equal(await page.locator(".filter-tabs a").count(), 13);
   for (const entry of catalog) {
     await open(entry);
-    if (entry.sourceState === "pdf") {
-      assert.equal(
-        await page.locator(".detail-prose p").count(),
-        entry.content.length,
-      );
-      assert.equal(await page.locator(".detail-page-reference").count(), 1);
-    }
+    assert.equal(
+      await page.locator(".detail-prose p").count(),
+      entry.content.length,
+    );
+    assert.equal(await page.locator(".detail-page-reference").count(), 0);
+    assert.doesNotMatch(
+      await page.locator(".entry-dialog").innerText(),
+      /PDF|Untitled|宝典|原文|kdocs/i,
+    );
     await close(entry);
   }
   console.log(
-    `PASS: ${catalog.length} detail images, PDF paragraphs, page references, Escape focus restore`,
+    `PASS: ${catalog.length} detail images, business instructions, source privacy, Escape focus restore`,
   );
 
   const shuttle = byId("pdf-teaching-shuttle");
@@ -134,10 +136,7 @@ try {
     el.scrollTop = el.scrollHeight;
   });
   assert.ok(await table.evaluate((el) => el.scrollTop > 0));
-  const cta = page.locator(".detail-cta");
-  await cta.scrollIntoViewIfNeeded();
-  assert.equal(await cta.getAttribute("href"), shuttle.url);
-  assert.equal(await cta.innerText(), "查看原文攻略");
+  assert.equal(await page.locator(".detail-cta").count(), 0);
   await close(shuttle, "bottom");
 
   const mapEntry = byId("pdf-campus-map");

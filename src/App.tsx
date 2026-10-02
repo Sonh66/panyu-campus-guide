@@ -40,7 +40,7 @@ import { localAnswer, searchCatalog } from "../server/catalog-search.mjs";
 
 gsap.registerPlugin(ScrollTrigger);
 const pagesDeployment = import.meta.env.VITE_DEPLOY_TARGET === "github-pages";
-const sourceUrl = "https://www.kdocs.cn/l/cd8vwmB6EhQt";
+const portalUrl = "https://info.jnu.edu.cn/";
 type Entry = {
   id: string;
   title: string;
@@ -50,17 +50,14 @@ type Entry = {
   tags: string[];
   stages: string[];
   steps: string[];
-  sourceLabel: string;
-  checkedOn: string;
-  sourceState: string;
   content: string[];
   links: { label: string; url: string }[];
-  sourcePages: number[];
   tables: { columns: string[]; rows: string[][]; caption?: string }[];
   image: string;
   imageAlt: string;
   imageCredit: string;
-  sourceNote: string;
+  notice: string;
+  imageFit?: string;
   gallery: { image: string; alt: string; caption: string }[];
 };
 const catalog: Entry[] = rawCatalog;
@@ -284,12 +281,7 @@ function EntryCard({
         <span className="entry-copy">
           <strong>{entry.title}</strong>
           <span>{entry.summary}</span>
-          <small>
-            {entry.sourceState === "pdf" && entry.sourcePages.length
-              ? `攻略 PDF · 第 ${entry.sourcePages.join("、")} 页`
-              : entry.sourceLabel}
-            {entry.sourceState === "provided" ? " · 原文入口" : ""}
-          </small>
+          <small>{categories[entry.category].title} · 查看指南</small>
         </span>
         <span className="entry-arrow">
           <ArrowUpRight size={19} aria-hidden="true" />
@@ -339,16 +331,17 @@ function SearchBox({
     </form>
   );
 }
-function SourceNote() {
+function ServiceNotice() {
   return (
     <div className="source-note">
       <BookOpen size={19} aria-hidden="true" />
-      <p>
-        已按 50 页 PDF 整理校园攻略，具体时间、价格与办理方式以最新说明为准。
-        原有扩展入口仍需回到原文或官网核对。
-      </p>
-      <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
-        查看原文
+      <p>校园服务可能调整，具体时间、价格与办理方式请查看最新通知。</p>
+      <a
+        href="https://panyu.jnu.edu.cn/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        校区通知
         <ExternalLink size={14} aria-hidden="true" />
       </a>
     </div>
@@ -598,7 +591,7 @@ function Home({
             </a>
           ))}
         </div>
-        <SourceNote />
+        <ServiceNotice />
       </section>
     </>
   );
@@ -681,7 +674,7 @@ function Guide({
           </a>
         </div>
       )}
-      <SourceNote />
+      <ServiceNotice />
     </div>
   );
 }
@@ -747,7 +740,7 @@ function Journey({
           <EntryCard key={entry.id} entry={entry} onOpen={onOpen} />
         ))}
       </div>
-      <SourceNote />
+      <ServiceNotice />
     </div>
   );
 }
@@ -968,7 +961,7 @@ function Chat({
                             <CategoryIcon category={entry.category} size={18} />
                             <span>
                               {entry.title}
-                              <small>{entry.sourceLabel}</small>
+                              <small>{categories[entry.category].title}</small>
                             </span>
                             <ChevronRight size={17} aria-hidden="true" />
                           </button>
@@ -1062,8 +1055,8 @@ function AskPage({ onOpen }: { onOpen: (entry: Entry) => void }) {
           ))}
           <div className="ask-source">
             <ShieldCheck size={22} aria-hidden="true" />
-            <strong>有来源，才有方向</strong>
-            <p>入口来自学校官网、公开服务网站及你提供的原文攻略。</p>
+            <strong>把需要办的事，快速找到</strong>
+            <p>告诉向导你的需求，查看对应分类、操作步骤与校园服务入口。</p>
           </div>
         </aside>
         <div className="full-chat">
@@ -1125,7 +1118,7 @@ function EntryDialog({
           </button>
           <div className="detail-scroll" ref={detailScroll}>
             <figure
-              className={`detail-cover ${entry.image.startsWith("images/pdf/") ? "detail-cover-original" : ""}`}
+              className={`detail-cover ${entry.imageFit === "contain" ? "detail-cover-original" : ""}`}
             >
               <img
                 src={assetUrl(entry.image)}
@@ -1140,19 +1133,9 @@ function EntryDialog({
                   <CategoryIcon category={entry.category} size={19} />
                   {categories[entry.category].title}
                 </span>
-                {entry.imageCredit && <small>{entry.imageCredit}</small>}
               </figcaption>
             </figure>
             <div className="detail-content">
-              <div className="detail-source-row">
-                <span className="detail-source">{entry.sourceLabel}</span>
-                {entry.sourcePages.length > 0 && (
-                  <span className="detail-page-reference">
-                    <BookOpen size={14} aria-hidden="true" />
-                    PDF 第 {entry.sourcePages.join("、")} 页
-                  </span>
-                )}
-              </div>
               <h2 id="detail-title">{entry.title}</h2>
               <p id="detail-summary" className="detail-summary">
                 {entry.summary}
@@ -1160,9 +1143,9 @@ function EntryDialog({
               {entry.content.length > 0 && (
                 <section
                   className="detail-section detail-prose"
-                  aria-label="攻略正文"
+                  aria-label="业务说明"
                 >
-                  <h3>攻略详情</h3>
+                  <h3>业务详情</h3>
                   {entry.content.map((paragraph, index) => (
                     <p key={`${entry.id}-paragraph-${index}`}>{paragraph}</p>
                   ))}
@@ -1219,10 +1202,10 @@ function EntryDialog({
                 </section>
               ))}
               {entry.gallery.length > 0 && (
-                <section className="detail-section" aria-label="攻略原图">
-                  <h3>攻略里的图片</h3>
+                <section className="detail-section" aria-label="位置与服务图片">
+                  <h3>位置与服务图片</h3>
                   <p className="detail-gallery-hint">
-                    点击图片，在新窗口查看原图。
+                    点击图片，在新窗口放大查看。
                   </p>
                   <div className="detail-gallery">
                     {entry.gallery.map((picture, index) => (
@@ -1232,7 +1215,7 @@ function EntryDialog({
                         target="_blank"
                         rel="noopener noreferrer"
                         className="detail-gallery-item"
-                        aria-label={`查看原图：${picture.alt}`}
+                        aria-label={`放大图片：${picture.alt}`}
                       >
                         <img
                           src={assetUrl(picture.image)}
@@ -1282,32 +1265,21 @@ function EntryDialog({
               <div className="detail-note">
                 <ShieldCheck size={19} aria-hidden="true" />
                 <div>
-                  <strong>
-                    {entry.sourceState === "pdf"
-                      ? "资料来源与时效"
-                      : "来源说明"}
-                  </strong>
-                  {entry.sourceNote && <p>{entry.sourceNote}</p>}
-                  <p>
-                    {entry.sourceState === "pdf"
-                      ? "本条内容已按所提供的 PDF 整理；资料时间及现行价格、班次、联系方式尚未核实，请以学校或服务方最新说明为准。"
-                      : entry.sourceState === "provided"
-                        ? "这是原有扩展入口，具体内容仍需回到原文核对。查看 WPS 原文可能需要登录。"
-                        : "本条提供官方服务入口，具体条件、时间和办理方式请核对最新通知。"}
-                  </p>
+                  <strong>办理提醒</strong>
+                  <p>{entry.notice}</p>
                 </div>
               </div>
-              <a
-                className="primary-button detail-cta"
-                href={entry.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {entry.url.includes("kdocs.cn")
-                  ? "查看原文攻略"
-                  : "打开官网或来源"}
-                <ExternalLink size={17} aria-hidden="true" />
-              </a>
+              {entry.url && (
+                <a
+                  className="primary-button detail-cta"
+                  href={entry.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  打开服务网站
+                  <ExternalLink size={17} aria-hidden="true" />
+                </a>
+              )}
               <a
                 className="detail-category"
                 href={guideHref(entry.category)}
@@ -1572,11 +1544,11 @@ export default function App() {
           </nav>
           <a
             className="header-source"
-            href={sourceUrl}
+            href={portalUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
-            原文攻略
+            校园服务
             <ExternalLink size={15} aria-hidden="true" />
           </a>
         </div>
@@ -1598,8 +1570,12 @@ export default function App() {
           <p>从入学到毕业，校园生活有处可寻。</p>
         </div>
         <div className="footer-actions">
-          <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
-            番禺校区攻略宝典
+          <a
+            href="https://www.jnu.edu.cn/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            暨南大学官网
             <ExternalLink size={14} aria-hidden="true" />
           </a>
           <button

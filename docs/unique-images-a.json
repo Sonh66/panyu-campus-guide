@@ -1,0 +1,211 @@
+[
+  {
+    "entryId": "pdf-xingan-supermarket",
+    "path": "images/entries/pdf-xingan-supermarket.webp",
+    "url": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "超市生鲜货架通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 900,
+    "sha256": "6a955880edde9adf2fd7dccd0bc22075cfad5d1c2e66bc79d1495564d86be763"
+  },
+  {
+    "entryId": "pdf-speciality-restaurant",
+    "path": "images/entries/pdf-speciality-restaurant.webp",
+    "url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "特色餐厅用餐空间通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 800,
+    "sha256": "d4066fa8539cc0d78e5ba2bdd57e9b4f7b8d5af50e9f728052f35a00cd14d76a"
+  },
+  {
+    "entryId": "pdf-shanbei-restaurant",
+    "path": "images/entries/pdf-shanbei-restaurant.webp",
+    "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "餐厅餐食与就餐通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 800,
+    "sha256": "7e3ceac20c15b6f2450a5d216f1eac080b4d5dc847d34a311d48951da1bf5ecb"
+  },
+  {
+    "entryId": "pdf-hongli-canteen",
+    "path": "images/entries/pdf-hongli-canteen.webp",
+    "url": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "食堂熟食餐点通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 1800,
+    "sha256": "ce3ecb6209911535103a5478d7d8965bb02d06131f85ae320d676b1b1b0044c2"
+  },
+  {
+    "entryId": "pdf-lakeside-restaurant",
+    "path": "images/entries/pdf-lakeside-restaurant.webp",
+    "url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "湖景餐厅就餐环境通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 900,
+    "sha256": "60b273e2fef8959c72f6b5b4cde938b7c03b1f6397cae7bd0b2b1e5d655b495d"
+  },
+  {
+    "entryId": "pdf-f5-rice-noodles",
+    "path": "images/entries/pdf-f5-rice-noodles.webp",
+    "url": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "米粉面食通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 1200,
+    "sha256": "c418803ad793bdd33e6e913e77ea570c92f4648953f892969bf02459e69c0ab9"
+  },
+  {
+    "entryId": "pdf-encounter-noodles-east",
+    "path": "images/entries/pdf-encounter-noodles-east.webp",
+    "url": "https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "面条与配菜通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 1500,
+    "sha256": "81762c9bc9c949169f68b701ca5945dd011545404eace650bf220494c8aca2db"
+  },
+  {
+    "entryId": "pdf-mcdonalds-east",
+    "path": "images/entries/pdf-mcdonalds-east.webp",
+    "url": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "汉堡快餐通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 799,
+    "sha256": "a3732727d5365e58c5f683c3914c03d4c1d7981409faa12f81bbbcb7fbd07fbd"
+  },
+  {
+    "entryId": "pdf-jiliudaren-east",
+    "path": "images/entries/pdf-jiliudaren-east.webp",
+    "url": "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "炸鸡快餐通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 798,
+    "sha256": "19972380796904358dc31c47b3a14cf84d9e2a5454a48f3b88a5e144233a0764"
+  },
+  {
+    "entryId": "pdf-luckin-t3",
+    "path": "images/entries/pdf-luckin-t3.webp",
+    "url": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "冰咖啡饮品通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 801,
+    "sha256": "c71bf032995d1013c76c6c8362f1be35be5022c7c55f9289a4aa9197582656f4"
+  },
+  {
+    "entryId": "pdf-ningji-t5",
+    "path": "images/entries/pdf-ningji-t5.webp",
+    "url": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "柠檬青柠与水果冰饮通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 1475,
+    "sha256": "3c359ffbc82c501421a7b41ef47586194b36230a17fc66a226c6433feb1f7d97"
+  },
+  {
+    "entryId": "pdf-cotti-t5",
+    "path": "images/entries/pdf-cotti-t5.webp",
+    "url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "拿铁咖啡饮品通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 800,
+    "sha256": "b47b53bcb92960cf77289b51a7abbf71118f8bc05a3d832adb060e5e7adb9ac6"
+  },
+  {
+    "entryId": "pdf-luckin-east",
+    "path": "images/entries/pdf-luckin-east.webp",
+    "url": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "咖啡豆与咖啡制作通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 915,
+    "sha256": "d0fa57c58f73f2a59ad8fc56f5befb5770b18e13b7a719a85433d4516ab8bf3c"
+  },
+  {
+    "entryId": "pdf-chabaidao-east",
+    "path": "images/entries/pdf-chabaidao-east.webp",
+    "url": "https://images.unsplash.com/photo-1558857563-b371033873b8?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "茶饮奶茶通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 1800,
+    "sha256": "54a54454d743e38158d9b6865f376975f537025f081bb269e159a7eb47bccdcb"
+  },
+  {
+    "entryId": "food-campus",
+    "path": "images/entries/food-campus.webp",
+    "url": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "校园日常营养餐通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 800,
+    "sha256": "d002d0e48b1c6a0d269ef5f6fb4d2304b68eddebbee487de7f455be30e7c0f91"
+  },
+  {
+    "entryId": "laundry",
+    "path": "images/entries/laundry.webp",
+    "url": "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "洗衣后折叠整理的衣物通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 800,
+    "sha256": "b40f3a5f7729d20576fb1cbc7fabddd8eb0d20d5a5e8f251ed72c4222faa6287"
+  },
+  {
+    "entryId": "clothing",
+    "path": "images/entries/clothing.webp",
+    "url": "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "衣物衣架与换季整理通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 800,
+    "sha256": "5dd9f1bec7874f2f0007c69f081d8d07146b62768eee9be6b6996402862cc1f0"
+  },
+  {
+    "entryId": "reuse",
+    "path": "images/entries/reuse.webp",
+    "url": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "毕业前分类整理与再利用衣物通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 800,
+    "sha256": "a2d9ab3fe4fc4505b42d460b455d9e7b3c7cb9c70d3ebe19edcec43331cab18a"
+  },
+  {
+    "entryId": "pdf-takeout-wuyougo",
+    "path": "images/entries/pdf-takeout-wuyougo.webp",
+    "url": "https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=max&w=1200&q=86",
+    "license": "Unsplash License — https://unsplash.com/license",
+    "alt": "携带保温箱骑行的外卖配送员通用配图",
+    "credit": "Unsplash 通用场景配图，非暨南大学或对应门店实景",
+    "width": 1200,
+    "height": 800,
+    "sha256": "68a627d8a60a50a4798eb24933e21af5f07f2d2fde7447814878ee751a88a731"
+  }
+]

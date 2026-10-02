@@ -141,7 +141,7 @@ export function localAnswer(query, catalog) {
     return {
       mode: "local",
       answer:
-        "目前的站内资料没有匹配到这个问题。可以换成具体需求，例如“宿舍报修”“新生报到”或“找实习”，也可以打开原文攻略继续查找。",
+        "目前的站内资料没有匹配到这个问题。可以换成具体需求，例如“宿舍报修”“新生报到”或“找实习”，也可以按分类继续查找。",
       recommendations: [],
       categories: [],
     };
@@ -152,13 +152,9 @@ export function localAnswer(query, catalog) {
     .map((category) => categoryLabels[category])
     .join("、");
   const first = recommendations[0];
-  const evidence =
-    first.sourceState === "pdf"
-      ? `《番禺校区攻略》PDF 第 ${first.sourcePages.join("、")} 页：${first.summary}`
-      : first.summary;
   return {
     mode: "local",
-    answer: `找到${labels}相关资料。${evidence}\n点击下方条目查看完整步骤、图片和来源。原攻略中的时间、价格与营业状态是历史信息，请核对学校或商家的最新说明。`,
+    answer: `找到${labels}相关指南。${first.summary}\n点击下方条目查看完整步骤、图片与服务入口。具体安排请核对学校或商家的最新说明。`,
     recommendations: recommendations.map((entry) => entry.id),
     categories,
   };

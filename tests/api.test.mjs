@@ -67,6 +67,12 @@ test("local API labels retrieval and rejects invalid input or origins", async (t
     403,
   );
   assert.equal((await fetch(`${base}/api/status`)).status, 200);
+  for (const privatePath of [
+    "/docs/catalog-provenance.json",
+    "/Untitled.pdf",
+    "/docs/pdf-page-map.json",
+  ])
+    assert.equal((await fetch(`${base}${privatePath}`)).status, 404);
 });
 test("model API validates provider recommendations and surfaces outages", async (t) => {
   let scenario = "valid";
