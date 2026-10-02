@@ -32,6 +32,7 @@ import catalog from "./catalog.json";
 import { localAnswer, searchCatalog } from "../server/catalog-search.mjs";
 
 gsap.registerPlugin(ScrollTrigger);
+const pagesDeployment = import.meta.env.VITE_DEPLOY_TARGET === "github-pages";
 const sourceUrl = "https://www.kdocs.cn/l/cd8vwmB6EhQt";
 type Entry = (typeof catalog)[number];
 type Category = {
@@ -299,7 +300,7 @@ function Home({
         </div>
         <div className="hero-scene">
           <img
-            src="/images/campus-illustration.webp"
+            src={`${import.meta.env.BASE_URL}images/campus-illustration.webp`}
             alt="亚热带校园、湖畔步道与骑车学生的原创意象插画"
             fetchPriority="high"
             width="1672"
@@ -359,7 +360,7 @@ function Home({
                   <p>{category.description}</p>
                 </div>
                 <img
-                  src={`/images/${category.image}.jpg`}
+                  src={`${import.meta.env.BASE_URL}images/${category.image}.jpg`}
                   alt=""
                   loading="lazy"
                   width="300"
@@ -684,6 +685,11 @@ function Chat({
   const sendLock = useRef(false);
   useEffect(() => {
     const abort = new AbortController();
+    if (pagesDeployment)
+      return () => {
+        abort.abort();
+        controller.current?.abort();
+      };
     fetch("/api/status", { signal: abort.signal })
       .then((response) => (response.ok ? response.json() : Promise.reject()))
       .then((status) => {

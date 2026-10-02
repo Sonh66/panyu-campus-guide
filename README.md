@@ -61,3 +61,13 @@ npm run check
 包含 TypeScript 编译、生产构建及目录检索/模型目标限制测试。浏览器交互检查脚本位于 `tests/browser-check.mjs`，运行前启动服务；通过 `BROWSER_EXECUTABLE` 指定可用的 Chromium 可执行文件。
 
 服务器默认仅监听本机；对外运行可设置 `HOST=0.0.0.0`，正式部署时由 HTTPS 网关提供访问控制与请求限制。仓库本身不等于已部署网站，GitHub 私有仓库只保存源码。
+
+## GitHub Pages 部署
+
+仓库包含 `.github/workflows/pages.yml`。在 GitHub 仓库 Settings → Pages 中选择 GitHub Actions，启用成功后，在仓库 Actions Variables 中设置 `PAGES_ENABLED=true`，随后推送 main 或手动执行 Deploy campus guide to GitHub Pages。工作流完成构建、测试和部署。
+
+Pages 构建采用相对资源路径，支持项目子目录；使用 hash 导航，刷新分类页面无需服务器重写。Pages 上的校园向导明确使用浏览器内站内检索，不请求不存在的服务端接口。Node AI 接口仍保留在源码中，但 GitHub Pages 不运行 Node 服务。
+
+私有仓库启用 Pages 取决于账号套餐与仓库设置。部署不会自动修改仓库为公开。正式地址以 GitHub Pages 返回的 URL 为准。
+
+当前账号的私有仓库 Pages 启用请求被 GitHub 套餐规则拒绝。构建工作流仍可运行，部署步骤默认跳过；不会自动改变仓库可见性。
