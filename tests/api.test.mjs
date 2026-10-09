@@ -115,4 +115,13 @@ test("model API validates provider recommendations and surfaces outages", async 
   assert.equal((await question(base, "报修")).status, 502);
   scenario = "outage";
   assert.equal((await question(base, "报修")).status, 502);
+  const urgent = await question(base, "胸痛呼吸困难怎么办");
+  assert.equal(urgent.status, 200);
+  const urgentReply = await urgent.json();
+  assert.equal(urgentReply.mode, "local");
+  assert.match(urgentReply.answer, /立即拨打 120/);
+  assert.deepEqual(urgentReply.recommendations, [
+    "health-guide",
+    "pdf-campus-clinic-location",
+  ]);
 });

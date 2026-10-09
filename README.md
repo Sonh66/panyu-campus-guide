@@ -63,7 +63,7 @@ React、TypeScript、Vite、GSAP、ScrollTrigger、Lucide。包含页面进出�
 npm run check
 ```
 
-包含 TypeScript 编译、生产构建，以及 17 项目录检索、模型目标限制、50 页内容核对、完整表格、封面去重和来源隐藏测试。`tests/unique-images-browser.py` 根据目录数量解码全部封面并比较 RGB 像素，在电脑与手机分别打开全部指南，验证图片和向导回复。其他交互检查位于 `tests/browser-check.mjs` 与 `tests/pdf-browser-check.mjs`。运行浏览器检查前启动服务，通过 `BROWSER_EXECUTABLE` 指定 Chromium。
+包含 TypeScript 编译、生产构建，以及 19 项目录检索、紧急健康分流、模型目标限制、50 页内容核对、完整表格、封面去重和来源隐藏测试。`tests/unique-images-browser.py` 根据目录数量解码全部封面并比较 RGB 像素，在电脑与手机分别打开全部指南，验证图片和向导回复。其他交互检查位于 `tests/browser-check.mjs` 与 `tests/pdf-browser-check.mjs`。运行浏览器检查前启动服务，通过 `BROWSER_EXECUTABLE` 指定 Chromium。
 
 服务器默认仅监听本机；对外运行可设置 `HOST=0.0.0.0`，正式部署时由 HTTPS 网关提供访问控制与请求限制。仓库本身不等于已部署网站。
 
@@ -73,4 +73,4 @@ npm run check
 
 Pages 构建采用相对资源路径，支持项目子目录；使用 hash 导航，刷新分类页面无需服务器重写。Pages 上的校园向导明确使用浏览器内站内检索，不请求不存在的服务端接口。Node AI 接口仍保留在源码中，但 GitHub Pages 不运行 Node 服务。
 
-仓库已按所有者要求改为公开。Pages 仍需单独启用，部署步骤只在 `PAGES_ENABLED=true` 时运行；正式地址以 GitHub Pages 返回的 URL 为准。
+仓库已按所有者要求改为公开，Pages 已启用。当前地址为 https://campus.sonh.me/ ，HTTP 自动跳转 HTTPS。部署步骤在 `PAGES_ENABLED=true` 时运行。

@@ -3,7 +3,11 @@ import http from "node:http";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { localAnswer, validateModelAnswer } from "./catalog-search.mjs";
+import {
+  localAnswer,
+  validateModelAnswer,
+  urgentHealthQuery,
+} from "./catalog-search.mjs";
 
 const projectRoot = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -138,7 +142,7 @@ const server = http.createServer(async (request, response) => {
     }
     try {
       const result =
-        configuredValues === 3
+        configuredValues === 3 && !urgentHealthQuery(question)
           ? await modelAnswer(question)
           : localAnswer(question, catalog);
       return reply(response, 200, result);

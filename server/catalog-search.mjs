@@ -64,8 +64,19 @@ const categoryLabels = {
   logistics: "快递收发",
   facilities: "校园地图",
 };
+export function urgentHealthQuery(query) {
+  return /呼吸困难|喘不过气|意识不清|昏迷|严重胸痛|持续胸痛|大量出血/.test(
+    query,
+  );
+}
+function urgentHealthEntries(catalog) {
+  return ["health-guide", "pdf-campus-clinic-location"]
+    .map((id) => catalog.find((entry) => entry.id === id))
+    .filter(Boolean);
+}
 export function searchCatalog(query, catalog) {
   const normalized = query.trim().toLowerCase();
+  if (urgentHealthQuery(normalized)) return urgentHealthEntries(catalog);
   const networkQuery = categoryWords.network.some((word) =>
     normalized.includes(word),
   );
@@ -136,6 +147,16 @@ export function searchCatalog(query, catalog) {
     .map((match) => match.entry);
 }
 export function localAnswer(query, catalog) {
+  if (urgentHealthQuery(query)) {
+    const entries = urgentHealthEntries(catalog);
+    return {
+      mode: "local",
+      answer:
+        "如果你或身边的人正在出现呼吸困难、严重胸痛、意识不清或大量出血等紧急症状，请立即拨打 120，并请现场人员协助说明位置。不要等待线上回复或自行诊断。下方提供校医室联系方式和就医指南。",
+      recommendations: entries.map((entry) => entry.id),
+      categories: [...new Set(entries.map((entry) => entry.category))],
+    };
+  }
   const recommendations = searchCatalog(query, catalog).slice(0, 4);
   if (recommendations.length === 0)
     return {

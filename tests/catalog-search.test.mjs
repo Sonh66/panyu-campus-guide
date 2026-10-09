@@ -21,6 +21,22 @@ test("medical queries recommend health sources", () => {
     "health",
   );
 });
+
+test("urgent breathing symptoms take priority over financial hardship keywords", () => {
+  const question = "胸痛呼吸困难怎么办";
+  assert.equal(searchCatalog(question, catalog)[0].id, "health-guide");
+  const result = localAnswer(question, catalog);
+  assert.match(result.answer, /立即拨打 120/);
+  assert.ok(!result.recommendations.includes("scholarship"));
+  assert.deepEqual(result.categories, ["health"]);
+});
+
+test("ordinary financial hardship still leads to student aid", () => {
+  assert.equal(
+    searchCatalog("家庭经济困难申请助学金", catalog)[0].id,
+    "scholarship",
+  );
+});
 test("unknown questions do not invent destinations", () => {
   const result = localAnswer("量子引力张量", catalog);
   assert.deepEqual(result.recommendations, []);
