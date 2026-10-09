@@ -1,0 +1,38 @@
+[
+  {
+    "entryId": "chunhui-n2-canteen",
+    "path": "images/entries/chunhui-n2-canteen.webp",
+    "alt": "蔬菜与热食餐盘的食堂主题配图",
+    "credit": "Unsplash 通用主题场景 · 非具体校园设施",
+    "url": "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=max&w=1200&q=86",
+    "license": "https://unsplash.com/license",
+    "sha256": "a1fe9af867307c7918d1bbc113dd6d8be4416921eee4dc492e0c83c64c971acf"
+  },
+  {
+    "entryId": "n4-canteen-project",
+    "path": "images/entries/n4-canteen-project.webp",
+    "alt": "建筑设计与施工规划主题配图",
+    "credit": "Unsplash 通用主题场景 · 非具体校园设施",
+    "url": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=max&w=1200&q=86",
+    "license": "https://unsplash.com/license",
+    "sha256": "50012b9eb8ba6200b6e8b9272d1e175fca5011a67db6043886adad8ff83037e5"
+  },
+  {
+    "entryId": "campus-service-hall",
+    "path": "images/entries/campus-service-hall.webp",
+    "alt": "明亮接待空间与综合服务主题配图",
+    "credit": "Unsplash 通用主题场景 · 非具体校园设施",
+    "url": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=max&w=1200&q=86",
+    "license": "https://unsplash.com/license",
+    "sha256": "6db4e989813f068dc6a2768a9178652f002964157bd5e2bac5184353191f85d6"
+  },
+  {
+    "entryId": "campus-cycling",
+    "path": "images/entries/campus-cycling.webp",
+    "alt": "户外骑行与校园绿色出行主题配图",
+    "credit": "Unsplash 通用主题场景 · 非具体校园设施",
+    "url": "https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=max&w=1200&q=86",
+    "license": "https://unsplash.com/license",
+    "sha256": "93dd18cae5f618b2ce117e70ef4f61c36e1317b1ffd640158f9367e76514f082"
+  }
+]

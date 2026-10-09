@@ -26,14 +26,14 @@ AI 只能推荐目录中已存在的条目 ID；前端通过本地目录解析�
 
 ## 内容来源与当前限制
 
-- 已逐页整理用户提供的 50 页 `Untitled.pdf`，导入 51 条指南；另保留 19 条补充导航，共 70 条。网页展示直接的业务说明、步骤与完整表格，不显示 PDF、宝典名称、来源页码和原文链接。
+- 在原有 70 条业务指南基础上，补充了 28 条生活服务内容，并新增春晖园 N2 食堂、N4 食堂建设动态、N120 综合服务大厅与校内骑行指南，共 74 条。网页展示业务说明、步骤与表格，不显示资料文件、来源页码和原始文档链接。
 - WPS 在线原文仍要求登录，PDF 内容不代表在线文档实时同步。PDF 中 2024/2025 年界面、班次、营业状态与优惠均为历史资料，整理日期不代表其当前有效。
 - 已纳入可访问的暨南大学、番禺校区、图书馆、学生处、就业、教务、广州地铁与 12306 官网。教务需要学校账号登录。
 - 不编造食堂价格、商家地址、就医地点、校车时刻或学校政策。所有具体安排以官网为准。
 - 网站提供导航与查询线索，目前不具备学校业务办理、预约、支付或报修系统接口。
 - 没有接入大模型密钥，初始交付使用站内智能检索。
 
-编辑 `src/catalog.json` 可维护公开分类、正文、步骤、表格、图片和实际服务链接；没有直接网址的小程序提供微信名称搜索步骤。原始整理记录与页码单独保存在私有仓库的 `docs/catalog-provenance.json` 和 `docs/pdf-page-map.json` 中，这些文件不进入网页构建。详见 [内部内容核对说明](docs/source-notes.md)。
+编辑 `src/catalog.json` 可维护公开分类、正文、步骤、表格、图片和实际服务链接；没有直接网址的小程序提供微信名称搜索步骤。早期整理记录与页码保存在 `docs/catalog-provenance.json` 和 `docs/pdf-page-map.json` 中，不进入网页构建。后续原始资料与逐页核对记录保存在仓库外。详见 [内容核对说明](docs/source-notes.md)。
 
 ## 动画与界面
 
@@ -53,7 +53,7 @@ React、TypeScript、Vite、GSAP、ScrollTrigger、Lucide。包含页面进出�
 
 另新增 10 张主题场景图，来源、许可与说明见 [主题图片清单](docs/section-image-sources.json)。从 PDF 提取 17 张原图：校园地图、餐饮分布图、裕华堂、KFC、三种班车、外卖柜与九个小程序分享卡片，来源见 [PDF 图片清单](docs/pdf-image-sources.json)。原 PDF 中个人身份与账号信息未发布。
 
-业务封面采用 55 张独立照片与 15 张各自不同的校园/服务图片，共 70 张；12 个分类封面另行保留，82 张封面互不重复。照片分别匹配各业务主题，同一张照片不会用于另一业务或分类，也不会通过换名或裁切重复使用。照片授权与来源只在私有维护清单记录：[餐饮及衣物](docs/unique-images-a.json)、[生活及办事](docs/unique-images-b.json)、[数字校园](docs/unique-images-root.json)。
+业务封面采用 59 张独立照片与 15 张各自不同的校园/服务图片，共 74 张；12 个分类封面另行保留，86 张封面互不重复。照片分别匹配各业务主题，同一张照片不会用于另一业务或分类，也不会通过换名或裁切重复使用。照片授权与来源在维护清单记录：[餐饮及衣物](docs/unique-images-a.json)、[生活及办事](docs/unique-images-b.json)、[数字校园](docs/unique-images-root.json)、[新增生活服务](docs/life-guide-images.json)。
 
 来源：https://unsplash.com/ 。许可：https://unsplash.com/license 。GSAP 许可随安装包提供。
 
@@ -63,9 +63,9 @@ React、TypeScript、Vite、GSAP、ScrollTrigger、Lucide。包含页面进出�
 npm run check
 ```
 
-包含 TypeScript 编译、生产构建，以及 17 项目录检索、模型目标限制、50 页内部核对、完整表格、封面去重和来源隐藏测试。`tests/unique-images-browser.py` 对 82 张封面解码并比较 RGB 像素，在电脑与手机分别打开全部 70 条指南，验证图片和 AI 回复；详见 [图片验收记录](docs/unique-image-review.md)。其他交互检查位于 `tests/browser-check.mjs` 与 `tests/pdf-browser-check.mjs`。运行浏览器检查前启动服务，通过 `BROWSER_EXECUTABLE` 指定 Chromium。
+包含 TypeScript 编译、生产构建，以及 17 项目录检索、模型目标限制、50 页内容核对、完整表格、封面去重和来源隐藏测试。`tests/unique-images-browser.py` 根据目录数量解码全部封面并比较 RGB 像素，在电脑与手机分别打开全部指南，验证图片和向导回复。其他交互检查位于 `tests/browser-check.mjs` 与 `tests/pdf-browser-check.mjs`。运行浏览器检查前启动服务，通过 `BROWSER_EXECUTABLE` 指定 Chromium。
 
-服务器默认仅监听本机；对外运行可设置 `HOST=0.0.0.0`，正式部署时由 HTTPS 网关提供访问控制与请求限制。仓库本身不等于已部署网站，GitHub 私有仓库只保存源码。
+服务器默认仅监听本机；对外运行可设置 `HOST=0.0.0.0`，正式部署时由 HTTPS 网关提供访问控制与请求限制。仓库本身不等于已部署网站。
 
 ## GitHub Pages 部署
 
@@ -73,6 +73,4 @@ npm run check
 
 Pages 构建采用相对资源路径，支持项目子目录；使用 hash 导航，刷新分类页面无需服务器重写。Pages 上的校园向导明确使用浏览器内站内检索，不请求不存在的服务端接口。Node AI 接口仍保留在源码中，但 GitHub Pages 不运行 Node 服务。
 
-私有仓库启用 Pages 取决于账号套餐与仓库设置。部署不会自动修改仓库为公开。正式地址以 GitHub Pages 返回的 URL 为准。
-
-当前账号的私有仓库 Pages 启用请求被 GitHub 套餐规则拒绝。构建工作流仍可运行，部署步骤默认跳过；不会自动改变仓库可见性。
+仓库已按所有者要求改为公开。Pages 仍需单独启用，部署步骤只在 `PAGES_ENABLED=true` 时运行；正式地址以 GitHub Pages 返回的 URL 为准。

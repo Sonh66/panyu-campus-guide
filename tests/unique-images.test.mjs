@@ -35,17 +35,20 @@ async function categoryImages() {
   );
 }
 
-test("each of 70 business entries and 12 categories has a different cover file", async () => {
-  assert.equal(
-    catalog.length,
-    70,
-    "A business entry was added or removed unexpectedly",
+test("every business entry and all 12 categories have different cover files", async () => {
+  assert.ok(
+    catalog.length >= 70,
+    "Previously imported businesses must remain available",
   );
-  assert.equal(byId.size, 70, "Business entry IDs must remain unique");
+  assert.equal(
+    byId.size,
+    catalog.length,
+    "Business entry IDs must remain unique",
+  );
   const entryImages = catalog.map((entry) => entry.image);
   assert.equal(
     new Set(entryImages).size,
-    70,
+    catalog.length,
     "Entry covers reuse the same image path",
   );
   const covers = await categoryImages();
@@ -54,7 +57,7 @@ test("each of 70 business entries and 12 categories has a different cover file",
   const allImages = [...entryImages, ...covers];
   assert.equal(
     new Set(allImages).size,
-    82,
+    catalog.length + covers.length,
     "Category and entry covers share a picture",
   );
   const hashes = new Map();

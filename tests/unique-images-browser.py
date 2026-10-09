@@ -41,8 +41,8 @@ def difference_hash(image):
 
 def image_audit(catalog):
     covers = [(entry["id"], entry["image"]) for entry in catalog] + category_covers()
-    assert len(covers) == 82, f"Expected 82 covers, received {len(covers)}"
-    assert len({path for _, path in covers}) == 82, "Cover paths are reused"
+    assert len(covers) == len(catalog) + 12, "Every entry and category needs a cover"
+    assert len({path for _, path in covers}) == len(covers), "Cover paths are reused"
     file_hashes, pixel_hashes = {}, {}
     result = []
     for business_id, relative in covers:
@@ -149,12 +149,17 @@ def browser_audit(catalog, base, executable, entry_ids=None):
                 "payment": "pdf-tuition-payment",
                 "takeout-kuaituan": "pdf-takeout-kuaituan",
                 "takeout-wuyou": "pdf-takeout-wuyougo",
+                "clinic-hours": "health-guide",
+                "housing-repair": "repair",
+                "service-hall": "campus-service-hall",
+                "n2-canteen": "chunhui-n2-canteen",
+                "cycling": "campus-cycling",
             }
             for size_label, viewport in [("desktop", {"width": 1440, "height": 1100}), ("mobile", {"width": 390, "height": 844})]:
                 page.set_viewport_size(viewport)
                 navigate("#/guide")
                 cards = page.locator(".entry-card")
-                expect(cards).to_have_count(70)
+                expect(cards).to_have_count(len(catalog))
                 assert_no_source(page, f"{size_label} guide")
                 assert_no_overflow(page, f"{size_label} guide")
                 for entry in selected:
