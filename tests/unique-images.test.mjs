@@ -7,6 +7,12 @@ import { localAnswer } from "../server/catalog-search.mjs";
 const catalog = JSON.parse(
   await fs.readFile(new URL("../src/catalog.json", import.meta.url), "utf8"),
 );
+const transitions = JSON.parse(
+  await fs.readFile(
+    new URL("../src/catalog-transitions.json", import.meta.url),
+    "utf8",
+  ),
+);
 const byId = new Map(catalog.map((entry) => [entry.id, entry]));
 const digest = (value) => createHash("sha256").update(value).digest("hex");
 const forbiddenPublicSource =
@@ -137,10 +143,18 @@ test("all 51 imported businesses and complete schedule rows survive the image up
       .filter((entry) => entry.id.startsWith("pdf-"))
       .map((entry) => entry.id)
       .sort(),
-    expectedImportedIds.toSorted(),
+    expectedImportedIds
+      .filter(
+        (id) => !transitions.aliases[id] && !transitions.removed.includes(id),
+      )
+      .toSorted(),
   );
   for (const id of expectedImportedIds) {
-    const entry = byId.get(id);
+    if (transitions.removed.includes(id)) {
+      assert.ok(!byId.has(id));
+      continue;
+    }
+    const entry = byId.get(transitions.aliases[id] || id);
     assert.ok(
       entry.content.length > 0,
       `${id} has lost its business instructions`,
@@ -183,6 +197,21 @@ test("business text and assistant replies do not expose the user's source docume
         ...table.rows.flat(),
       ]),
       ...entry.links.map((link) => `${link.label} ${link.url}`),
+      ...entry.sections.flatMap((section) => [
+        section.title,
+        ...section.blocks.flatMap((block) => {
+          if (block.type === "paragraph") return [block.text];
+          if (block.type === "image") return [block.alt, block.caption];
+          if (block.type === "steps") return block.items;
+          if (block.type === "table")
+            return [
+              block.caption || "",
+              ...block.columns,
+              ...block.rows.flat(),
+            ];
+          return block.items.map((link) => link.label);
+        }),
+      ]),
     ];
     assert.doesNotMatch(
       visibleFields.join("\n"),

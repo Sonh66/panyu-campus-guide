@@ -36,6 +36,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import rawCatalog from "./catalog.json";
+import catalogTransitions from "./catalog-transitions.json";
 import { localAnswer, searchCatalog } from "../server/catalog-search.mjs";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -59,8 +60,24 @@ type Entry = {
   notice: string;
   imageFit?: string;
   gallery: { image: string; alt: string; caption: string }[];
+  sections: DetailSection[];
+  relatedEntries: string[];
 };
-const catalog: Entry[] = rawCatalog;
+type DetailBlock =
+  | { type: "paragraph"; text: string }
+  | { type: "steps"; items: string[] }
+  | {
+      type: "image";
+      image: string;
+      alt: string;
+      caption: string;
+      width?: number;
+      height?: number;
+    }
+  | { type: "table"; columns: string[]; rows: string[][]; caption?: string }
+  | { type: "links"; items: { label: string; url: string }[] };
+type DetailSection = { id: string; title: string; blocks: DetailBlock[] };
+const catalog = rawCatalog as Entry[];
 function assetUrl(path: string) {
   return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
 }
@@ -204,11 +221,17 @@ type Route =
   | { page: "home" }
   | { page: "guide"; category: string; query: string }
   | { page: "journey"; stage: string }
+  | { page: "entry"; id: string }
   | { page: "ask" };
 function readRoute(): Route {
   const hash = window.location.hash.slice(1);
   const [pathname, parameters] = hash.split("?");
   const query = new URLSearchParams(parameters);
+  if (pathname?.startsWith("/entry/")) {
+    const id = pathname.slice(7);
+    const aliases = catalogTransitions.aliases as Record<string, string>;
+    return { page: "entry", id: aliases[id] || id };
+  }
   if (pathname === "/guide")
     return {
       page: "guide",
@@ -219,6 +242,9 @@ function readRoute(): Route {
     return { page: "journey", stage: query.get("stage") || "arrival" };
   if (pathname === "/ask") return { page: "ask" };
   return { page: "home" };
+}
+function entryHref(id: string) {
+  return `#/entry/${encodeURIComponent(id)}`;
 }
 function guideHref(category = "all", query = "") {
   return `#/guide?category=${encodeURIComponent(category)}${query ? `&q=${encodeURIComponent(query)}` : ""}`;
@@ -254,15 +280,14 @@ function Brand({ small = false }: { small?: boolean }) {
 }
 function EntryCard({
   entry,
-  onOpen,
 }: {
   entry: Entry;
   onOpen: (entry: Entry) => void;
 }) {
   return (
-    <button
+    <article
       className={`entry-card tone-${categories[entry.category].color}`}
-      onClick={() => onOpen(entry)}
+      data-entry-id={entry.id}
     >
       <span className="entry-thumbnail">
         <img
@@ -279,15 +304,23 @@ function EntryCard({
       </span>
       <span className="entry-card-body">
         <span className="entry-copy">
-          <strong>{entry.title}</strong>
+          <strong>
+            <a href={entryHref(entry.id)}>{entry.title}</a>
+          </strong>
           <span>{entry.summary}</span>
-          <small>{categories[entry.category].title} · 查看指南</small>
+          <a
+            className="entry-details-button"
+            href={entryHref(entry.id)}
+            aria-label={`查看详情：${entry.title}`}
+          >
+            查看详情 <ArrowUpRight size={17} aria-hidden="true" />
+          </a>
         </span>
         <span className="entry-arrow">
           <ArrowUpRight size={19} aria-hidden="true" />
         </span>
       </span>
-    </button>
+    </article>
   );
 }
 function SearchBox({
@@ -575,7 +608,7 @@ function Home({
             { title: "图书馆", url: "https://lib.jnu.edu.cn/", icon: BookOpen },
             {
               title: "实习与就业",
-              url: "https://career.jnu.edu.cn/",
+              url: "https://scdc.jnu.edu.cn/",
               icon: GraduationCap,
             },
           ].map((link) => (
@@ -654,6 +687,7 @@ function Guide({
           </a>
         ))}
       </nav>
+      {route.category === "facilities" && !route.query && <MapFeature />}
       <div className="results-label" role="status">
         {route.query ? `“${route.query}”的相关入口` : "可浏览的服务入口"}
         <span>{entries.length} 项</span>
@@ -1066,238 +1100,356 @@ function AskPage({ onOpen }: { onOpen: (entry: Entry) => void }) {
     </div>
   );
 }
-function EntryDialog({
-  entry,
-  onClose,
-}: {
-  entry: Entry | null;
-  onClose: () => void;
-}) {
-  const dialog = useRef<HTMLDialogElement>(null);
-  const detailScroll = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const element = dialog.current;
-    if (!element) return;
-    if (entry) {
-      element.scrollTop = 0;
-      if (detailScroll.current) detailScroll.current.scrollTop = 0;
-      if (!element.open) {
-        element.showModal();
-        if (!reducedMotion())
-          gsap.fromTo(
-            element,
-            { opacity: 0, y: 22, scale: 0.97 },
-            { opacity: 1, y: 0, scale: 1, duration: 0.32, ease: "power3.out" },
-          );
-      }
-    }
-    if (!entry && element.open) element.close();
-    return () => {
-      gsap.killTweensOf(element);
-    };
-  }, [entry]);
+function ResourceText({ text }: { text: string }) {
   return (
-    <dialog
-      ref={dialog}
-      className="entry-dialog"
-      aria-labelledby="detail-title"
-      aria-describedby="detail-summary"
-      onCancel={onClose}
-      onClick={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
-    >
-      {entry && (
-        <>
-          <button
-            className="dialog-close"
-            aria-label="关闭指南详情"
-            onClick={onClose}
-          >
-            <X size={21} aria-hidden="true" />
-          </button>
-          <div className="detail-scroll" ref={detailScroll}>
-            <figure
-              className={`detail-cover ${entry.imageFit === "contain" ? "detail-cover-original" : ""}`}
+    <>
+      {text
+        .split(/(https:\/\/[A-Za-z0-9._~:/?#\[\]@!$&'()*+,;=%-]+)/g)
+        .map((part, index) =>
+          part.startsWith("https://") ? (
+            <a
+              className="inline-resource"
+              key={index}
+              href={part}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <img
-                src={assetUrl(entry.image)}
-                alt={entry.imageAlt}
-                width="1400"
-                height="800"
-              />
-              <figcaption>
-                <span
-                  className={`detail-cover-category tone-${categories[entry.category].color}`}
-                >
-                  <CategoryIcon category={entry.category} size={19} />
-                  {categories[entry.category].title}
-                </span>
-              </figcaption>
-            </figure>
-            <div className="detail-content">
-              <h2 id="detail-title">{entry.title}</h2>
-              <p id="detail-summary" className="detail-summary">
-                {entry.summary}
-              </p>
-              {entry.content.length > 0 && (
-                <section
-                  className="detail-section detail-prose"
-                  aria-label="业务说明"
-                >
-                  <h3>业务详情</h3>
-                  {entry.content.map((paragraph, index) => (
-                    <p key={`${entry.id}-paragraph-${index}`}>{paragraph}</p>
-                  ))}
-                </section>
-              )}
-              {entry.steps.length > 0 && (
-                <section className="detail-section" aria-label="办理与使用步骤">
-                  <h3>从这里开始</h3>
-                  <ol className="detail-steps">
-                    {entry.steps.map((step, index) => (
-                      <li key={`${entry.id}-step-${index}`}>{step}</li>
-                    ))}
-                  </ol>
-                </section>
-              )}
-              {entry.tables.map((table, index) => (
-                <section
-                  className="detail-section detail-table-section"
-                  key={`${entry.id}-table-${index}`}
-                >
-                  <h3 id={`detail-table-${index}`}>
-                    {table.caption || "参考信息表"}
-                  </h3>
-                  <p className="detail-table-hint">
-                    表格可上下、左右滚动查看完整信息。
-                  </p>
-                  <div
-                    className="detail-table-scroll"
-                    role="region"
-                    aria-labelledby={`detail-table-${index}`}
-                    tabIndex={0}
-                  >
-                    <table>
-                      <thead>
-                        <tr>
-                          {table.columns.map((column, columnIndex) => (
-                            <th key={columnIndex} scope="col">
-                              {column}
-                            </th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {table.rows.map((row, rowIndex) => (
-                          <tr key={rowIndex}>
-                            {row.map((cell, cellIndex) => (
-                              <td key={cellIndex}>{cell}</td>
-                            ))}
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </section>
-              ))}
-              {entry.gallery.length > 0 && (
-                <section className="detail-section" aria-label="位置与操作图解">
-                  <h3>位置与操作图解</h3>
-                  <p className="detail-gallery-hint">
-                    点击图片，在新窗口放大查看。
-                  </p>
-                  <div className="detail-gallery">
-                    {entry.gallery.map((picture, index) => (
-                      <a
-                        key={`${entry.id}-gallery-${index}`}
-                        href={assetUrl(picture.image)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="detail-gallery-item"
-                        aria-label={`放大图片：${picture.alt}`}
-                      >
-                        <img
-                          src={assetUrl(picture.image)}
-                          alt={picture.alt}
-                          loading="lazy"
-                        />
-                        <span>
-                          {picture.caption}
-                          <ExternalLink size={14} aria-hidden="true" />
-                        </span>
-                      </a>
-                    ))}
-                  </div>
-                </section>
-              )}
-              {entry.links.length > 0 && (
-                <section className="detail-section" aria-label="联系与网站入口">
-                  <h3>联系与相关入口</h3>
-                  <div className="detail-links">
-                    {entry.links.map((link, index) => (
-                      <a
-                        key={`${entry.id}-link-${index}`}
-                        href={link.url}
-                        target={
-                          link.url.startsWith("http") ? "_blank" : undefined
-                        }
-                        rel={
-                          link.url.startsWith("http")
-                            ? "noopener noreferrer"
-                            : undefined
-                        }
-                      >
-                        {link.url.startsWith("tel:") ? (
-                          <Phone size={17} aria-hidden="true" />
-                        ) : link.url.startsWith("mailto:") ? (
-                          <Mail size={17} aria-hidden="true" />
-                        ) : (
-                          <ExternalLink size={17} aria-hidden="true" />
-                        )}
-                        <span>{link.label}</span>
-                        <ArrowUpRight size={15} aria-hidden="true" />
-                      </a>
-                    ))}
-                  </div>
-                </section>
-              )}
-              <div className="detail-note">
-                <ShieldCheck size={19} aria-hidden="true" />
-                <div>
-                  <strong>办理提醒</strong>
-                  <p>{entry.notice}</p>
-                </div>
-              </div>
-              {entry.url && (
-                <a
-                  className="primary-button detail-cta"
-                  href={entry.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  打开服务网站
-                  <ExternalLink size={17} aria-hidden="true" />
-                </a>
-              )}
-              <a
-                className="detail-category"
-                href={guideHref(entry.category)}
-                onClick={onClose}
-              >
-                继续浏览{categories[entry.category].title}
-              </a>
-              <button className="detail-close-bottom" onClick={onClose}>
-                关闭本条指南
-                <X size={16} aria-hidden="true" />
-              </button>
-            </div>
-          </div>
-        </>
-      )}
-    </dialog>
+              {part}
+            </a>
+          ) : (
+            part
+          ),
+        )}
+    </>
   );
 }
+function DetailLinks({ links }: { links: { label: string; url: string }[] }) {
+  return (
+    <div className="detail-links">
+      {links.map((link, i) => (
+        <a
+          key={i}
+          href={link.url}
+          target={link.url.startsWith("http") ? "_blank" : undefined}
+          rel={link.url.startsWith("http") ? "noopener noreferrer" : undefined}
+        >
+          {link.url.startsWith("tel:") ? (
+            <Phone size={17} aria-hidden="true" />
+          ) : link.url.startsWith("mailto:") ? (
+            <Mail size={17} aria-hidden="true" />
+          ) : (
+            <ExternalLink size={17} aria-hidden="true" />
+          )}
+          <span>{link.label}</span>
+          <ArrowUpRight size={15} aria-hidden="true" />
+        </a>
+      ))}
+    </div>
+  );
+}
+function DetailPage({ id }: { id: string }) {
+  const entry = catalog.find((item) => item.id === id);
+  const [activeSection, setActiveSection] = useState("");
+  const article = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (!entry) {
+      document.title = "指南暂不可用 · 番禺校园指南";
+      return;
+    }
+    document.title = `${entry.title} · 番禺校园指南`;
+    const sections =
+      article.current?.querySelectorAll<HTMLElement>(".reading-section") || [];
+    const observer = new IntersectionObserver(
+      (items) => {
+        const visible = items
+          .filter((item) => item.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible[0]) setActiveSection(visible[0].target.id);
+      },
+      { rootMargin: "-100px 0px -55% 0px", threshold: 0 },
+    );
+    sections.forEach((section) => observer.observe(section));
+    setActiveSection(entry.sections[0]?.id || "");
+    if (window.location.hash !== entryHref(entry.id))
+      window.history.replaceState(
+        window.history.state,
+        "",
+        entryHref(entry.id),
+      );
+    return () => {
+      observer.disconnect();
+      document.title = "番禺校园指南";
+    };
+  }, [entry]);
+  if (!entry)
+    return (
+      <div className="inner-page detail-unavailable">
+        <h1>这条指南暂不可用</h1>
+        <p>相关内容已调整，请在生活指南中选择当前可用的服务。</p>
+        <a href={guideHref()} className="primary-button">
+          查看生活指南 <ChevronRight size={18} />
+        </a>
+      </div>
+    );
+  function goTo(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({
+      behavior: reducedMotion() ? "instant" : "smooth",
+      block: "start",
+    });
+    element?.focus({ preventScroll: true });
+  }
+  return (
+    <div
+      className={`inner-page reading-page ${entry.id === "pdf-campus-map" ? "map-reading-page" : ""}`}
+    >
+      <div className="reading-breadcrumb">
+        <button
+          className="back-link"
+          onClick={() => {
+            if (window.history.state?.campusNavigation) window.history.back();
+            else window.location.hash = guideHref(entry.category);
+          }}
+        >
+          <ChevronLeft size={17} aria-hidden="true" />
+          返回
+        </button>
+        <a href={guideHref(entry.category)}>
+          {categories[entry.category].title}
+        </a>
+        <ChevronRight size={15} aria-hidden="true" />
+        <span>完整指南</span>
+      </div>
+      <header className="reading-header">
+        <span className="location-label">
+          <CategoryIcon category={entry.category} size={18} />
+          {categories[entry.category].title}
+        </span>
+        <h1>{entry.title}</h1>
+        <p>{entry.summary}</p>
+        <div className="reading-actions">
+          {entry.url && (
+            <a
+              className="primary-button"
+              href={entry.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              打开服务入口 <ExternalLink size={17} aria-hidden="true" />
+            </a>
+          )}
+          <button
+            className="secondary-button"
+            onClick={() => {
+              const target = document.getElementById("reading-body");
+              target?.scrollIntoView({
+                behavior: reducedMotion() ? "instant" : "smooth",
+              });
+              target?.focus({ preventScroll: true });
+            }}
+          >
+            阅读图文指南 <ChevronRight size={17} aria-hidden="true" />
+          </button>
+        </div>
+      </header>
+      <figure
+        className={`reading-cover ${entry.imageFit === "contain" ? "reading-cover-original" : ""}`}
+      >
+        <a
+          href={assetUrl(entry.image)}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`放大图片：${entry.imageAlt}`}
+        >
+          <img
+            src={assetUrl(entry.image)}
+            alt={entry.imageAlt}
+            width="1320"
+            height={entry.imageFit === "contain" ? "1225" : "740"}
+          />
+        </a>
+        <figcaption>
+          {entry.imageFit === "contain"
+            ? "完整地图 · 点击查看原尺寸"
+            : "主题场景配图 · 操作与位置图解见下文"}
+        </figcaption>
+      </figure>
+      <div className="reading-layout">
+        <aside className="reading-sidebar">
+          <nav aria-label="本页目录">
+            <strong>本页目录</strong>
+            {entry.sections.map((section, i) => (
+              <button
+                key={section.id}
+                className={activeSection === section.id ? "current" : ""}
+                aria-current={
+                  activeSection === section.id ? "location" : undefined
+                }
+                onClick={() => goTo(section.id)}
+              >
+                <span>{String(i + 1).padStart(2, "0")}</span>
+                {section.title}
+              </button>
+            ))}
+            {entry.links.length > 0 && (
+              <button onClick={() => goTo("reading-links")}>
+                联系与相关入口
+              </button>
+            )}
+          </nav>
+        </aside>
+        <article
+          id="reading-body"
+          className="reading-body"
+          tabIndex={-1}
+          ref={article}
+        >
+          {entry.sections.map((section) => (
+            <section
+              id={section.id}
+              key={section.id}
+              className="reading-section"
+              tabIndex={-1}
+            >
+              <h2>{section.title}</h2>
+              {section.blocks.map((block, index) => {
+                if (block.type === "paragraph")
+                  return (
+                    <p key={index}>
+                      <ResourceText text={block.text} />
+                    </p>
+                  );
+                if (block.type === "steps")
+                  return (
+                    <ol key={index} className="detail-steps">
+                      {block.items.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ol>
+                  );
+                if (block.type === "image")
+                  return (
+                    <figure key={index} className="instruction-figure">
+                      <a
+                        href={assetUrl(block.image)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`放大图片：${block.alt}`}
+                      >
+                        <img
+                          src={assetUrl(block.image)}
+                          alt={block.alt}
+                          width={block.width}
+                          height={block.height}
+                          loading="lazy"
+                        />
+                        <span className="image-expand">
+                          <ExternalLink size={16} aria-hidden="true" />
+                          放大查看
+                        </span>
+                      </a>
+                      <figcaption>{block.caption}</figcaption>
+                    </figure>
+                  );
+                if (block.type === "links")
+                  return <DetailLinks links={block.items} key={index} />;
+                return (
+                  <div className="reading-table" key={index}>
+                    <p className="detail-table-hint">
+                      {block.caption} · 窄屏可左右滑动查看完整表格
+                    </p>
+                    <div
+                      className="detail-table-scroll"
+                      tabIndex={0}
+                      role="region"
+                      aria-label={block.caption || section.title}
+                    >
+                      <table>
+                        <thead>
+                          <tr>
+                            {block.columns.map((column, i) => (
+                              <th key={i} scope="col">
+                                {column}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {block.rows.map((row, i) => (
+                            <tr key={i}>
+                              {row.map((cell, j) => (
+                                <td key={j}>
+                                  <ResourceText text={cell} />
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                );
+              })}
+            </section>
+          ))}
+          {entry.links.length > 0 && (
+            <section
+              id="reading-links"
+              className="reading-section"
+              tabIndex={-1}
+            >
+              <h2>联系与相关入口</h2>
+              <DetailLinks links={entry.links} />
+            </section>
+          )}
+          <div className="detail-note">
+            <ShieldCheck size={20} aria-hidden="true" />
+            <div>
+              <strong>办理提醒</strong>
+              <p>{entry.notice}</p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <section className="related-guides">
+        <h2>继续了解相关服务</h2>
+        <div className="entries-grid">
+          {entry.relatedEntries
+            .map((relatedId) => catalog.find((item) => item.id === relatedId))
+            .filter((item): item is Entry => Boolean(item))
+            .map((item) => (
+              <EntryCard key={item.id} entry={item} onOpen={() => {}} />
+            ))}
+        </div>
+      </section>
+    </div>
+  );
+}
+function MapFeature() {
+  return (
+    <a className="map-feature" href={entryHref("pdf-campus-map")}>
+      <img
+        src={assetUrl("images/campus/panyu-location-map.jpg")}
+        alt="番禺校区新版地图：T1–T20、教学楼、图书馆与校医室"
+        width="1320"
+        height="1225"
+        loading="lazy"
+      />
+      <div>
+        <span className="location-label">
+          <MapIcon size={19} aria-hidden="true" />
+          校园地图
+        </span>
+        <h2>先找到你要去的地方</h2>
+        <p>宿舍、食堂、教学楼、校医室与校门，一张完整地图看清位置。</p>
+        <span className="primary-button">
+          查看完整地图 <ArrowUpRight size={18} aria-hidden="true" />
+        </span>
+      </div>
+    </a>
+  );
+}
+
 function AssistantDialog({
   open,
   question,
@@ -1352,7 +1504,6 @@ function AssistantDialog({
 }
 export default function App() {
   const [route, setRoute] = useState<Route>(readRoute);
-  const [entry, setEntry] = useState<Entry | null>(null);
   const [assistant, setAssistant] = useState({ open: false, question: "" });
   const [menuOpen, setMenuOpen] = useState(false);
   const [motionPaused, setMotionPaused] = useState(false);
@@ -1365,7 +1516,7 @@ export default function App() {
       const next = readRoute();
       setMenuOpen(false);
       setAssistant({ open: false, question: "" });
-      setEntry(null);
+      window.history.replaceState({ campusNavigation: true }, "");
       navigationTween.current?.kill();
       entrance.current?.revert();
       const target = main.current;
@@ -1472,16 +1623,16 @@ export default function App() {
     return () => entrance.current?.revert();
   }, [route, motionPaused]);
   useEffect(() => {
-    document.body.style.overflow = entry || assistant.open ? "hidden" : "";
+    document.body.style.overflow = assistant.open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [entry, assistant.open]);
+  }, [assistant.open]);
   function ask(question: string) {
     setAssistant({ open: true, question });
   }
   function openEntry(next: Entry) {
-    setEntry(next);
+    window.location.hash = entryHref(next.id);
   }
   return (
     <>
@@ -1534,6 +1685,16 @@ export default function App() {
               入学到毕业
             </a>
             <a
+              href={entryHref("pdf-campus-map")}
+              className={
+                route.page === "entry" && route.id === "pdf-campus-map"
+                  ? "active"
+                  : ""
+              }
+            >
+              校园地图
+            </a>
+            <a
               href="#/ask"
               className={route.page === "ask" ? "active" : ""}
               aria-current={route.page === "ask" ? "page" : undefined}
@@ -1560,6 +1721,8 @@ export default function App() {
           <Guide route={route} onOpen={openEntry} />
         ) : route.page === "journey" ? (
           <Journey stageId={route.stage} onOpen={openEntry} />
+        ) : route.page === "entry" ? (
+          <DetailPage key={route.id} id={route.id} />
         ) : (
           <AskPage onOpen={openEntry} />
         )}
@@ -1589,7 +1752,7 @@ export default function App() {
             )}
             {motionPaused ? "动态效果已暂停" : "暂停动态效果"}
           </button>
-          <small>主题照片为场景配图；攻略原图在详情中单独标注。</small>
+          <small>主题照片为场景配图；位置与操作图解可在完整指南中查看。</small>
         </div>
       </footer>
       {route.page !== "ask" && (
@@ -1608,7 +1771,6 @@ export default function App() {
         onClose={() => setAssistant({ open: false, question: "" })}
         onOpen={openEntry}
       />
-      <EntryDialog entry={entry} onClose={() => setEntry(null)} />
     </>
   );
 }

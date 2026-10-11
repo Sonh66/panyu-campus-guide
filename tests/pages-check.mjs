@@ -104,15 +104,20 @@ try {
   );
   await page.waitForTimeout(700);
   await page
-    .getByRole("button", { name: /番禺校区往返新造地铁站校园小巴/ })
+    .getByRole("link", { name: /查看详情：番禺校区往返新造地铁站校园小巴/ })
     .click();
   await page
-    .locator(".detail-cover img")
+    .locator(".reading-cover img")
     .evaluate((element) => element.decode());
-  const busUrl = await page.locator(".detail-cover img").getAttribute("src");
+  const busUrl = await page.locator(".reading-cover img").getAttribute("src");
   if (!busUrl.includes("xinzao-campus-minibus.jpeg"))
     throw new Error("PDF bus image missing under Pages subpath");
-  await page.getByRole("button", { name: "关闭指南详情" }).click();
+  await page.reload();
+  await page.locator(".reading-header h1").waitFor();
+  if (!page.url().includes("#/entry/pdf-xinzao-campus-minibus"))
+    throw new Error("Detail deep link lost on reload");
+  await page.goBack();
+  await page.locator(".page-heading h1").waitFor();
   if (apis.length || problems.length || failed.length)
     throw new Error("Pages static deployment check failed");
 } finally {

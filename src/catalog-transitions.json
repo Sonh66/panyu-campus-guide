@@ -1,0 +1,13 @@
+{
+  "aliases": {
+    "pdf-jnuid-password-reset": "pdf-jnuid-login",
+    "pdf-campus-clinic-location": "health-guide",
+    "housing-guide": "dorm",
+    "metro": "pdf-xinzao-metro",
+    "pdf-express-address": "pdf-express-centre",
+    "pdf-finance-hall": "pdf-tuition-payment",
+    "pdf-luckin-east": "pdf-luckin-t3",
+    "career-recruitment-notices": "career-job-search"
+  },
+  "removed": ["pdf-study-room-location", "pdf-f5-rice-noodles"]
+}

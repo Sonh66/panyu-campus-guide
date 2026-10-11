@@ -19,14 +19,14 @@ console.log("directory entries", await page.locator(".entry-card").count());
 await page.screenshot({ path: "qa/guide-desktop.png", fullPage: true });
 await page.getByRole("link", { name: "安心住下来", exact: true }).click();
 await page.waitForTimeout(700);
-await page.getByRole("button", { name: /宿舍报修与后勤/ }).click();
+await page.getByRole("link", { name: /查看详情：宿舍报修与后勤/ }).click();
 await page.waitForTimeout(500);
 console.log(
-  "dialog visible",
-  await page.getByRole("dialog", { name: "宿舍报修与后勤" }).isVisible(),
+  "detail page visible",
+  await page.locator(".reading-header h1").isVisible(),
 );
 await page.screenshot({ path: "qa/detail.png" });
-await page.getByRole("button", { name: "关闭指南详情" }).click();
+await page.goBack();
 await page.getByRole("button", { name: "打开校园向导" }).click();
 await page.waitForTimeout(500);
 await page.getByLabel("向校园向导提问").fill("我的宿舍空调坏了怎么报修");

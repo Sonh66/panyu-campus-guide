@@ -120,8 +120,5 @@ test("model API validates provider recommendations and surfaces outages", async 
   const urgentReply = await urgent.json();
   assert.equal(urgentReply.mode, "local");
   assert.match(urgentReply.answer, /立即拨打 120/);
-  assert.deepEqual(urgentReply.recommendations, [
-    "health-guide",
-    "pdf-campus-clinic-location",
-  ]);
+  assert.deepEqual(urgentReply.recommendations, ["health-guide"]);
 });

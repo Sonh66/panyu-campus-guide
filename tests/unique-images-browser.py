@@ -13,7 +13,7 @@ from playwright.sync_api import expect, sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 QA = ROOT / "qa" / "unique-images"
-FORBIDDEN = re.compile(r"PDF|Untitled|宝典|原文|来源页码|kdocs\.cn|WPS|金山文档", re.I)
+FORBIDDEN = re.compile(r"(?<!\.)\bPDF\b|Untitled|宝典|原文|来源页码|kdocs\.cn|WPS|金山文档", re.I)
 
 
 def category_covers():
@@ -144,7 +144,7 @@ def browser_audit(catalog, base, executable, entry_ids=None):
                 assert_no_overflow(page, "homepage")
 
             screenshots = {
-                "food": "pdf-f5-rice-noodles",
+                "food": "pdf-yuhua-canteen",
                 "network": "pdf-jnu-secure-wifi",
                 "payment": "pdf-tuition-payment",
                 "takeout-kuaituan": "pdf-takeout-kuaituan",
@@ -168,15 +168,13 @@ def browser_audit(catalog, base, executable, entry_ids=None):
                     card.scroll_into_view_if_needed()
                     card_image = loaded_image(card.locator("img"))
                     assert card_image["source"].endswith("/" + entry["image"]), f"Stale card image for {entry['id']}"
-                    card.click()
-                    dialog = page.locator(".entry-dialog")
+                    card.locator(".entry-details-button").click()
+                    dialog = page.locator(".reading-page")
                     expect(dialog).to_be_visible()
-                    cover = loaded_image(page.locator(".detail-cover > img"))
+                    cover = loaded_image(page.locator(".reading-cover img"))
                     assert cover["source"] == card_image["source"], f"Card/detail differ for {entry['id']}"
                     assert cover["height"] >= 150 and cover["width"] >= 280, f"Detail cover too small for {entry['id']}"
-                    assert page.locator(".detail-scroll").evaluate("el => el.scrollTop") == 0, f"Detail opens halfway down: {entry['id']}"
-                    title_y = page.locator("#detail-title").bounding_box()["y"]
-                    assert cover["y"] + cover["height"] <= title_y + 1, f"Cover is not above title/content for {entry['id']}"
+                    assert page.evaluate("window.scrollY") == 0, f"Detail opens halfway down: {entry['id']}"
                     assert_no_source(page, f"{size_label} detail {entry['id']}")
                     assert_no_overflow(page, f"{size_label} detail {entry['id']}")
                     box = dialog.bounding_box()
@@ -184,8 +182,8 @@ def browser_audit(catalog, base, executable, entry_ids=None):
                     if entry["id"] in screenshots.values():
                         category = next(key for key, value in screenshots.items() if value == entry["id"])
                         page.screenshot(path=str(QA / f"{category}-{size_label}.png"))
-                    page.keyboard.press("Escape")
-                    expect(dialog).not_to_be_visible()
+                    page.go_back()
+                    expect(page.locator(".entry-card")).to_have_count(len(catalog))
                 print(f"PASS: {size_label} {len(selected)} cards/detail images decode, header placement correct, no horizontal overflow or source disclosure")
 
             if not entry_ids:

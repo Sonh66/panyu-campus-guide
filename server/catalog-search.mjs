@@ -85,7 +85,7 @@ export function urgentHealthQuery(query) {
   );
 }
 function urgentHealthEntries(catalog) {
-  return ["health-guide", "pdf-campus-clinic-location"]
+  return ["health-guide"]
     .map((id) => catalog.find((entry) => entry.id === id))
     .filter(Boolean);
 }
@@ -137,6 +137,18 @@ export function searchCatalog(query, catalog) {
         ...(entry.content || []),
         ...entry.steps,
         ...(entry.tables || []).flatMap((table) => table.rows.flat()),
+        ...(entry.sections || []).flatMap((section) => [
+          section.title,
+          ...section.blocks.flatMap((block) => {
+            if (block.type === "paragraph") return [block.text];
+            if (block.type === "steps") return block.items;
+            if (block.type === "table")
+              return [...block.columns, ...block.rows.flat()];
+            if (block.type === "links")
+              return block.items.map((link) => link.label);
+            return [block.alt, block.caption];
+          }),
+        ]),
       ]
         .join(" ")
         .toLowerCase();

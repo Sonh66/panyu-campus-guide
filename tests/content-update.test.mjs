@@ -43,10 +43,7 @@ test("employment schedules retain all supplied events and distinguish closed act
   );
   assert.match(fairs.summary, /已结束/);
   assert.equal(byId.get("career-company-talks").tables[0].rows.length, 22);
-  assert.equal(
-    byId.get("career-recruitment-notices").tables[0].rows.length,
-    20,
-  );
+  assert.equal(byId.get("career-job-search").tables[1].rows.length, 20);
   assert.equal(byId.get("career-job-search").tables[0].rows.length, 15);
   assert.match(
     byId.get("career-selection-policy").content.join(" "),
@@ -58,7 +55,13 @@ test("employment schedules retain all supplied events and distinguish closed act
 
 test("all 19 instruction pictures are attached to relevant guides and the map has changed", async () => {
   const used = new Set(
-    catalog.flatMap((entry) => entry.gallery.map((picture) => picture.image)),
+    catalog.flatMap((entry) =>
+      entry.sections.flatMap((section) =>
+        section.blocks
+          .filter((block) => block.type === "image")
+          .map((block) => block.image),
+      ),
+    ),
   );
   for (let n = 1; n <= 19; n++) {
     const path = `images/instructions/service-step-${String(n).padStart(2, "0")}.png`;
@@ -82,9 +85,11 @@ test("all 19 instruction pictures are attached to relevant guides and the map ha
   );
   const repair = byId.get("pdf-campus-network-repair");
   assert.equal(
-    repair.gallery.filter((image) =>
-      image.image.startsWith("images/instructions/"),
-    ).length,
+    repair.sections
+      .flatMap((section) =>
+        section.blocks.filter((block) => block.type === "image"),
+      )
+      .filter((image) => image.image.startsWith("images/instructions/")).length,
     4,
   );
   assert.match(repair.content.join(" "), /私人账号/);

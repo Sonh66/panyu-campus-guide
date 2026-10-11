@@ -12,6 +12,12 @@ const mapping = JSON.parse(
     "utf8",
   ),
 );
+const transitions = JSON.parse(
+  await fs.readFile(
+    new URL("../src/catalog-transitions.json", import.meta.url),
+    "utf8",
+  ),
+);
 const byId = new Map(catalog.map((entry) => [entry.id, entry]));
 const provenance = JSON.parse(
   await fs.readFile(
@@ -29,7 +35,11 @@ test("all 50 PDF pages have imported, readable entries and page provenance", () 
   for (const row of mapping) {
     assert.ok(row.entryIds.length > 0, `Page ${row.page} is missing`);
     for (const id of row.entryIds) {
-      const entry = byId.get(id);
+      if (transitions.removed.includes(id)) {
+        assert.ok(!byId.has(id));
+        continue;
+      }
+      const entry = byId.get(transitions.aliases[id] || id);
       assert.equal(provenanceById.get(id)?.sourceState, "pdf");
       assert.ok(provenanceById.get(id).sourcePages.includes(row.page));
       assert.ok(entry.content.length > 0);
@@ -50,7 +60,11 @@ test("every entry has a packaged detail image and valid optional galleries", asy
     );
     for (const image of [
       entry.image,
-      ...entry.gallery.map((item) => item.image),
+      ...entry.sections.flatMap((section) =>
+        section.blocks
+          .filter((block) => block.type === "image")
+          .map((block) => block.image),
+      ),
     ]) {
       assert.match(image, /^images\//);
       assert.ok(!image.includes(".."));

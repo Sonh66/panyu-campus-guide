@@ -1,0 +1,736 @@
+{
+  "wordPictures": [
+    {
+      "number": 1,
+      "path": "images/instructions/service-step-01.png",
+      "entryIds": ["welcome"]
+    },
+    {
+      "number": 2,
+      "path": "images/instructions/service-step-02.png",
+      "entryIds": ["intercity-panyu"]
+    },
+    {
+      "number": 3,
+      "path": "images/instructions/service-step-03.png",
+      "entryIds": ["health-guide"]
+    },
+    {
+      "number": 4,
+      "path": "images/instructions/service-step-04.png",
+      "entryIds": ["health-guide"]
+    },
+    {
+      "number": 5,
+      "path": "images/instructions/service-step-05.png",
+      "entryIds": ["pdf-jnuid-login"]
+    },
+    {
+      "number": 6,
+      "path": "images/instructions/service-step-06.png",
+      "entryIds": ["pdf-jnuid-login"]
+    },
+    {
+      "number": 7,
+      "path": "images/instructions/service-step-07.png",
+      "entryIds": ["pdf-jnuid-login"]
+    },
+    {
+      "number": 8,
+      "path": "images/instructions/service-step-08.png",
+      "entryIds": ["pdf-jnuid-login"]
+    },
+    {
+      "number": 9,
+      "path": "images/instructions/service-step-09.png",
+      "entryIds": ["pdf-wechat-service-hub", "pdf-network-application"]
+    },
+    {
+      "number": 10,
+      "path": "images/instructions/service-step-10.png",
+      "entryIds": ["pdf-wechat-service-hub", "pdf-network-application"]
+    },
+    {
+      "number": 11,
+      "path": "images/instructions/service-step-11.png",
+      "entryIds": ["pdf-wechat-service-hub", "pdf-network-application"]
+    },
+    {
+      "number": 12,
+      "path": "images/instructions/service-step-12.png",
+      "entryIds": ["pdf-wechat-service-hub", "pdf-network-application"]
+    },
+    {
+      "number": 13,
+      "path": "images/instructions/service-step-13.png",
+      "entryIds": ["pdf-jnu-secure-wifi"]
+    },
+    {
+      "number": 14,
+      "path": "images/instructions/service-step-14.png",
+      "entryIds": ["pdf-wired-network"]
+    },
+    {
+      "number": 15,
+      "path": "images/instructions/service-step-15.png",
+      "entryIds": ["pdf-wired-network"]
+    },
+    {
+      "number": 16,
+      "path": "images/instructions/service-step-16.png",
+      "entryIds": ["pdf-campus-network-repair"]
+    },
+    {
+      "number": 17,
+      "path": "images/instructions/service-step-17.png",
+      "entryIds": ["pdf-campus-network-repair"]
+    },
+    {
+      "number": 18,
+      "path": "images/instructions/service-step-18.png",
+      "entryIds": ["pdf-campus-network-repair"]
+    },
+    {
+      "number": 19,
+      "path": "images/instructions/service-step-19.png",
+      "entryIds": ["pdf-campus-network-repair"]
+    }
+  ],
+  "embeddedWorkbooks": 3,
+  "wordParagraphs": [
+    {
+      "block": 7,
+      "entryId": "dorm"
+    },
+    {
+      "block": 8,
+      "entryId": "dorm"
+    },
+    {
+      "block": 9,
+      "entryId": "dorm"
+    },
+    {
+      "block": 13,
+      "entryId": "repair"
+    },
+    {
+      "block": 14,
+      "entryId": "repair"
+    },
+    {
+      "block": 16,
+      "entryId": "repair"
+    },
+    {
+      "block": 17,
+      "entryId": "repair"
+    },
+    {
+      "block": 18,
+      "entryId": "repair"
+    },
+    {
+      "block": 19,
+      "entryId": "repair"
+    },
+    {
+      "block": 21,
+      "entryId": "repair"
+    },
+    {
+      "block": 22,
+      "entryId": "repair"
+    },
+    {
+      "block": 23,
+      "entryId": "repair"
+    },
+    {
+      "block": 24,
+      "entryId": "repair"
+    },
+    {
+      "block": 28,
+      "entryId": "dorm"
+    },
+    {
+      "block": 29,
+      "entryId": "dorm"
+    },
+    {
+      "block": 31,
+      "entryId": "dorm"
+    },
+    {
+      "block": 32,
+      "entryId": "dorm"
+    },
+    {
+      "block": 33,
+      "entryId": "dorm"
+    },
+    {
+      "block": 36,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 37,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 38,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 39,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 40,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 41,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 43,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 44,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 45,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 46,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 48,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 52,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 53,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 54,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 55,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 56,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 57,
+      "entryId": "food-campus"
+    },
+    {
+      "block": 61,
+      "entryId": "laundry"
+    },
+    {
+      "block": 62,
+      "entryId": "laundry"
+    },
+    {
+      "block": 63,
+      "entryId": "laundry"
+    },
+    {
+      "block": 64,
+      "entryId": "laundry"
+    },
+    {
+      "block": 66,
+      "entryId": "laundry"
+    },
+    {
+      "block": 67,
+      "entryId": "laundry"
+    },
+    {
+      "block": 70,
+      "entryId": "laundry"
+    },
+    {
+      "block": 71,
+      "entryId": "laundry"
+    },
+    {
+      "block": 72,
+      "entryId": "laundry"
+    },
+    {
+      "block": 73,
+      "entryId": "laundry"
+    },
+    {
+      "block": 77,
+      "entryId": "clothing"
+    },
+    {
+      "block": 78,
+      "entryId": "clothing"
+    },
+    {
+      "block": 80,
+      "entryId": "clothing"
+    },
+    {
+      "block": 81,
+      "entryId": "clothing"
+    },
+    {
+      "block": 82,
+      "entryId": "clothing"
+    },
+    {
+      "block": 84,
+      "entryId": "clothing"
+    },
+    {
+      "block": 85,
+      "entryId": "clothing"
+    },
+    {
+      "block": 86,
+      "entryId": "clothing"
+    },
+    {
+      "block": 90,
+      "entryId": "reuse"
+    },
+    {
+      "block": 91,
+      "entryId": "reuse"
+    },
+    {
+      "block": 92,
+      "entryId": "reuse"
+    },
+    {
+      "block": 94,
+      "entryId": "reuse"
+    },
+    {
+      "block": 95,
+      "entryId": "reuse"
+    },
+    {
+      "block": 97,
+      "entryId": "reuse"
+    },
+    {
+      "block": 98,
+      "entryId": "reuse"
+    },
+    {
+      "block": 100,
+      "entryId": "reuse"
+    },
+    {
+      "block": 101,
+      "entryId": "reuse"
+    },
+    {
+      "block": 127,
+      "entryId": "student-support"
+    },
+    {
+      "block": 128,
+      "entryId": "student-support"
+    },
+    {
+      "block": 129,
+      "entryId": "student-support"
+    },
+    {
+      "block": 130,
+      "entryId": "student-support"
+    },
+    {
+      "block": 132,
+      "entryId": "student-support"
+    },
+    {
+      "block": 134,
+      "entryId": "student-support"
+    },
+    {
+      "block": 135,
+      "entryId": "student-support"
+    },
+    {
+      "block": 136,
+      "entryId": "student-support"
+    },
+    {
+      "block": 138,
+      "entryId": "student-support"
+    },
+    {
+      "block": 139,
+      "entryId": "student-support"
+    },
+    {
+      "block": 140,
+      "entryId": "student-support"
+    },
+    {
+      "block": 142,
+      "entryId": "student-support"
+    },
+    {
+      "block": 143,
+      "entryId": "student-support"
+    },
+    {
+      "block": 147,
+      "entryId": "health-notice"
+    },
+    {
+      "block": 148,
+      "entryId": "health-notice"
+    },
+    {
+      "block": 149,
+      "entryId": "health-notice"
+    },
+    {
+      "block": 151,
+      "entryId": "health-notice"
+    },
+    {
+      "block": 152,
+      "entryId": "health-notice"
+    },
+    {
+      "block": 154,
+      "entryId": "health-notice"
+    },
+    {
+      "block": 155,
+      "entryId": "health-notice"
+    },
+    {
+      "block": 183,
+      "entryId": "rail-guangzhou-south"
+    },
+    {
+      "block": 184,
+      "entryId": "rail-guangzhou-south"
+    },
+    {
+      "block": 185,
+      "entryId": "rail-guangzhou-south"
+    },
+    {
+      "block": 186,
+      "entryId": "rail-guangzhou-south"
+    },
+    {
+      "block": 187,
+      "entryId": "rail-guangzhou-south"
+    },
+    {
+      "block": 188,
+      "entryId": "rail-guangzhou-south"
+    },
+    {
+      "block": 190,
+      "entryId": "rail-guangzhou-south"
+    },
+    {
+      "block": 191,
+      "entryId": "rail-qingsheng"
+    },
+    {
+      "block": 192,
+      "entryId": "rail-qingsheng"
+    },
+    {
+      "block": 193,
+      "entryId": "rail-qingsheng"
+    },
+    {
+      "block": 194,
+      "entryId": "rail-qingsheng"
+    },
+    {
+      "block": 195,
+      "entryId": "rail-qingsheng"
+    },
+    {
+      "block": 196,
+      "entryId": "rail-qingsheng"
+    },
+    {
+      "block": 197,
+      "entryId": "rail-qingsheng"
+    },
+    {
+      "block": 198,
+      "entryId": "rail-qingsheng"
+    },
+    {
+      "block": 199,
+      "entryId": "rail-qingsheng"
+    },
+    {
+      "block": 200,
+      "entryId": "rail-qingsheng"
+    },
+    {
+      "block": 201,
+      "entryId": "rail-qingsheng"
+    },
+    {
+      "block": 203,
+      "entryId": "rail-qingsheng"
+    },
+    {
+      "block": 237,
+      "entryId": "intercity-panyu"
+    },
+    {
+      "block": 238,
+      "entryId": "intercity-panyu"
+    },
+    {
+      "block": 239,
+      "entryId": "intercity-panyu"
+    }
+  ],
+  "employmentSections": [
+    {
+      "chapter": 1,
+      "title": "1.1 暨南大学学生就业指导中心",
+      "entryId": "career-service-center"
+    },
+    {
+      "chapter": 1,
+      "title": "1.2 下设四个部门及职能",
+      "entryId": "career-service-center"
+    },
+    {
+      "chapter": 2,
+      "title": "2.1 就业信息官方平台",
+      "entryId": "career"
+    },
+    {
+      "chapter": 2,
+      "title": "2.2 官方微信公众号矩阵",
+      "entryId": "career"
+    },
+    {
+      "chapter": 2,
+      "title": "2.3 官方短视频/新媒体平台",
+      "entryId": "career"
+    },
+    {
+      "chapter": 3,
+      "title": "校园招聘会信息",
+      "entryId": "career-job-fairs"
+    },
+    {
+      "chapter": 3,
+      "title": "3.1 2026年秋季招聘会（2027届毕业生）",
+      "entryId": "career-job-fairs"
+    },
+    {
+      "chapter": 3,
+      "title": "3.2 2026年春季招聘会",
+      "entryId": "career-job-fairs"
+    },
+    {
+      "chapter": 3,
+      "title": "3.3 线上双选会",
+      "entryId": "career-job-fairs"
+    },
+    {
+      "chapter": 4,
+      "title": "企业宣讲会信息",
+      "entryId": "career-company-talks"
+    },
+    {
+      "chapter": 5,
+      "title": "5.1 最新招聘公告",
+      "entryId": "career-job-search"
+    },
+    {
+      "chapter": 5,
+      "title": "5.2 岗位信息平台",
+      "entryId": "career-job-search"
+    },
+    {
+      "chapter": 6,
+      "title": "6.1 广东省2026年度选调优秀大学毕业生",
+      "entryId": "career-selection-policy"
+    },
+    {
+      "chapter": 6,
+      "title": "6.2 山西省2026年面向暨南大学选调优秀高校毕业生",
+      "entryId": "career-selection-policy"
+    },
+    {
+      "chapter": 7,
+      "title": "7.1 \"书记院长访企拓岗\"专项行动",
+      "entryId": "career-practice-bases"
+    },
+    {
+      "chapter": 7,
+      "title": "7.2 学院访企拓岗案例",
+      "entryId": "career-practice-bases"
+    },
+    {
+      "chapter": 7,
+      "title": "7.3 产教融合/实践基地",
+      "entryId": "career-practice-bases"
+    },
+    {
+      "chapter": 7,
+      "title": "7.4 就业导师团计划",
+      "entryId": "career-practice-bases"
+    },
+    {
+      "chapter": 7,
+      "title": "7.5 制度建设",
+      "entryId": "career-practice-bases"
+    },
+    {
+      "chapter": 8,
+      "title": "8.1 \"领航计划\"——就业委员培训",
+      "entryId": "career-planning"
+    },
+    {
+      "chapter": 8,
+      "title": "8.2 \"灯塔\"就业委员骨干领航计划",
+      "entryId": "career-planning"
+    },
+    {
+      "chapter": 8,
+      "title": "8.3 全国大学生职业规划大赛",
+      "entryId": "career-planning"
+    },
+    {
+      "chapter": 8,
+      "title": "8.4 就业文化活动品牌",
+      "entryId": "career-planning"
+    },
+    {
+      "chapter": 8,
+      "title": "8.5 就业困难帮扶服务",
+      "entryId": "career-employment-support"
+    },
+    {
+      "chapter": 9,
+      "title": "9.1 2024届毕业生就业数据",
+      "entryId": "career-employment-reports"
+    },
+    {
+      "chapter": 9,
+      "title": "9.2 药学院就业数据（作为学院层面示例）",
+      "entryId": "career-employment-reports"
+    },
+    {
+      "chapter": 9,
+      "title": "9.3 历年就业率概况",
+      "entryId": "career-employment-reports"
+    },
+    {
+      "chapter": 10,
+      "title": "10.1 校内实习岗位",
+      "entryId": "internship-campus"
+    },
+    {
+      "chapter": 10,
+      "title": "10.2 校外实习岗位推送（通过就业信息网发布）",
+      "entryId": "internship-company"
+    },
+    {
+      "chapter": 10,
+      "title": "10.3 港青大湾区暑期实习计划详情",
+      "entryId": "internship-hongkong-gba"
+    },
+    {
+      "chapter": 11,
+      "title": "各学院官方就业信息平台",
+      "entryId": "career-college-channels"
+    },
+    {
+      "chapter": 12,
+      "title": "12.1 官方融媒体矩阵",
+      "entryId": "official-campus-news"
+    },
+    {
+      "chapter": 12,
+      "title": "12.2 光影暨南栏目",
+      "entryId": "official-campus-news"
+    },
+    {
+      "chapter": 12,
+      "title": "12.3 部分视频内容",
+      "entryId": "official-campus-news"
+    },
+    {
+      "chapter": 13,
+      "title": "13.1 广东省2024届毕业生供需见面活动（南方金融科技类专场）",
+      "entryId": "official-campus-news"
+    },
+    {
+      "chapter": 13,
+      "title": "13.2 暨南大学代表团访问越南（国际合作）",
+      "entryId": "official-campus-news"
+    },
+    {
+      "chapter": 13,
+      "title": "13.3 暨南大学120周年校庆",
+      "entryId": "official-campus-news"
+    },
+    {
+      "chapter": 14,
+      "title": "官方渠道核对与转载识别",
+      "entryId": "career"
+    },
+    {
+      "chapter": 15,
+      "title": "就业与实习分类速查",
+      "entryId": "career"
+    }
+  ],
+  "aliases": {
+    "pdf-jnuid-password-reset": "pdf-jnuid-login",
+    "pdf-campus-clinic-location": "health-guide",
+    "housing-guide": "dorm",
+    "metro": "pdf-xinzao-metro",
+    "pdf-express-address": "pdf-express-centre",
+    "pdf-finance-hall": "pdf-tuition-payment",
+    "pdf-luckin-east": "pdf-luckin-t3",
+    "career-recruitment-notices": "career-job-search"
+  },
+  "removed": ["pdf-study-room-location", "pdf-f5-rice-noodles"],
+  "retiredPictures": [
+    {
+      "path": "images/campus/campus-map.jpg",
+      "reason": "Replaced by current supplied map; obsolete locations omitted"
+    },
+    {
+      "path": "images/campus/food-zone.jpg",
+      "reason": "Contains F5 and outdated canteen labels; current locations are on supplied map and individual entries"
+    }
+  ]
+}
