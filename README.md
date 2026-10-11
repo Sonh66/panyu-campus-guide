@@ -18,7 +18,7 @@ npm start
 
 ## AI 接入
 
-复制 `.env.example` 为 `.env`，设置 `AI_BASE_URL`、`AI_MODEL`、`AI_API_KEY`。三个值必须同时配置。接口采用兼容 Chat Completions 的格式：程序在 `AI_BASE_URL` 后追加 `/chat/completions`；服务端发送 `response_format: {type: "json_object"}`，提供商需支持此格式。
+复制 `.env.example` 为 `.env`，设置 `AI_BASE_URL`、`AI_MODEL`、`AI_API_KEY`。三个值必须同时配置。接口采用兼容 Chat Completions 的格式：程序在 `AI_BASE_URL` 后追加 `/chat/completions`；服务端检索相关完整指南，并支持模型调用受限的 `read_guides` 工具读取其他业务。接口返回真实模型自然语言回答，相关详情跳转由服务端校验站内ID。
 
 例如供应商提供 `https://供应商域名/v1/chat/completions`，则 `AI_BASE_URL` 填写 `https://供应商域名/v1`。密钥仅保存在服务器环境变量，绝不写入前端或提交仓库。配置完成后重启服务器，向导状态将显示为 AI 校园向导。
 
@@ -34,7 +34,7 @@ AI 只能推荐目录中已存在的条目 ID；前端通过本地目录解析�
 - 已纳入可访问的暨南大学、番禺校区、图书馆、学生处、就业、教务、广州地铁与 12306 官网。教务需要学校账号登录。
 - 不编造食堂价格、商家地址、就医地点、校车时刻或学校政策。所有具体安排以官网为准。
 - 网站提供导航与查询线索，目前不具备学校业务办理、预约、支付或报修系统接口。
-- 没有接入大模型密钥，初始交付使用站内智能检索。
+- GitHub Pages 可通过 Cloudflare Workers 调用移动云 DeepSeek 模型；密钥仅存入 Worker Secret。未配置代理地址的构建继续明确使用站内检索。
 
 编辑 `src/catalog.json` 可维护公开分类、正文、步骤、表格、图片和实际服务链接；没有直接网址的小程序提供微信名称搜索步骤。早期整理记录与页码保存在 `docs/catalog-provenance.json` 和 `docs/pdf-page-map.json` 中，不进入网页构建。后续原始资料与逐页核对记录保存在仓库外。详见 [内容核对说明](docs/source-notes.md)。
 
@@ -44,7 +44,7 @@ React、TypeScript、Vite、GSAP、ScrollTrigger、Lucide。包含页面进出�
 
 ## 图片
 
-校园意象插画使用内置 imagegen 生成。提示词保存在 `public/images/campus-illustration.prompt.txt`。WebP 为网页优化版本，PNG 为原始生成文件。该插画不是暨南大学实景。
+首页使用用户提供的暨南大学校门照片 `public/images/campus/jnu-gate.jpg`，按原文件复制；电脑和手机采用突出校名的显示位置。此前的校园意象插画已从首页撤下。
 
 生活场景照片来自 Unsplash，非特定校园设施：
 
@@ -66,7 +66,7 @@ React、TypeScript、Vite、GSAP、ScrollTrigger、Lucide。包含页面进出�
 npm run check
 ```
 
-包含 TypeScript 编译、生产构建与28项测试：目录检索、紧急健康分流、模型目标限制、内容覆盖、图文顺序、完整表格、删除与合并、封面去重及来源隐藏。`tests/detail_browser.py` 在电脑、375px手机和横屏检查独立详情、全部图片、完整地图、旧链接、返回与刷新、目录和向导跳转。`tests/unique-images-browser.py --assets-only` 比较全部封面的解码RGB像素。运行浏览器检查前启动服务，设置 `PREVIEW_URL`、`BROWSER_EXECUTABLE`；Python入口需要安装Playwright，旧Node详情检查入口还需设置 `PYTHON_EXECUTABLE`。
+包含 TypeScript 编译、生产构建与34项测试：目录检索、紧急健康分流、模型目标限制、内容覆盖、图文顺序、完整表格、删除与合并、封面去重及来源隐藏。`tests/detail_browser.py` 在电脑、375px手机和横屏检查独立详情、全部图片、完整地图、旧链接、返回与刷新、目录和向导跳转。`tests/unique-images-browser.py --assets-only` 比较全部封面的解码RGB像素。运行浏览器检查前启动服务，设置 `PREVIEW_URL`、`BROWSER_EXECUTABLE`；Python入口需要安装Playwright，旧Node详情检查入口还需设置 `PYTHON_EXECUTABLE`。
 
 服务器默认仅监听本机；对外运行可设置 `HOST=0.0.0.0`，正式部署时由 HTTPS 网关提供访问控制与请求限制。仓库本身不等于已部署网站。
 
@@ -74,6 +74,6 @@ npm run check
 
 仓库包含 `.github/workflows/pages.yml`。在 GitHub 仓库 Settings → Pages 中选择 GitHub Actions，启用成功后，在仓库 Actions Variables 中设置 `PAGES_ENABLED=true`，随后推送 main 或手动执行 Deploy campus guide to GitHub Pages。工作流完成构建、测试和部署。
 
-Pages 构建采用相对资源路径，支持项目子目录；使用 hash 导航，刷新分类页面无需服务器重写。Pages 上的校园向导明确使用浏览器内站内检索，不请求不存在的服务端接口。Node AI 接口仍保留在源码中，但 GitHub Pages 不运行 Node 服务。
+Pages 构建采用相对资源路径，支持项目子目录；使用 hash 导航，刷新分类页面无需服务器重写。Pages 的校园向导通过仓库变量 `VITE_API_BASE_URL` 连接 Cloudflare Workers，支持根据完整站内指南回答和连续追问。未配置变量时使用浏览器内站内检索。Node AI 接口仍保留在源码中，GitHub Pages 不运行 Node 服务。代理地址、密钥配置、访问控制与更新步骤见 [Cloudflare AI 部署说明](docs/cloudflare-ai.md)。
 
 仓库已按所有者要求改为公开，Pages 已启用。当前地址为 https://campus.sonh.me/ ，HTTP 自动跳转 HTTPS。部署步骤在 `PAGES_ENABLED=true` 时运行。

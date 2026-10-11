@@ -41,6 +41,17 @@ import { localAnswer, searchCatalog } from "../server/catalog-search.mjs";
 
 gsap.registerPlugin(ScrollTrigger);
 const pagesDeployment = import.meta.env.VITE_DEPLOY_TARGET === "github-pages";
+const configuredApiBase = (import.meta.env.VITE_API_BASE_URL || "")
+  .trim()
+  .replace(/\/$/, "");
+if (
+  configuredApiBase &&
+  new URL(configuredApiBase).protocol !== "https:" &&
+  !["localhost", "127.0.0.1"].includes(new URL(configuredApiBase).hostname)
+)
+  throw new Error("AI endpoint must use HTTPS");
+const apiBase = configuredApiBase;
+const remoteGuide = Boolean(configuredApiBase) || !pagesDeployment;
 const portalUrl = "https://info.jnu.edu.cn/";
 type Entry = {
   id: string;
@@ -389,7 +400,7 @@ function Home({
 }) {
   return (
     <>
-      <section className="home-hero">
+      <section className="home-hero home-hero-photo">
         <div className="hero-copy">
           <span className="location-label">
             <MapPin size={16} aria-hidden="true" />
@@ -410,15 +421,15 @@ function Home({
             <ChevronRight size={17} aria-hidden="true" />
           </a>
         </div>
-        <div className="hero-scene">
+        <div className="hero-scene hero-campus-photo">
           <img
-            src={`${import.meta.env.BASE_URL}images/campus-illustration.webp`}
-            alt="亚热带校园、湖畔步道与骑车学生的原创意象插画"
+            src={assetUrl("images/campus/jnu-gate.jpg")}
+            alt="蓝天映衬下的暨南大学校门，拱门上写有暨南大学与 JINAN UNIVERSITY"
             fetchPriority="high"
-            width="1672"
-            height="941"
+            width="1080"
+            height="1441"
           />
-          <div className="scene-caption">校园生活意象插画</div>
+          <div className="scene-caption">暨南大学 · 校门风景</div>
           <div className="scene-label">
             <Leaf size={16} aria-hidden="true" />
             <span>去发现校园里的小美好</span>
@@ -834,7 +845,7 @@ function Chat({
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
   const [mode, setMode] = useState<"local" | "model">("local");
-  const [connected, setConnected] = useState(false);
+
   const controller = useRef<AbortController | null>(null);
   const messageEnd = useRef<HTMLDivElement>(null);
   const initialSent = useRef(false);
@@ -842,17 +853,18 @@ function Chat({
   const sendLock = useRef(false);
   useEffect(() => {
     const abort = new AbortController();
-    if (pagesDeployment)
+    if (!remoteGuide)
       return () => {
         abort.abort();
         controller.current?.abort();
       };
-    fetch("/api/status", { signal: abort.signal })
+    fetch(`${apiBase}/api/status`, {
+      signal: AbortSignal.any([abort.signal, AbortSignal.timeout(10000)]),
+    })
       .then((response) => (response.ok ? response.json() : Promise.reject()))
       .then((status) => {
         if (status.mode === "model" || status.mode === "local") {
           setMode(status.mode);
-          setConnected(true);
         }
       })
       .catch(() => {});
@@ -882,12 +894,17 @@ function Chat({
     controller.current = abort;
     try {
       let result: unknown;
-      if (connected) {
-        const response = await fetch("/api/ask", {
+      if (remoteGuide) {
+        const response = await fetch(`${apiBase}/api/ask`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: trimmed }),
-          signal: abort.signal,
+          body: JSON.stringify({
+            message: trimmed,
+            history: messages
+              .slice(-6)
+              .map((item) => ({ role: item.role, content: item.text })),
+          }),
+          signal: AbortSignal.any([abort.signal, AbortSignal.timeout(110000)]),
         });
         const payload: unknown = await response.json();
         if (!response.ok) throw new Error(errorMessage(payload));
@@ -936,9 +953,15 @@ function Chat({
       <div className="chat-status">
         <span>
           <Sparkles size={15} aria-hidden="true" />
-          {mode === "model" ? "AI 校园向导" : "站内智能检索"}
+          {mode === "model" || configuredApiBase
+            ? "AI 校园向导"
+            : "站内智能检索"}
         </span>
-        <small>根据已有资料寻找入口</small>
+        <small>
+          {remoteGuide
+            ? "结合站内指南回答，支持继续追问"
+            : "根据已有资料寻找入口"}
+        </small>
       </div>
       <div
         className="chat-scroll"
@@ -1021,7 +1044,7 @@ function Chat({
         {pending && (
           <div className="chat-thinking" role="status">
             <LoaderCircle size={18} aria-hidden="true" />
-            正在查找相关入口…
+            {remoteGuide ? "正在阅读指南并整理回答…" : "正在查找相关入口…"}
           </div>
         )}
         <div ref={messageEnd} />

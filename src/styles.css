@@ -640,6 +640,34 @@ h3 {
   inset: 0;
   transform: scale(1.04);
 }
+.hero-scene.hero-campus-photo img {
+  object-position: 50% 54%;
+}
+.hero-scene.hero-campus-photo:before {
+  background: none;
+}
+@media (max-width: 620px) {
+  .home-hero.home-hero-photo {
+    min-height: 0;
+    padding-bottom: 0;
+  }
+  .home-hero-photo .hero-copy {
+    padding-bottom: 22px;
+  }
+  .home-hero-photo .hero-scene {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+  }
+  .home-hero-photo .hero-search {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin: 16px 17px 20px;
+  }
+}
 .scene-caption {
   position: absolute;
   bottom: 9px;

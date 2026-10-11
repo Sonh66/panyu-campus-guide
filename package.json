@@ -9,22 +9,24 @@
     "start": "node server/index.mjs",
     "test": "node --test tests/*.test.mjs",
     "check": "npm run build && npm test",
-    "format": "prettier --write src server tests index.html vite.config.ts tsconfig.json README.md docs .github"
+    "format": "prettier --write src server tests index.html vite.config.ts tsconfig.json README.md docs .github",
+    "deploy:worker": "wrangler deploy"
   },
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "dotenv": "^16.5.0",
     "gsap": "^3.13.0",
     "lucide-react": "^0.468.0",
-    "dotenv": "^16.5.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.51.1",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
     "@vitejs/plugin-react": "^4.4.1",
+    "prettier": "^3.6.2",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
-    "@playwright/test": "^1.51.1",
-    "prettier": "^3.6.2"
+    "wrangler": "^4.149.0"
   }
 }
