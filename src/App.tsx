@@ -833,6 +833,14 @@ function errorMessage(value: unknown) {
     return value.error;
   return "暂时无法连接，请稍后重试。";
 }
+function connectionErrorMessage(problem: unknown) {
+  if (problem instanceof Error) {
+    if (problem.name === "TimeoutError")
+      return "回答等待超时，请重试，或先使用站内检索查找指南。";
+    if (/[\u3400-\u9fff]/.test(problem.message)) return problem.message;
+  }
+  return "网络未能连接校园向导，请重试，或先使用站内检索查找指南。";
+}
 function Chat({
   initialQuestion,
   onOpen,
@@ -845,62 +853,74 @@ function Chat({
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
   const [mode, setMode] = useState<"local" | "model">("local");
-
+  const [useLocal, setUseLocal] = useState(false);
+  const [connection, setConnection] = useState<
+    "checking" | "ready" | "offline"
+  >(remoteGuide ? "checking" : "ready");
+  const [failedQuestion, setFailedQuestion] = useState("");
+  const usingRemote = remoteGuide && !useLocal;
   const controller = useRef<AbortController | null>(null);
   const messageEnd = useRef<HTMLDivElement>(null);
   const initialSent = useRef(false);
   const input = useRef<HTMLInputElement>(null);
   const sendLock = useRef(false);
+  useEffect(() => () => controller.current?.abort(), []);
   useEffect(() => {
     const abort = new AbortController();
-    if (!remoteGuide)
-      return () => {
-        abort.abort();
-        controller.current?.abort();
-      };
+    if (!usingRemote) {
+      setMode("local");
+      setConnection("ready");
+      return;
+    }
+    setConnection("checking");
     fetch(`${apiBase}/api/status`, {
-      signal: AbortSignal.any([abort.signal, AbortSignal.timeout(10000)]),
+      signal: AbortSignal.any([abort.signal, AbortSignal.timeout(6000)]),
     })
       .then((response) => (response.ok ? response.json() : Promise.reject()))
       .then((status) => {
         if (status.mode === "model" || status.mode === "local") {
           setMode(status.mode);
+          setConnection("ready");
+        } else {
+          setConnection("offline");
         }
       })
-      .catch(() => {});
-    return () => {
-      abort.abort();
-      controller.current?.abort();
-    };
-  }, []);
+      .catch(() => {
+        if (!abort.signal.aborted) setConnection("offline");
+      });
+    return () => abort.abort();
+  }, [usingRemote]);
   useEffect(() => {
     messageEnd.current?.scrollIntoView({
       behavior: reducedMotion() ? "instant" : "smooth",
       block: "nearest",
     });
   }, [messages, pending]);
-  async function ask(text: string) {
+  async function ask(text: string, retry = false, forceLocal = false) {
     const trimmed = text.trim();
     if (!trimmed || sendLock.current) return;
     sendLock.current = true;
     setQuestion("");
     setError("");
+    setFailedQuestion("");
     setPending(true);
-    setMessages((current) => [
-      ...current,
-      { id: Date.now(), role: "user", text: trimmed },
-    ]);
+    const history = retry ? messages.slice(0, -1) : messages;
+    if (!retry)
+      setMessages((current) => [
+        ...current,
+        { id: Date.now(), role: "user", text: trimmed },
+      ]);
     const abort = new AbortController();
     controller.current = abort;
     try {
       let result: unknown;
-      if (remoteGuide) {
+      if (usingRemote && !forceLocal) {
         const response = await fetch(`${apiBase}/api/ask`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             message: trimmed,
-            history: messages
+            history: history
               .slice(-6)
               .map((item) => ({ role: item.role, content: item.text })),
           }),
@@ -919,18 +939,19 @@ function Chat({
       if (!isReply(result))
         throw new Error("返回的指南无法确认，请按分类查找。");
       const reply = result;
-      setMode(reply.mode);
+      if (!usingRemote || forceLocal || reply.mode === "model")
+        setMode(reply.mode);
+      setConnection("ready");
       setMessages((current) => [
         ...current,
         { id: Date.now() + 1, role: "assistant", text: reply.answer, reply },
       ]);
     } catch (problem) {
-      if (!abort.signal.aborted)
-        setError(
-          problem instanceof Error
-            ? problem.message
-            : "暂时无法连接，请稍后重试。",
-        );
+      if (!abort.signal.aborted) {
+        setError(connectionErrorMessage(problem));
+        setFailedQuestion(trimmed);
+        if (usingRemote && !forceLocal) setConnection("offline");
+      }
     } finally {
       if (!abort.signal.aborted) {
         setPending(false);
@@ -953,15 +974,32 @@ function Chat({
       <div className="chat-status">
         <span>
           <Sparkles size={15} aria-hidden="true" />
-          {mode === "model" || configuredApiBase
-            ? "AI 校园向导"
-            : "站内智能检索"}
+          {usingRemote && connection === "checking"
+            ? "正在连接 AI…"
+            : usingRemote && connection === "offline"
+              ? "AI 暂未连接"
+              : mode === "model"
+                ? "AI 校园向导"
+                : "站内智能检索"}
         </span>
         <small>
-          {remoteGuide
+          {usingRemote
             ? "结合站内指南回答，支持继续追问"
             : "根据已有资料寻找入口"}
         </small>
+        {remoteGuide && useLocal && (
+          <button
+            className="chat-mode-button"
+            type="button"
+            disabled={pending}
+            onClick={() => {
+              setError("");
+              setUseLocal(false);
+            }}
+          >
+            尝试连接 AI
+          </button>
+        )}
       </div>
       <div
         className="chat-scroll"
@@ -1044,15 +1082,42 @@ function Chat({
         {pending && (
           <div className="chat-thinking" role="status">
             <LoaderCircle size={18} aria-hidden="true" />
-            {remoteGuide ? "正在阅读指南并整理回答…" : "正在查找相关入口…"}
+            {usingRemote ? "正在阅读指南并整理回答…" : "正在查找相关入口…"}
           </div>
         )}
         <div ref={messageEnd} />
       </div>
-      {error && (
-        <p className="chat-error" role="alert">
-          {error}
-        </p>
+      {(error || (usingRemote && connection === "offline")) && (
+        <div className="chat-error" role="alert">
+          <p>
+            {error ||
+              "校园向导暂时无法连接，你可以继续按分类查找，或使用站内检索。"}
+          </p>
+          <div className="chat-error-actions">
+            {failedQuestion && (
+              <button
+                type="button"
+                disabled={pending}
+                onClick={() => void ask(failedQuestion, true)}
+              >
+                重试这个问题
+              </button>
+            )}
+            {usingRemote && (
+              <button
+                type="button"
+                disabled={pending}
+                onClick={() => {
+                  setUseLocal(true);
+                  setError("");
+                  if (failedQuestion) void ask(failedQuestion, true, true);
+                }}
+              >
+                使用站内检索
+              </button>
+            )}
+          </div>
+        </div>
       )}
       <form
         className="chat-form"
@@ -1081,10 +1146,10 @@ function Chat({
         </button>
       </form>
       <p className="chat-footnote">
-        {mode === "local"
+        {!usingRemote || (connection === "ready" && mode === "local")
           ? "当前使用站内检索，不生成未核实的信息。"
-          : "回答仅供指引，请核对来源的最新说明。"}
-        点击条目后由你决定是否打开来源。
+          : "AI 根据站内指南回答，请核对服务的最新安排。"}
+        点击条目可查看完整图文详情。
       </p>
     </div>
   );
