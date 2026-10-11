@@ -34,7 +34,7 @@ AI 只能推荐目录中已存在的条目 ID；前端通过本地目录解析�
 - 已纳入可访问的暨南大学、番禺校区、图书馆、学生处、就业、教务、广州地铁与 12306 官网。教务需要学校账号登录。
 - 不编造食堂价格、商家地址、就医地点、校车时刻或学校政策。所有具体安排以官网为准。
 - 网站提供导航与查询线索，目前不具备学校业务办理、预约、支付或报修系统接口。
-- GitHub Pages 可通过 Cloudflare Workers 调用移动云 DeepSeek 模型；密钥仅存入 Worker Secret。未配置代理地址的构建继续明确使用站内检索。
+- 当前按用户要求仅由 GitHub Pages 运行，校园向导默认使用站内检索，支持查询和图文详情跳转；没有启用实时大模型。Cloudflare 默认接口在当前网络直连失败，移动云浏览器跨域预检返回401且未提供允许跨域的响应头。共享模型密钥不得嵌入静态网页。
 
 编辑 `src/catalog.json` 可维护公开分类、正文、步骤、表格、图片和实际服务链接；没有直接网址的小程序提供微信名称搜索步骤。早期整理记录与页码保存在 `docs/catalog-provenance.json` 和 `docs/pdf-page-map.json` 中，不进入网页构建。后续原始资料与逐页核对记录保存在仓库外。详见 [内容核对说明](docs/source-notes.md)。
 
@@ -74,6 +74,6 @@ npm run check
 
 仓库包含 `.github/workflows/pages.yml`。在 GitHub 仓库 Settings → Pages 中选择 GitHub Actions，启用成功后，在仓库 Actions Variables 中设置 `PAGES_ENABLED=true`，随后推送 main 或手动执行 Deploy campus guide to GitHub Pages。工作流完成构建、测试和部署。
 
-Pages 构建采用相对资源路径，支持项目子目录；使用 hash 导航，刷新分类页面无需服务器重写。Pages 的校园向导通过仓库变量 `VITE_API_BASE_URL` 连接 Cloudflare Workers，支持根据完整站内指南回答和连续追问。未配置变量时使用浏览器内站内检索。Node AI 接口仍保留在源码中，GitHub Pages 不运行 Node 服务。代理地址、密钥配置、访问控制与更新步骤见 [Cloudflare AI 部署说明](docs/cloudflare-ai.md)。
+Pages 构建采用相对资源路径，支持项目子目录；使用 hash 导航，刷新分类页面无需服务器重写。当前已移除仓库变量 `VITE_API_BASE_URL`，校园向导使用浏览器内站内检索，不请求 Cloudflare 或其他代理接口。Node AI 接口仍保留在源码中，GitHub Pages 不运行 Node 服务。可选代理的历史部署说明见 [Cloudflare AI 部署说明](docs/cloudflare-ai.md)，当前 Pages 不启用它。
 
 仓库已按所有者要求改为公开，Pages 已启用。当前地址为 https://campus.sonh.me/ ，HTTP 自动跳转 HTTPS。部署步骤在 `PAGES_ENABLED=true` 时运行。
