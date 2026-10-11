@@ -1202,8 +1202,8 @@ function EntryDialog({
                 </section>
               ))}
               {entry.gallery.length > 0 && (
-                <section className="detail-section" aria-label="位置与服务图片">
-                  <h3>位置与服务图片</h3>
+                <section className="detail-section" aria-label="位置与操作图解">
+                  <h3>位置与操作图解</h3>
                   <p className="detail-gallery-hint">
                     点击图片，在新窗口放大查看。
                   </p>
